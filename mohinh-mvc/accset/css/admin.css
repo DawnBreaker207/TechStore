@@ -1,0 +1,229 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+
+
+/* ==========setup class============== */
+.w-sm {
+    width: 1px;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.table-info {
+    margin: 30px 20px;
+    max-width: 100%;
+    overflow: auto;
+}
+
+
+/* ===========HEADER ADMIN============= */
+.header-admin {
+    background-color:
+        #2D3748;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 0px 10px;
+}
+
+a:active {
+    color: blue;
+    font-weight: 700;
+}
+
+ul li {
+    display: inline-block;
+    line-height: 30px;
+
+}
+
+.name-admin {
+    padding-left: 40px;
+    color: white;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid;
+}
+
+.form-serch {
+    padding-bottom: 20px;
+}
+
+.input-search {
+    margin-left: 30px;
+    background-image: url(/icon/search.svg);
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    width: 250px;
+
+
+}
+
+.input-search::placeholder {
+    padding-left: 15px;
+}
+
+.text-align {
+    text-align: center;
+}
+
+/* ================button============== */
+.btn-add {
+    width: 135px;
+    height: 42px;
+    background-color:
+        #2A4365;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #F7FAFC;
+    margin: 0 30px 10px 0;
+}
+
+.btn-sm {
+    width: 40px;
+    height: 20px;
+    background-color:
+        #2A4365;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #F7FAFC;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.btn-color {
+    background-color:
+        #D53F8C;
+    font-weight: 700;
+}
+
+/* ===========TABLE============= */
+table {
+    margin-top: 50px;
+    width: 90%;
+    border-collapse: collapse;
+    margin: auto;
+    border: 3 solid black;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
+
+}
+
+tr {
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+tr:first-child {
+    height: 40px;
+}
+
+td:last-child {
+    width: 50px;
+
+    text-align: center;
+}
+
+td:first-child {
+    width: 10px;
+    text-align: left;
+}
+
+
+
+td {
+    height: 40px;
+    background-color: #F7FAFC;
+    text-align: center;
+
+}
+
+/* =============form add============== */
+.add-admin {
+    width: 100%;
+
+}
+
+.add-tt {
+    max-width: 800px;
+    /* Đặt chiều rộng tối đa của phần này */
+    margin: 20px auto;
+    /* Căn giữa phần nội dung theo chiều ngang */
+    padding: 20px 40px;
+    /* Đặt khoảng cách nội dung và viền */
+    background-color: #f9f9f9;
+    /* Màu nền */
+    border-radius: 10px;
+    /* Bo tròn viền */
+    box-shadow: 0px 0px 5px #ccc;
+    /* Hiệu ứng bóng đổ */
+}
+
+form label {
+    font-weight: bold;
+    /* Đậm cho label */
+    display: block;
+    /* Hiển thị label trên một dòng */
+    margin-top: 10px;
+
+}
+
+form input {
+    width: 100%;
+    /* Độ rộng của input là 100% */
+    padding: 5px 10px;
+    /* Khoảng cách trong input */
+    margin: 5px 0;
+    /* Khoảng cách giữa các input */
+    border-radius: 4px;
+    /* Bo tròn viền của input */
+    border: 1px solid #ccc;
+    /* Viền của input */
+}
+
+.them {
+    padding: 6px;
+    background-color: #0073e6;
+    border-radius: 5px;
+    color: white;
+    width: 100px;
+    display: block;
+    /* Thay đổi kích thước */
+    text-align: center;
+
+    /* Biểu tượng chuột */
+    transition: background-color 0.3s;
+    /* Hiệu ứng chuyển động */
+}
+
+.them:hover {
+    background-color: #0056b3;
+    /* Màu nền khi rê chuột */
+}
