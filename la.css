@@ -1,0 +1,90 @@
+
+   table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 30px 150px;
+    border: none;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+}
+tbody td{
+ 
+}
+.apply-coupon{
+  display: flex;
+  overflow: hidden;
+  padding: 10px 150px;
+}
+.apply-coupon input{
+  float: left;
+  margin-right: 10px;
+  padding: 10px;
+}
+.apply-coupon button{
+  float: left;
+  color: white;
+  background-color: red;
+  outline: none;
+  border: none;
+}
+.apply-coupon button:hover{
+  background-color: greenyellow;
+  color: black;
+}
+
+.cart-total{
+  border-collapse: collapse;
+  width: 80%;
+  margin: 30px 150px;
+  border: none;
+}
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-side {
+  width: 40%;
+}
+
+.right-side {
+  width: 60%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
