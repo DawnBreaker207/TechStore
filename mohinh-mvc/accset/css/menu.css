@@ -31,14 +31,17 @@
     width: 56px;
     height: 56px;
 }
+
 .icon-m {
     height: 24px;
     width: 24px;
 }
+
 .icon-xl {
     height: 40px;
     width: 40px;
 }
+
 /*  */
 ul {
     margin: 0;
@@ -104,6 +107,7 @@ ul {
     text-decoration: none;
     border-radius: 4px;
 }
+
 /* bug */
 .section-row {
     display: flex;
@@ -607,4 +611,62 @@ ul {
     text-align: center;
     padding: 16px 0 24px;
     font-size: 16px;
+}
+
+/* ===========FORM LOGIN============== */
+
+.container-frm {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.right-side_heading {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #45a049;
+}
+
+.switch-login {
+    margin: 10px 35%;
+}
+
+.switch-signup {
+    margin: 10px 33%;
 }

@@ -4,7 +4,7 @@ body {
    padding: 100px;
 }
 
-.container {
+.container-frm {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -16,7 +16,7 @@ body {
   
 }
 
-h2 {
+.right-side_heading {
   text-align: center;
 }
 
