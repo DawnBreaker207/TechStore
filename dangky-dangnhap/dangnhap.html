@@ -2,45 +2,60 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu</title>
+  <!--Link CSS-->
+  <link rel="stylesheet" href="style.css" />
+  <!-- <link rel="stylesheet" href="accset/css/list-product.css">
+    <link rel="stylesheet" href="accset/css/detail.css"> -->
+  <!--End Link CSS-->
+  <!--    Normalize CSS-->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <!--    End Normalize CSS-->
+  <!--Inter Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans:wght@500&family=Roboto&display=swap"
+    rel="stylesheet" />
+  <!--End Inter Font-->
+  <!--Poppins Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans:wght@500&family=Poppins&family=Roboto&display=swap"
+    rel="stylesheet" />
+  <!--End Poppins Font-->
 </head>
-
-<body>
-  <!-- trang dang nhap -->
-  <div class="container-frm">
-    <div class="left-side">
-      <div class="banner-frm">
-        <img src="image/anh-dep-ha-noi-10.jpg" alt="" width="550px" class="Signin-img">
-      </div>
-    </div>
-
-    <div class="right-side">
-      <h2 class="right-side_heading">Đăng nhập</h2>
-      <form>
-        <div class="form-group">
-          <label for="loginUsername">Tên đăng nhập:</label>
-          <input type="text" id="loginUsername" name="loginUsername" required>
-        </div>
-        <div class="form-group">
-          <label for="loginPassword">Mật khẩu:</label>
-          <input type="password" id="loginPassword" name="loginPassword" required>
-        </div>
-        <div class="form-group">
-          <button type="submit">Đăng nhập</button>
-          <a href="https://trello.com/b/JzAzGMS0/project-management">Foget Password ?</a>
-        </div>
-        <div class="switch-signup">
-          <p>Bạn chưa có tài khoản ? <a href="https://trello.com/b/JzAzGMS0/project-management">Sign Up</a></p>
-        </div>
-        <div class="form-group message">
-          <!-- Hiển thị thông báo lỗi đăng nhập -->
-        </div>
-      </form>
+<!-- trang dang nhap -->
+<div class="container-frm">
+  <div class="left-side">
+    <div class="banner-frm">
+      <img src="image/anh-dep-ha-noi-10.jpg" alt="" width="550px" class="Signin-img">
     </div>
   </div>
+
+  <div class="right-side">
+    <h2 class="right-side_heading">Đăng nhập</h2>
+    <form>
+      <div class="form-group">
+        <input type="text" id="loginUsername" name="loginUsername" placeholder="Username" required>
+      </div>
+      <div class="form-group">
+        <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
+      </div>
+      <div class="form-group flex mg-top">
+        <button type="submit" class="btn-login">Đăng nhập</button>
+        <a href="https://trello.com/b/JzAzGMS0/project-management" class="a">Foget Password ?</a>
+      </div>
+      <div class="switch-signup">
+        <p>Bạn chưa có tài khoản ? <a href="https://trello.com/b/JzAzGMS0/project-management">Sign Up</a></p>
+      </div>
+
+    </form>
+  </div>
+</div>
 </body>
 
 </html>
