@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Đăng ký</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <!-- trang dang ky -->
-  <div class="container-frm">
+<div class="container-frm">
     <img src="image/anh-dep-ha-noi-10.jpg" alt="" width="550px" height="435px" class="signup_img">
 
 
@@ -42,6 +32,3 @@
       </form>
     </div>
   </div>
-</body>
-
-</html>
