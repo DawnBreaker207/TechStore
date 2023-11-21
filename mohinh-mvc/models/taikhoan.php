@@ -23,11 +23,10 @@
         $sql = "UPDATE `taikhoan` SET `user`='$user',`pass`='$pass',`email`='$email',`dia_chi`='$diachi',`sdt`='$sdt',`ma_vaitro`='$ma_vaitro' WHERE `ma_tk` = '$ma_tk'";
         execute($sql);
     }
-
     function delete_taikhoan($ma_tk){
         $sql = "DELETE FROM `taikhoan` WHERE `ma_tk` = '$ma_tk'";
         execute($sql);
     }
-
+ 
 
 ?>

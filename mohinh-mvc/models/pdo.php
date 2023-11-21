@@ -13,6 +13,57 @@ function connect()
     }
     return $conn;
 }
+function execute($sql){
+    $sql_args=array_slice(func_get_args(),1);
+    try{
+        $conn=  connect();
+        $stmt=$conn->prepare($sql);
+        $stmt->execute($sql_args);
+
+    }
+    catch(PDOException $e){
+        throw $e;
+    }
+    finally{
+        unset($conn);
+    }
+}
+// truy vấn nhiều dữ liệu
+function query($sql){
+    $sql_args=array_slice(func_get_args(),1);
+
+    try{
+        $conn=  connect();
+        $stmt=$conn->prepare($sql);
+        $stmt->execute($sql_args);
+        $rows=$stmt->fetchAll();
+        return $rows;
+    }
+    catch(PDOException $e){
+        throw $e;
+    }
+    finally{
+        unset($conn);
+    }
+}
+// truy vấn  1 dữ liệu
+function query_one($sql){
+    $sql_args=array_slice(func_get_args(),1);
+    try{
+        $conn=  connect();
+        $stmt=$conn->prepare($sql);
+        $stmt->execute($sql_args);
+        $row=$stmt->fetch(PDO::FETCH_ASSOC);
+        // thực thi và hiển thị danh sách dữ liệu 
+        return $row;
+    }
+    catch(PDOException $e){
+        throw $e;
+    }
+    finally{
+        unset($conn);
+    }
+}
 function get_time_present()
 {
     // hàm này để lấy thời gian hiện tại trên máy tính
