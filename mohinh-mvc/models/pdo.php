@@ -27,18 +27,56 @@ function get_time_present()
 //    echo $currentDateTime; // có thể test ngay tại đây
 
 
-function getData($query, $params = [], $getAll = true)
-{
-    // hàm này dùng để thêm sửa xóa select
-    // nếu muốn thêm sử xóa thì chuyền false
-    // nếu muốn select thì không cần chuyền gì
-    $conn = connect();
-    $stmt = $conn->prepare($query);
-    $stmt->execute($params);
-    if ($getAll) {
-        return $stmt->fetchAll();
+function execute($sql){
+    $sql_args=array_slice(func_get_args(),1);
+    try{
+        $conn=connect();
+        $stmt=$conn->prepare($sql);
+        $stmt->execute($sql_args);
+
     }
-    return $stmt->fetch();
+    catch(PDOException $e){
+        throw $e;
+    }
+    finally{
+        unset($conn);
+    }
+}
+// truy vấn nhiều dữ liệu
+function query($sql){
+    $sql_args=array_slice(func_get_args(),1);
+
+    try{
+        $conn=connect();
+        $stmt=$conn->prepare($sql);
+        $stmt->execute($sql_args);
+        $rows=$stmt->fetchAll();
+        return $rows;
+    }
+    catch(PDOException $e){
+        throw $e;
+    }
+    finally{
+        unset($conn);
+    }
+}
+// truy vấn  1 dữ liệu
+function query_one($sql){
+    $sql_args=array_slice(func_get_args(),1);
+    try{
+        $conn=connect();
+        $stmt=$conn->prepare($sql);
+        $stmt->execute($sql_args);
+        $row=$stmt->fetch(PDO::FETCH_ASSOC);
+        // thực thi và hiển thị danh sách dữ liệu 
+        return $row;
+    }
+    catch(PDOException $e){
+        throw $e;
+    }
+    finally{
+        unset($conn);
+    }
 }
 function img()
 {

@@ -1,11 +1,12 @@
 <?php
+    
     function loadAll_tk(){
         $sql = "SELECT * FROM `taikhoan`";
         $result = query($sql);
         return $result;
     }  
-    function loadOne_tk($ma_tk){
-        $sql = "SELECT * FROM `taikhoan` WHERE 'ma_tk' = '$ma_tk'"; 
+    function loadOne_tk($user,$pass){
+        $sql = "SELECT * FROM `taikhoan` WHERE 'user' = '$user' , 'pass'='$pass'"; 
         $result = query_one($sql);
         return $result;
     }
@@ -27,6 +28,12 @@
     function delete_taikhoan($ma_tk){
         $sql = "DELETE FROM `taikhoan` WHERE `ma_tk` = '$ma_tk'";
         execute($sql);
+    }
+
+    function dangnhap($user,$pass) {
+        $sql="SELECT * FROM `taikhoan` WHERE  user='$user' and pass='$pass'";
+        $taikhoan =query_one($sql);
+        return $taikhoan;
     }
 
 
