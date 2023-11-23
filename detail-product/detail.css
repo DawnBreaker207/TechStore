@@ -26,14 +26,17 @@
     width: 16px;
     height: 16px;
 }
-.icon-m{
+
+.icon-m {
     height: 24px;
     width: 24px;
 }
-.icon-xm{
+
+.icon-xm {
     height: 40px;
     width: 40px;
 }
+
 .icon-xl {
     width: 56px;
     height: 56px;
@@ -159,7 +162,10 @@ ul {
     font-family: var(--font-title);
     color: var(--text-color);
 }
-
+.path__link {
+    text-decoration: none;
+    color: var(--text-color);
+}
 .header {
     margin: 40px 0 16px 0;
 }
@@ -211,45 +217,58 @@ ul {
 }
 
 /*Product*/
-.product{
+.product {
     display: grid;
     grid-template-columns: 2.5fr 1fr;
     grid-gap: 70px;
     padding-bottom: 70px;
 }
-.product-row{
+
+.product-row {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-gap: 30px;
 }
-.product-col{
+
+.product-col {
     display: flex;
     flex-direction: column;
-    gap:30px;
+    gap: 30px;
 
 }
-.product-item{
-    width: 100%;
-    height: 100%;
-}.product__img{
+
+.product-item {
     width: 100%;
     height: 100%;
 }
-.detail-row{
+
+.product__img {
+    width: 100%;
+    height: 100%;
+}
+
+.product-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-row {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.detail-col{
+
+.detail-col {
     display: flex;
     flex-direction: column;
 }
 
-.product__title{
+.product__title {
     font-size: 24px;
     font-family: var(--font-heading);
     margin: 0;
 }
+
 .product__rate {
     display: flex;
     margin: 16px 0;
@@ -257,56 +276,86 @@ ul {
     font-family: var(--font-title);
     font-size: 14px;
 }
-.product-review{
+
+.product-review {
     padding: 0 16px 0 8px;
 }
-.product__status{
+
+.product__status {
     padding: 0 0 0 16px;
     color: var(--clr-status);
 }
-.product__price{
-    margin:  0 0 24px 0;
+
+.product__price {
+    margin: 0 0 24px 0;
     font-family: var(--font-heading);
     font-size: 24px;
     font-weight: var(--font-regular);
 }
-.product__desc{
+
+.product__desc {
     font-size: 14px;
     font-family: var(--font-title);
     max-width: 390px;
     line-height: 21px;
 }
-.detail-function{
+
+.detail-function {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 16px;
     margin: 0 0 40px 0;
 }
-.product-btn{
+
+.product-btn {
     display: flex;
     align-items: center;
 
 }
-.product-detail{
+
+.product-detail {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.btn{
+
+.product-cart {
+    text-align: center;
+    background-color: var(--bg-color-3);
+    color: var(--text-color-2);
+    font-family: var(--font-title);
+    padding: 8px 0;
+    position: absolute;
+    bottom: -15%;
+    width: 100%;
+    transition: 0.5s ease-in-out;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.product-header:hover .product-cart {
+    bottom: 1%;
+    transition: 0.3s ease-in-out;
+}
+
+.btn {
     padding: 8px 10px;
     display: inline-flex;
     border: 1px solid var(--border-color);
     align-items: center;
 }
-.btn-minus{
+
+.btn-minus {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
-.btn-add{
+
+.btn-add {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
-.btn-quantity{
+
+.btn-quantity {
     padding: 8px 34px;
     align-self: center;
     border-top: 1px solid var(--border-color);
@@ -315,29 +364,35 @@ ul {
     font-weight: var(--font-medium);
     font-size: 21px;
 }
-.btn-buy{
+
+.btn__buy {
     padding: 10px 48px;
     border: 1px solid transparent;
     background: var(--primary-color);
     color: var(--text-color-2);
     border-radius: 4px;
     font-family: var(--font-title);
+    display: inline-flex;
+    text-decoration: none;
 
 }
-.btn-add-cart{
+
+.btn-add-cart {
     padding: 8px 10px;
     display: inline-flex;
     border: 1px solid var(--border-color);
     align-items: center;
     border-radius: 5px;
 }
-.product-deliver{
+
+.product-deliver {
     display: inline-flex;
     flex-direction: column;
     border: 1px solid var(--border-color);
     border-radius: 4px;
 }
-.deliver-item{
+
+.deliver-item {
     display: flex;
     gap: 16px;
     color: var(--text-color);
@@ -345,25 +400,30 @@ ul {
     font-family: var(--font-title);
 
 }
-.deliver__title{
+
+.deliver__title {
     font-weight: var(--font-bold);
     padding: 0 0 8px 0;
 }
-.deliver__desc a{
+
+.deliver__desc a {
     color: var(--text-color);
 }
-.free-deliver{
+
+.free-deliver {
     padding: 24px 0 16px 16px;
     border-bottom: 1px solid var(--border-color);
 }
-.return-deliver{
+
+.return-deliver {
     padding: 16px 0 24px 16px;
 }
 
 /*Relate*/
-.product__img{
+.product__img {
     width: 100%;
 }
+
 .product-header {
     position: relative;
 }
@@ -421,27 +481,32 @@ ul {
     padding: 0 0 0 8px;
     font-weight: var(--font-bold);
 }
+
 /*Comment*/
-.comment{
+.comment {
     margin: 55px 0 30px 0;
     background-color: var(--bg-color);
     height: 400px;
 }
-.comment-header{
+
+.comment-header {
     padding: 5px 0 0 20px;
-    font-family: var(--font-heading) ;
+    font-family: var(--font-heading);
 }
-.comment-body{
+
+.comment-body {
     padding: 0 45px;
 }
-.comment-input{
+
+.comment-input {
     background-color: var(--bg-color-2);
     padding: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.comment-rate{
+
+.comment-rate {
     font-family: var(--font-heading);
     font-weight: var(--font-bold);
     display: flex;
@@ -449,7 +514,8 @@ ul {
     align-items: center;
     gap: 20px;
 }
-.comment__input{
+
+.comment__input {
     background-color: var(--bg-color);
     font-family: var(--font-heading);
     font-weight: var(--font-bold);
@@ -460,11 +526,13 @@ ul {
     border: none;
     outline: none;
 }
-.comment-customer{
+
+.comment-customer {
     padding: 20px 0 0 0;
     display: flex;
 }
-.comment-image{
+
+.comment-image {
     width: 52px;
     height: 52px;
     display: inline-flex;
@@ -472,10 +540,12 @@ ul {
     border-radius: 50%;
     background-color: var(--bg-color-2);
 }
-.comment-image img{
+
+.comment-image img {
     width: 100%;
     height: 100%;
 }
+
 .comment-name {
     display: inline-flex;
     gap: 3px;
@@ -483,14 +553,17 @@ ul {
     font-family: var(--font-heading);
     align-items: center;
 }
-.comment-date{
+
+.comment-date {
     font-weight: var(--font-regular);
     font-family: var(--font-title);
     font-size: 10px;
 }
-.comment-rating{
-    padding:4px;
+
+.comment-rating {
+    padding: 4px;
 }
+
 /*Footer*/
 .footer {
     background-color: var(--bg-color-3);
