@@ -1,3 +1,6 @@
+<?php
+
+?>
 <div class="container-frm">
   <div class="left-side">
     <div class="banner-frm">
@@ -7,12 +10,12 @@
 
   <div class="right-side">
     <h2 class="right-side_heading">Đăng nhập</h2>
-    <form>
+    <form action="index.php?act=sigin" method="post">
       <div class="form-group">
-        <input type="text" id="loginUsername" name="loginUsername" placeholder="Username" required>
+        <input type="text" id="loginUsername" name="user" placeholder="Username" required>
       </div>
       <div class="form-group">
-        <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
+        <input type="password" id="loginPassword" name="pass" placeholder="Password" required>
       </div>
       <div class="form-group flex mg-top">
         <button type="submit" class="btn-login">Đăng nhập</button>

@@ -14,7 +14,7 @@
     <section class="add-admin">
         <div class="add-tt">
             <h1>Sửa danh mục</h1>
-            <form action="index.php?act=sach&nd=addS" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=danhMuc&nd=update" method="post" enctype="multipart/form-data">
                 <label for="madm">Mã danh mục:</label>
                 <input type="text" id="madm" name="madm"><br>
 
