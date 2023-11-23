@@ -1,7 +1,7 @@
 <?php
-include "pdo.php";
+  
     function insert_danhmuc($ten_dm){
-       $sql = "INSERT INTO `danhmuc`(`ten_dm`) VALUES ('?')";
+       $sql = "INSERT INTO  danhmuc (ten_dm) VALUES (?)";
        return getData($sql, [$ten_dm], false);
     }
 
@@ -15,11 +15,10 @@ include "pdo.php";
     }
 
     function loadAll_danhmuc(){
-        $sql = "SELECT * FROM `danhmuc`";
+        $sql = "SELECT * FROM danhmuc ";
        return getData($sql);
         
     }
-
     function loadOne_danhmuc($ma_dm){
         $sql = "SELECT * FROM `danhmuc` WHERE ma_dm = ?";
        return getData($sql,[$ma_dm]);
