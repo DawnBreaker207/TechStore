@@ -18,17 +18,17 @@
           
             <div class="menu-admin">
                 <ul>
-                    <li><a href="index.php?act=trangchu">Trang chủ</a></li>
-                    <li><a href="index.php?act=danhmuc">Danh mục</a></li>
-                    <li><a href="index.php?act=sanpham">Sản phẩm</a></li>
-                    <li><a href="index.php?act=taikhoan">Tài khoản</a></li>
-                    <li><a href="index.php?act=donhang">Đơn hàng</a></li>
-                    <li><a href="index.php?act=binhluan">Bình luận</a></li>
+                    <li><a href="index.php?act=trangChu">Trang chủ</a></li>
+                    <li><a href="index.php?act=danhMuc">Danh mục</a></li>
+                    <li><a href="index.php?act=sanPham">Sản phẩm</a></li>
+                    <li><a href="index.php?act=taiKhoan">Tài khoản</a></li>
+                    <li><a href="index.php?act=donHang">Đơn hàng</a></li>
+                    <li><a href="index.php?act=binhLuan">Bình luận</a></li>
                 </ul>
             </div>
 
         <div>
-            <a href="" class="btn-add btn-color">Đăng xuất</a>
+            <a href="index.php?act=dangxuat" class="btn-add btn-color">Đăng xuất</a>
         </div>
     </header>
  

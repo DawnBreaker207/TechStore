@@ -31,8 +31,6 @@
                                     if(isset($_GET['id'])){
                                         $id=$_GET['id'];
                                         delete_danhmuc($id);
-                                        
-                         
                                     }
                                     break;
                                 case 'view':
@@ -48,9 +46,6 @@
                             require_once "view/admin/danhmuc/list.php";
                         }
                         break;
-
-
-      
                     case 'dangxuat':
                             unset($_SESSION['ma_vaitro']);
                             unset($_SESSION['ma_tk']);
