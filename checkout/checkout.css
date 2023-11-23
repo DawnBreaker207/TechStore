@@ -1,0 +1,153 @@
+body{
+    font-family: var(--font-heading);
+}
+:root {
+    --primary-color: #db4444;
+    /*Text Color*/
+    --text-color: #000000;
+    --text-color-2: #fafafa;
+    --text-color-3: #ffffff;
+    /*BG Color*/
+    --bg-color: #f5f5f5;
+    --bg-color-2: #ffffff;
+    --bg-color-3: #000000;
+    /*Border Color*/
+    --border-color: rgba(0, 0, 0, 0.3);
+    --border-color-2: #fafafa;
+    /*Font Weight*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 600;
+    /*Font Family*/
+    --font-heading: Inter, san-serif;
+    --font-title: Poppins, san-serif;
+
+    --clr-status: #00FF66;
+}
+
+.wrapper {
+    margin: 0 135px;
+}
+
+.path {
+    margin: 80px 0 80px 0;
+    display: inline-flex;
+    gap: 12px;
+    font-family: var(--font-title);
+    color: var(--text-color);
+}
+
+.heading h2{
+    font-size: 30px;
+}
+
+.checkout-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 173px;
+    margin-top: 30px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.form-group label{
+    margin-bottom: 5px;
+    display: block;
+    font-size: 23px;
+    color: gray;
+}
+
+.form-group input[type=text]{
+    display: block;
+    margin-bottom: 5px;
+    width: 470px;
+    height: 50px;
+    border: none;
+    border: 1px solid gray;
+}
+
+.form-group input[type=checkbox]:checked{
+    background-color: red;
+}
+
+.form-group input[type=text]:focus{
+    background-color: white;
+    color: gray;
+}
+
+.form-group span{
+    color: red;
+}
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.product-info span{
+    font-weight: var(--font-regular);
+    align-items: center;
+}
+
+.cart-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px 0;
+}
+
+hr{
+    color: gray;
+    margin: 20px 0;
+}
+
+.cart-purchase{
+    margin: 25px 0;
+}
+
+.cart-purchase label{
+    margin: 0 20px;
+}
+
+.coupon{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.coupon input[type=text]{
+    width: 150px;
+    height: 10px;
+    padding: 15px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.coupon button{
+    background-color: red;
+    color: white;
+    width: 100px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+}
+
+.coupon button:hover{
+    background-color: gray;
+}
+
+.order button{
+    background-color: red;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+}
+
+.order button:hover{
+    background-color: gray;
+}

@@ -1,0 +1,109 @@
+body{
+    font-family: var(--font-heading);
+}
+:root {
+    --primary-color: #db4444;
+    /*Text Color*/
+    --text-color: #000000;
+    --text-color-2: #fafafa;
+    --text-color-3: #ffffff;
+    /*BG Color*/
+    --bg-color: #f5f5f5;
+    --bg-color-2: #ffffff;
+    --bg-color-3: #000000;
+    /*Border Color*/
+    --border-color: rgba(0, 0, 0, 0.3);
+    --border-color-2: #fafafa;
+    /*Font Weight*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 600;
+    /*Font Family*/
+    --font-heading: Inter, san-serif;
+    --font-title: Poppins, san-serif;
+
+    --clr-status: #00FF66;
+}
+
+.wrapper {
+    margin: 0 135px;
+}
+
+.path {
+    margin: 80px 0 80px 0;
+    display: inline-flex;
+    gap: 12px;
+    font-family: var(--font-title);
+    color: var(--text-color);
+}
+
+.account{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.manage{
+    width: 40%;
+}
+
+.manage h2{
+    font-size: 18px;
+}
+
+.manage-link a{
+    display: block;
+    margin: 10px 20px;
+    font-size: 15px;
+    text-decoration: none;
+    color: gray;
+}
+
+.manage-link a:hover{
+    color: red;
+}
+
+.edit h2{
+    color: red;
+    font-weight: var(--font-medium);
+}
+
+.name .miniform{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 0;
+}
+
+.miniform-group input[type=text]{
+    margin: 10px 0;
+    height: 25px;
+    padding: 5px;
+}
+
+.form-group input[type=password]{
+    display: block;
+    width: 450px;
+    margin: 15px 0;
+    height: 25px;
+    padding: 5px;
+}
+
+.submit{
+    text-align: right;
+}
+
+button[type=button]{
+    width: 100px;
+    height: 35px;
+    margin: 20px 10px;
+    background-color: white;
+    border: 1px solid gray;
+}
+
+button[type=submit]{
+    width: 150px;
+    height: 35px;
+    margin-right: 10px;
+    background-color: rgb(232, 89, 89);
+    color: white;
+    border: none;
+}
