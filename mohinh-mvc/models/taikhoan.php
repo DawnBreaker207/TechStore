@@ -27,6 +27,15 @@
         $sql = "DELETE FROM `taikhoan` WHERE `ma_tk` = '$ma_tk'";
         execute($sql);
     }
- 
+    function checkInfo($user,$pass)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE user = ? AND pass = ?";
+        $info = getData($sql, [$user,$pass]);
+        if (count($info) > 0) {
+            return $info[0];
+        } else {
+            return null;
+        }
+    }
 
 ?>
