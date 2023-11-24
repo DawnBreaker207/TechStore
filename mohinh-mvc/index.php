@@ -5,49 +5,49 @@ require_once "models/taikhoan.php";
 require_once "models/danhmuc.php";
 
 
-if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 4) {
-    require_once "view/admin/ui_admin/header.php";
-    if (isset($_GET['act'])) {
-        $act = $_GET['act'];
-        switch ($act) {
 
-            case 'trangChu':
-                break;
-            case 'danhMuc':
-                if (isset($_GET['nd'])) {
-                    switch ($_GET['nd']) {
-                        case 'addDm':
-                            if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                                $tendm = $_POST['tendm'];
-                                $ma_dm = $_POST['madm'];
-                                insert_danhmuc($tendm);
-                            } else {
-                                require_once "view/admin/danhmuc/add.php";
-                            }
-                            break;
-                        case 'update':
-                            if (isset($_GET['ma_dm'])) {
-                                $ma_dm = $_GET['ma_dm'];
-                                $loadOne_dm = loadOne_danhmuc($ma_dm);
-                                require_once "view/admin/danhmuc/add.php";
-                            }
-                            if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                                $tendm = $_POST['tendm'];
-                                $ma_dm = $_POST['madm'];
-                                update_danhmuc($tendm, $ma_dm);
-                            } else {
-                                require_once "view/admin/danhmuc/add.php";
-                            }
-                            break;
-                        case 'delete':
-                            if (isset($_GET['ma_dm'])) {
-                                $ma_dm = $_GET['ma_dm'];
-                                delete_danhmuc($ma_dm);
-                            }
-                            break;
-                        case 'view':
-                            $loadallDm = loadAll_danhmuc();
-
+     if(isset($_SESSION['ma_vaitro'])&& $_SESSION['ma_vaitro']== 0){
+        require_once "view/admin/ui_admin/header.php";
+            if(isset($_GET['act'])){
+                $act=$_GET['act'];
+                switch($act){
+                    case 'trangChu':
+                        break;
+                    case 'danhMuc':
+                        if (isset($_GET['nd'])) {
+                            switch ($_GET['nd']) {
+                                case 'addDm':
+                                        if($_SERVER['REQUEST_METHOD']== "POST"){
+                                            $ten_dm=$_POST['tendm'];
+                                            $ma_dm=$_POST['madm'];
+                                            insert_danhmuc($ten_dm);
+                                        } 
+                                        else {
+                                            require_once "view/admin/danhmuc/add.php";
+                                        }
+                                    break;
+                                case'update':
+                                    if(isset($_GET['ma_dm'])){
+                                        $ma_dm=$_GET['ma_dm'];
+                                        $loadOneDM=loadOne_danhmuc($ma_dm);
+                                        require_once "view/admin/danhmuc/update.php";
+                                    }
+                                    if($_SERVER['REQUEST_METHOD']== "POST"){
+                                        $ten_dm=$_POST['tendm'];
+                                        $ma_dm=$_POST['madm'];
+                                        update_danhmuc($ma_dm,$ten_dm);
+                                        $loadallDm=loadAll_danhmuc();
+                                        require_once "view/admin/danhmuc/list.php";
+                                    }
+                                    break;
+                                case 'delete':
+                                    if(isset($_GET['ma_dm'])){
+                                        $ma_dm=$_GET['ma_dm'];
+                                        delete_danhmuc($ma_dm);
+                                    }
+                                    break;
+                                case 'view':
+                                    $loadallDm=loadAll_danhmuc();
                             require_once "view/admin/danhmuc/list.php";
 
                             break;
