@@ -17,20 +17,32 @@
                             switch ($_GET['nd']) {
                                 case 'addDm':
                                         if($_SERVER['REQUEST_METHOD']== "POST"){
-                                            $tendm=$_POST['tendm'];
+                                            $ten_dm=$_POST['tendm'];
                                             $ma_dm=$_POST['madm'];
-                                            insert_danhmuc($tendm);
+                                            insert_danhmuc($ten_dm);
                                         } 
                                         else {
                                             require_once "view/admin/danhmuc/add.php";
                                         }
                                     break;
                                 case'update':
+                                    if(isset($_GET['ma_dm'])){
+                                        $ma_dm=$_GET['ma_dm'];
+                                        $loadOneDM=loadOne_danhmuc($ma_dm);
+                                        require_once "view/admin/danhmuc/update.php";
+                                    }
+                                    if($_SERVER['REQUEST_METHOD']== "POST"){
+                                        $ten_dm=$_POST['tendm'];
+                                        $ma_dm=$_POST['madm'];
+                                        update_danhmuc($ma_dm,$ten_dm);
+                                        $loadallDm=loadAll_danhmuc();
+                                        require_once "view/admin/danhmuc/list.php";
+                                    }
                                     break;
                                 case 'delete':
-                                    if(isset($_GET['id'])){
-                                        $id=$_GET['id'];
-                                        delete_danhmuc($id);
+                                    if(isset($_GET['ma_dm'])){
+                                        $ma_dm=$_GET['ma_dm'];
+                                        delete_danhmuc($ma_dm);
                                     }
                                     break;
                                 case 'view':
