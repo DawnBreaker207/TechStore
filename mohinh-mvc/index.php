@@ -49,7 +49,6 @@ require_once "models/danhmuc.php";
                                 case 'view':
                                     $loadallDm=loadAll_danhmuc();
                             require_once "view/admin/danhmuc/list.php";
-
                             break;
                     }
                 } else {
@@ -97,8 +96,6 @@ require_once "models/danhmuc.php";
                 }
                 break;
             
-    
-            
             case 'dangxuat':
                 unset($_SESSION['ma_vaitro']);
                 unset($_SESSION['ma_tk']);
@@ -136,6 +133,24 @@ require_once "models/danhmuc.php";
                     require_once("view/login.php");
                 }
                 break;
+            case 'product':
+                    require_once "view/user/sanpham/sanpham.php";
+                break;
+            case 'contact':
+                    require_once "view/user/contact/contact.php";
+                break;
+            case 'about':
+                    require_once "view/user/about/about.php";
+                break;
+            case 'cart':
+                    require_once "view/user/cart/cart.php";
+                break;
+             case 'user':
+                    require_once "view/user/profile/user.php";
+                break;
+             case 'home':
+                    require_once "view/user/trangchu/home.php";
+                break;
             case 'dangxuat':
                 unset($_SESSION['ma_vaitro']);
                 unset($_SESSION['ma_tk']);
@@ -143,7 +158,7 @@ require_once "models/danhmuc.php";
                 header("Refresh:0");
                 break;
         }
-    } else {
+    } else { 
         require_once "view/user/trangchu/home.php";
     }
     require_once "view/user/ui_view/footer.php";

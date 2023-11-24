@@ -121,7 +121,7 @@
         <!--    <hr/>-->
     </section>
     <!-- End .category -->
-    <section class="product-ctsp">
+    <section class="product">
         <header class="section-header">
             <div class="section-tag">
                 <div class="section-block"></div>
@@ -138,325 +138,47 @@
         </header>
         <div class="section-body">
             <div class="section-row">
-                <div class="section-col">
-                    <div class="product">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <img
-                                        src="image/product/product.png"
-                                        alt=""
-                                        class="product__img"
-                                />
-                            </div>
-                            <div class="product-tab">
-                                <div class="product-item">
-                                    <img src="image/icon/heart.svg" alt=""/>
-                                </div>
-                                <div class="product-item">
-                                    <img src="image/icon/view.svg" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <a href="">
-                                <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                            </a>
-                            <div class="product__price">
-                                $960<span class="product__sale">$1160</span>
-                            </div>
-                            <span class="product__rate">
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/half-star.svg" alt=""/>
-                            <span class="product__total">(65)</span>
-                          </span>
-                        </div>
+            <div class="section-col">
+              <div class="product">
+                <div class="product-header">
+                  <div class="product-image">
+                    <a href="">
+                      <img
+                        src="accset/img/product/product.png"
+                        alt=""
+                        class="product__img"
+                      />
+                    </a>
+                    <a href="" class="product-cart">Add to cart</a>
+                  </div>
+                  <div class="product-tab">
+                    <div class="product-item">
+                      <img src="accset/icon/heart.svg" alt="" />
                     </div>
-                    <div class="product-cart"></div>
-                    <!-- End .product -->
-                </div>
-                <!-- End .section-col -->
-                <div class="section-col">
-                    <div class="product">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <img
-                                        src="image/product/product.png"
-                                        alt=""
-                                        class="product__img"
-                                />
-                            </div>
-                            <div class="product-tab">
-                                <div class="product-item">
-                                    <img src="image/icon/heart.svg" alt=""/>
-                                </div>
-                                <div class="product-item">
-                                    <img src="image/icon/view.svg" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <a href="">
-                                <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                            </a>
-                            <div class="product__price">
-                                $960<span class="product__sale">$1160</span>
-                            </div>
-                            <span class="product__rate">
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/half-star.svg" alt=""/>
-                            <span class="product__total">(65)</span>
-                          </span>
-                        </div>
+                    <div class="product-item">
+                      <img src="accset/icon/view.svg" alt="" />
                     </div>
-                    <div class="product-cart"></div>
-                    <!-- End .product -->
+                  </div>
                 </div>
-                <!-- End .section-col -->
-                <div class="section-col">
-                    <div class="product">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <img
-                                        src="image/product/product.png"
-                                        alt=""
-                                        class="product__img"
-                                />
-                            </div>
-                            <div class="product-tab">
-                                <div class="product-item">
-                                    <img src="image/icon/heart.svg" alt=""/>
-                                </div>
-                                <div class="product-item">
-                                    <img src="image/icon/view.svg" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <a href="">
-                                <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                            </a>
-                            <div class="product__price">
-                                $960<span class="product__sale">$1160</span>
-                            </div>
-                            <span class="product__rate">
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/half-star.svg" alt=""/>
-                            <span class="product__total">(65)</span>
-                          </span>
-                        </div>
-                    </div>
-                    <div class="product-cart"></div>
-                    <!-- End .product -->
+                <div class="product-body">
+                  <a href="">
+                    <h3 class="product__title">AMD Ryzen 5 5600X</h3>
+                  </a>
+                  <div class="product__price">
+                    $960<span class="product__sale">$1160</span>
+                  </div>
+                  <span class="product__rate">
+                    <img src="accset/icon/star.svg" alt="" />
+                    <img src="accset/icon/star.svg" alt="" />
+                    <img src="accset/icon/star.svg" alt="" />
+                    <img src="accset/icon/star.svg" alt="" />
+                    <img src="accset/icon/half-star.svg" alt="" />
+                    <span class="product__total">(65)</span>
+                  </span>
                 </div>
-                <!-- End .section-col -->
-                <div class="section-col">
-                    <div class="product">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <img
-                                        src="image/product/product.png"
-                                        alt=""
-                                        class="product__img"
-                                />
-                            </div>
-                            <div class="product-tab">
-                                <div class="product-item">
-                                    <img src="image/icon/heart.svg" alt=""/>
-                                </div>
-                                <div class="product-item">
-                                    <img src="image/icon/view.svg" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <a href="">
-                                <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                            </a>
-                            <div class="product__price">
-                                $960<span class="product__sale">$1160</span>
-                            </div>
-                            <span class="product__rate">
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/half-star.svg" alt=""/>
-                            <span class="product__total">(65)</span>
-                          </span>
-                        </div>
-                    </div>
-                    <div class="product-cart"></div>
-                    <!-- End .product -->
-                </div>
-                <!-- End .section-col -->
-                <div class="section-col">
-                    <div class="product">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <img
-                                        src="image/product/product.png"
-                                        alt=""
-                                        class="product__img"
-                                />
-                            </div>
-                            <div class="product-tab">
-                                <div class="product-item">
-                                    <img src="image/icon/heart.svg" alt=""/>
-                                </div>
-                                <div class="product-item">
-                                    <img src="image/icon/view.svg" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <a href="">
-                                <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                            </a>
-                            <div class="product__price">
-                                $960<span class="product__sale">$1160</span>
-                            </div>
-                            <span class="product__rate">
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/half-star.svg" alt=""/>
-                            <span class="product__total">(65)</span>
-                          </span>
-                        </div>
-                    </div>
-                    <div class="product-cart"></div>
-                    <!-- End .product -->
-                </div>
-                <!-- End .section-col -->
-                <div class="section-col">
-                    <div class="product">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <img
-                                        src="image/product/product.png"
-                                        alt=""
-                                        class="product__img"
-                                />
-                            </div>
-                            <div class="product-tab">
-                                <div class="product-item">
-                                    <img src="image/icon/heart.svg" alt=""/>
-                                </div>
-                                <div class="product-item">
-                                    <img src="image/icon/view.svg" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <a href="">
-                                <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                            </a>
-                            <div class="product__price">
-                                $960<span class="product__sale">$1160</span>
-                            </div>
-                            <span class="product__rate">
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/half-star.svg" alt=""/>
-                            <span class="product__total">(65)</span>
-                          </span>
-                        </div>
-                    </div>
-                    <div class="product-cart"></div>
-                    <!-- End .product -->
-                </div>
-                <!-- End .section-col -->
-                <div class="section-col">
-                    <div class="product">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <img
-                                        src="image/product/product.png"
-                                        alt=""
-                                        class="product__img"
-                                />
-                            </div>
-                            <div class="product-tab">
-                                <div class="product-item">
-                                    <img src="image/icon/heart.svg" alt=""/>
-                                </div>
-                                <div class="product-item">
-                                    <img src="image/icon/view.svg" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <a href="">
-                                <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                            </a>
-                            <div class="product__price">
-                                $960<span class="product__sale">$1160</span>
-                            </div>
-                            <span class="product__rate">
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/half-star.svg" alt=""/>
-                            <span class="product__total">(65)</span>
-                          </span>
-                        </div>
-                    </div>
-                    <div class="product-cart"></div>
-                    <!-- End .product -->
-                </div>
-                <!-- End .section-col -->
-                <div class="section-col">
-                    <div class="product">
-                        <div class="product-header">
-                            <div class="product-image">
-                                <img
-                                        src="image/product/product.png"
-                                        alt=""
-                                        class="product__img"
-                                />
-                            </div>
-                            <div class="product-tab">
-                                <div class="product-item">
-                                    <img src="image/icon/heart.svg" alt=""/>
-                                </div>
-                                <div class="product-item">
-                                    <img src="image/icon/view.svg" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <a href="">
-                                <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                            </a>
-                            <div class="product__price">
-                                $960<span class="product__sale">$1160</span>
-                            </div>
-                            <span class="product__rate">
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/star.svg" alt=""/>
-                            <img src="image/icon/half-star.svg" alt=""/>
-                            <span class="product__total">(65)</span>
-                          </span>
-                        </div>
-                    </div>
-                    <div class="product-cart"></div>
-                    <!-- End .product -->
-                </div>
+              </div>
+              <!-- End .product -->
+            </div>
                 <!-- End .section-col -->
             </div>
         </div>

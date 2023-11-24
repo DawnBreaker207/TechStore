@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="accset/css/common.css">
     <link rel="stylesheet" href="accset/css/header.css">
     <link rel="stylesheet" href="accset/css/footer.css">
-    <link rel="stylesheet" href="accset/css/sign_up,log_in.css">
+    <link rel="stylesheet" href="accset/css/sigin.css">
     <!--End Link CSS-->
     <!--    Normalize CSS-->
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
@@ -39,12 +39,13 @@
             </div>
             <div class="header-col">
                 <ul class="header-list">
-                    <li><a href="" class="header__link">Home</a></li>
-                    <li><a href="" class="header__link">Contact</a></li>
-                    <li><a href="" class="header__link">About</a></li>
-                    <li><a href="view/login.php" class="header__link">Sign Up</a></li>
+                    <li><a href="index.php?act=home" class="header__link">Home</a></li>
+                    <li><a href="index.php?act=product" class="header__link">Product</a></li>
+                    <li><a href="index.php?act=contact" class="header__link">Contact</a></li>
+                    <li><a href="index.php?act=about" class="header__link">About</a></li>
+                    <li><a href="index.php?act=sigin" class="header__link">Sign Up</a></li>
                 </ul>
-            </div>
+            </div>  
             <div class="header-col">
                 <div class="header-function">
                     <div class="header-search">
@@ -53,16 +54,16 @@
                     </div>
                     <div class="header-nav">
                         <div class="header-cart">
-                            <a href="" class="header-cart__link">
+                            <a href="index.php?act=cart" class="header-cart__link">
                                 <img src="accset/icon/cart.svg" alt="" class="cart__img " />
                                 <span class="header-cart--notifi">2</span>
                             </a>
                         </div>
                         <div class="header-user">
                             <div class="user-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="transparent" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-l user__account">
+                                <a href="index.php?act=user"><svg xmlns="http://www.w3.org/2000/svg" fill="transparent" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-l user__account">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                                </svg>
+                                </svg></a>
 
 
                                 <div class="user-option">
