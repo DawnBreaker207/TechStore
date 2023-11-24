@@ -79,7 +79,7 @@ body{
     padding: 5px;
 }
 
-.form-group input[type=password]{
+.form-group-account input[type=password]{
     display: block;
     width: 450px;
     margin: 15px 0;

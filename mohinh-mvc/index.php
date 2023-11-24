@@ -146,7 +146,7 @@ require_once "models/danhmuc.php";
                     require_once "view/user/cart/cart.php";
                 break;
              case 'user':
-                    require_once "view/user/profile/user.php";
+                    require_once "view/user/account/account.php";
                 break;
              case 'home':
                     require_once "view/user/trangchu/home.php";

@@ -1,6 +1,7 @@
-body{
+body {
     font-family: var(--font-heading);
 }
+
 :root {
     --primary-color: #db4444;
     /*Text Color*/
@@ -37,29 +38,29 @@ body{
     color: var(--text-color);
 }
 
-.heading h2{
+.heading h2 {
     font-size: 30px;
 }
 
-.checkout-info{
+.checkout-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 173px;
     margin-top: 30px;
 }
 
-.form-group{
+.form-group-ck {
     margin-bottom: 20px;
 }
 
-.form-group label{
+.form-group-ck label {
     margin-bottom: 5px;
     display: block;
     font-size: 23px;
     color: gray;
 }
 
-.form-group input[type=text]{
+.form-group-ck input[type=text] {
     display: block;
     margin-bottom: 5px;
     width: 470px;
@@ -68,56 +69,56 @@ body{
     border: 1px solid gray;
 }
 
-.form-group input[type=checkbox]:checked{
+.form-group-ck input[type=checkbox]:checked {
     background-color: red;
 }
 
-.form-group input[type=text]:focus{
+.form-group-ck input[type=text]:focus {
     background-color: white;
     color: gray;
 }
 
-.form-group span{
+.form-group-ck span {
     color: red;
 }
 
-.product{
+.product-checkout {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
 }
 
-.product-info span{
+.product-info span {
     font-weight: var(--font-regular);
     align-items: center;
 }
 
-.cart-info{
+.cart-info {
     display: flex;
     justify-content: space-between;
     margin-top: 100px 0;
 }
 
-hr{
+hr {
     color: gray;
     margin: 20px 0;
 }
 
-.cart-purchase{
+.cart-purchase {
     margin: 25px 0;
 }
 
-.cart-purchase label{
+.cart-purchase label {
     margin: 0 20px;
 }
 
-.coupon{
+.coupon {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.coupon input[type=text]{
+.coupon input[type=text] {
     width: 150px;
     height: 10px;
     padding: 15px;
@@ -125,7 +126,7 @@ hr{
     border-radius: 5px;
 }
 
-.coupon button{
+.coupon button {
     background-color: red;
     color: white;
     width: 100px;
@@ -134,11 +135,11 @@ hr{
     border: none;
 }
 
-.coupon button:hover{
+.coupon button:hover {
     background-color: gray;
 }
 
-.order button{
+.order button {
     background-color: red;
     color: white;
     width: 100px;
@@ -148,6 +149,6 @@ hr{
     border: none;
 }
 
-.order button:hover{
+.order button:hover {
     background-color: gray;
 }
