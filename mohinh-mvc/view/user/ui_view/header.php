@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu</title>
     <!--Link CSS-->
-    <link rel="stylesheet" href="accset/css/menu.css" />
+    <link rel="stylesheet" href="accset/css/menu.css">
     <link rel="stylesheet" href="accset/css/list-product.css">
     <link rel="stylesheet" href="accset/css/detail.css">
     <link rel="stylesheet" href="accset/css/common.css">
     <link rel="stylesheet" href="accset/css/header.css">
     <link rel="stylesheet" href="accset/css/footer.css">
     <link rel="stylesheet" href="accset/css/sigin.css">
+    <link rel="stylesheet" href="accset/css/account.css">
+    <link rel="stylesheet" href="accset/css/checkout.css">
     <!--End Link CSS-->
     <!--    Normalize CSS-->
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
