@@ -15,6 +15,7 @@
         <div class="add-tt">
             <h1>Sửa danh mục</h1>
             <form action="index.php?act=danhMuc&nd=update" method="post" enctype="multipart/form-data">
+
                 <?php foreach ($loadOneDM as $dm){ 
                     extract($dm)
                     ?>
@@ -22,7 +23,6 @@
                 <input type="text" id="madm" name="madm" value="<?php echo $ma_dm; ?>"><br>
                 <label for="tendm">Tên danh mục:</label>
                 <input type="text" id="tendm" name="tendm"  value="<?php echo $ten_dm; ?>" ><br>
-
                 <input type="submit" value="Cập nhật" name="them" class="them"> 
                  <?php } ?>
             </form><br>
