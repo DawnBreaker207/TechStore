@@ -58,7 +58,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 4) {
                 }
                 break;
 
-            case 'taikhoan':
+            case 'taiKhoan':
                 if (isset($_GET['nd'])) {
                     switch ($_GET['nd']) {
                         case 'addTk':

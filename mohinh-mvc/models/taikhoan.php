@@ -19,7 +19,7 @@
     }
 
     function delete_taikhoan($ma_tk){
-        $sql = "DELETE FROM `taikhoan` WHERE `ma_tk` = '?'";
+        $sql = "DELETE FROM `taikhoan` WHERE `ma_tk` = ?";
         return getData($sql,[$ma_tk],false);
     }
 
