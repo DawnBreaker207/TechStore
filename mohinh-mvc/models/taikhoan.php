@@ -1,32 +1,28 @@
 <?php
     function loadAll_tk(){
         $sql = "SELECT * FROM `taikhoan`";
-        $result = query($sql);
-        return $result;
+        return getData($sql);
     }  
     function loadOne_tk($ma_tk){
-        $sql = "SELECT * FROM `taikhoan` WHERE 'ma_tk' = '$ma_tk'"; 
-        $result = query_one($sql);
-        return $result;
+        $sql = "SELECT * FROM `taikhoan` WHERE 'ma_tk' = ?"; 
+        return getData($sql, [$ma_tk]);
     }
    
     function insert_taikhoan($ma_tk, $user, $pass, $email, $diachi, $sdt, $ma_vaitro){       
-        $sql = "INSERT INTO `taikhoan` ( `user`, `pass`, `email`, `diachi`, ``sdt`, `ma_vaitro`) VALUES ('$user','$pass','$email','$diachi','$sdt','$ma_vaitro')";
-        execute ($sql);
-    }
-    function insert_vaitro($ma_vaitro, $vai_tro){
-        $sql = "INSERT INTO `vaitro`( `ma_vaitro`, `vaitro`) VALUES ('$ma_vaitro','$vai_tro')";
-        execute ($sql,[$ma_vaitro, $vai_tro]);
+        $sql = "INSERT INTO `taikhoan` ( `user`, `pass`, `email`, `diachi`, ``sdt`, `ma_vaitro`) VALUES ('?','?','?','?','?','?')";
+        return getData($sql,[$ma_tk,$user, $pass, $email, $diachi, $sdt, $ma_vaitro], false);
     }
 
     function update_taikhoan($ma_tk, $user, $pass, $email, $diachi, $sdt, $ma_vaitro){
-        $sql = "UPDATE `taikhoan` SET `user`='$user',`pass`='$pass',`email`='$email',`dia_chi`='$diachi',`sdt`='$sdt',`ma_vaitro`='$ma_vaitro' WHERE `ma_tk` = '$ma_tk'";
-        execute($sql);
+        $sql = "UPDATE `taikhoan` SET `user`='?',`pass`='?',`email`='?',`dia_chi`='?',`sdt`='?',`ma_vaitro`='?' WHERE `ma_tk` = '?'";
+        return getData($sql,[$user, $pass, $email, $diachi, $sdt, $ma_vaitro,$ma_tk], false);
     }
+
     function delete_taikhoan($ma_tk){
-        $sql = "DELETE FROM `taikhoan` WHERE `ma_tk` = '$ma_tk'";
-        execute($sql);
+        $sql = "DELETE FROM `taikhoan` WHERE `ma_tk` = '?'";
+        return getData($sql,[$ma_tk],false);
     }
+
     function checkInfo($user,$pass)
     {
         $sql = "SELECT * FROM taikhoan WHERE user = ? AND pass = ?";
