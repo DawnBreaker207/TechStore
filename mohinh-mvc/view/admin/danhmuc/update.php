@@ -15,17 +15,19 @@
         <div class="add-tt">
             <h1>Sửa danh mục</h1>
             <form action="index.php?act=danhMuc&nd=update" method="post" enctype="multipart/form-data">
-                <?php
-                
-                ?>
+
+                <?php foreach ($loadOneDM as $dm){ 
+                    extract($dm)
+                    ?>
             <label for="madm">Mã danh mục:</label>
-                <input type="text" id="madm" name="madm"><br>
-
+                <input type="text" id="madm" name="madm" value="<?php echo $ma_dm; ?>"><br>
                 <label for="tendm">Tên danh mục:</label>
-                <input type="text" id="tendm" name="tendm"><br>
-
-                <input type="submit" value="Cập nhật" class="them">
+                <input type="text" id="tendm" name="tendm"  value="<?php echo $ten_dm; ?>" ><br>
+                <input type="submit" value="Cập nhật" name="them" class="them"> 
+                 <?php } ?>
             </form><br>
+
+          
             <a href="view/admin/danhmuc/list.php" class="link_dsdm">Danh sách danh mục</a>
         </div>
     </section>
