@@ -57,7 +57,7 @@ require_once "models/danhmuc.php";
                 }
                 break;
 
-            case 'taikhoan':
+            case 'taiKhoan':
                 if (isset($_GET['nd'])) {
                     switch ($_GET['nd']) {
                         case 'addTk':
