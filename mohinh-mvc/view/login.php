@@ -1,6 +1,4 @@
-<?php
 
-?>
 <div class="container-frm">
   <div class="left-side">
     <div class="banner-frm">

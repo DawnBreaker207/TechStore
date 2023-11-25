@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once "models/pdo.php";
 require_once "models/taikhoan.php";
 require_once "models/danhmuc.php";
@@ -100,7 +101,7 @@ require_once "models/danhmuc.php";
                 unset($_SESSION['ma_vaitro']);
                 unset($_SESSION['ma_tk']);
                 header("Location: index.php");
-                header("Refresh:0");
+             
                 break;
         }
         
@@ -120,16 +121,16 @@ require_once "models/danhmuc.php";
                     $pass = $_POST['pass'];
                     $vaitro = checkInfo($user, $pass);
                     extract($vaitro);
-                    if ($vaitro == null) {
-                        header("Location: index.php");
-                        header("Refresh:0");
-                    } else {
+                    if ($vaitro != null){
                         $_SESSION['ma_tk'] = $ma_tk;
                         $_SESSION['ma_vaitro'] = $ma_vaitro;
                         header("Location: index.php");
-                        header("Refresh:0");
+                        exit;
+                    }else{
+                        require_once("view/login.php");
                     }
-                } else {
+                }
+                else{
                     require_once("view/login.php");
                 }
                 break;
