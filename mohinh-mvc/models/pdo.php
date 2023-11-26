@@ -94,7 +94,7 @@ function getData($query, $params = [], $getAll = true)
 function img()
 {
     if (isset($_FILES["hinhAnh"]) && $_FILES["hinhAnh"]["error"] === UPLOAD_ERR_OK) {
-        $target_dir = "models/uploads/";
+        $target_dir = "accset/uploads/";
         $target_file = $target_dir . basename($_FILES["hinhAnh"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

@@ -23,19 +23,22 @@
             <table class="table" border="0">
                 <tr>
                     <td>ID</td>
-                    <td>Tên sản phẩm</td>
-                    <td>Danh mục</td>
+                    <td>Tên sản phẩm</td>                   
                     <td>Ảnh </td>
                     <td>Giá</td>
                     <td>Mô tả</td>
                     <td>Số lượng </td>
+                    <td>Danh mục</td>
                     <td>Hãng</td>
                     <td>Tùy chỉnh</td>
                 </tr>
+                <?php foreach($loadallTk as $sp){
+
+                extract($sp); ?>
                 <tr>
                     <td>ID</td>
                     <td>VGA Asus ROG Strix RTX 4090 OC 24GB Gaming </td>
-                    <td>Danh mục</td>
+                    
                     <td><img src="accset/img/547953_9C2ST_8746_001_082_0000_Light-Gucci-Savoy-medium-duffle-bag 1.png"
                             class="img" alt="">
                     </td>
@@ -48,11 +51,13 @@
                         thoải mái và đạt được hiệu suất cao nhất. Thời kỳ chưa được khai phá của kiến ​​trúc NVIDIA Ada
                         Lovelace là ở đây.</td>
                     <td>15 </td>
+                    <td>Danh mục</td>
                     <td>Hãng</td>
                     <td><a href="updateSP.html" class="btn-sm">Sửa</a>
                         <a href="#" class="btn-sm">Xóa</a>
                     </td>
                 </tr>
+                <?php } ?>
 
             </table>
         </div>

@@ -9,7 +9,7 @@
     }
    
     function insert_taikhoan($ma_tk, $user, $pass, $email, $diachi, $sdt, $ma_vaitro){       
-        $sql = "INSERT INTO `taikhoan` ( `user`, `pass`, `email`, `diachi`, ``sdt`, `ma_vaitro`) VALUES ('?','?','?','?','?','?')";
+        $sql = "INSERT INTO `taikhoan` ( `ma_tk`, `user`, `pass`, `email`, `diachi`, ``sdt`, `ma_vaitro`) VALUES ('?','?','?','?','?','?')";
         return getData($sql,[$ma_tk,$user, $pass, $email, $diachi, $sdt, $ma_vaitro], false);
     }
 

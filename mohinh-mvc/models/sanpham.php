@@ -1,4 +1,5 @@
 <?php
+    
     function insert_sanpham($ten_sp, $img, $gia, $mota, $luotxem, $ma_nsx, $ma_dm){
         $sql = "INSERT INTO `sanpham`(`ma_sp`, `ten_sp`, `img`, `gia`, `mota`, `luotxem`, `ma_nsx`, `ma_dm`) VALUES ('?','?','?','?','?','?','?','?')";
         return getData($sql, [$ten_sp, $img, $gia, $mota, $luotxem, $ma_nsx, $ma_dm], false);
