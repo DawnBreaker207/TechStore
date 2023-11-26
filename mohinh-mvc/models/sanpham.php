@@ -12,11 +12,8 @@
 
 
     function update_sanpham($ma_sp,$ten_sp, $img, $gia, $mota, $luotxem, $ma_nsx, $ma_dm){
-        if($img!="")
-        $sql = "UPDATE `sanpham` SET `ma_sp`='?',`ten_sp`='?',`img`='?',`gia`='?',`mota`='?',`luotxem`='?',`ma_nsx`='?',`ma_dm`='?' WHERE `ma_sp` ='?'";
-        else
-        $sql = "UPDATE `sanpham` SET `ma_sp`='?',`ten_sp`='?',`gia`='?',`mota`='?',`luotxem`='?',`ma_nsx`='?',`ma_dm`='?' WHERE `ma_sp` ='?'";
-        return getData($sql, [$ma_sp, $ten_sp, $img, $gia, $mota, $luotxem, $ma_nsx, $ma_dm], false);
+        $sql = "UPDATE `sanpham` SET `ten_sp`='?',`gia`='?',`mota`='?',`luotxem`='?',`ma_nsx`='?',`ma_dm`='?' WHERE `ma_sp` ='?'";
+        return getData($sql, [$ten_sp, $img, $gia, $mota, $luotxem, $ma_nsx, $ma_dm,$ma_sp], false);
     }
 
     function loadAll_sanpham(){

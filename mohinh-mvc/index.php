@@ -153,21 +153,41 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
                 if (isset($_GET['nd'])) {
                     switch ($_GET['nd']) {
                         case 'addSp':
-                            if($_SERVER['REQUEST_METHOD'] == "POST") {
-                                $ma_sp = $_POST['ma_sp'];
-                                $ten_sp = $_POST['ten_sp'];
+                            if($_SERVER['REQUEST_METHOD'] == "POST") {                              
+                                $ten_sp = $_POST['tensp'];
                                 $img = img();
                                 $gia = $_POST['gia'];
+                                $soluong = $_POST['soLuong'];
                                 $mota = $_POST['mota'];
                                 $luotxem = $_POST['luotxem'];
-                                $ma_nsx = $_POST['ma_nsx'];
+                                $ma_nsx = $_POST['hang'];
                                 $ma_dm = $_POST['ma_dm'];
-                                insert_sanpham($ma_sp, $ten_sp, $img, $gia, $mota, $luotxem, $ma_nsx, $ma_dm);
+                                insert_sanpham($ma_sp, $ten_sp, $img,$soluong, $gia, $mota, $luotxem, $ma_nsx, $ma_dm);
                             }else{
                                 require_once "view/admin/sanpham/add.php";
                             }
                             break;
                          case 'update':
+                            if(isset($_GET['ma_sp'])){
+                                $ma_sp = $_GET['ma_sp'];
+                                $loadOneSp = loadOne_sanpham($ma_sp);
+                                require_once "view/admin/sanpham/update.php";
+                            }
+                            if($_SERVER['REQUEST_METHOD'] == "POST"){
+                                $ten_sp = $_POST['ten_sp'];
+                                $img = img();
+                                $gia = $_POST['gia'];
+                                $soluong = $_POST['soLuong'];
+                                $mota = $_POST['mota'];
+                                $luotxem = $_POST['luotxem'];
+                                $ma_nsx = $_POST['hang'];
+                                $ma_dm = $_POST['ma_dm'];
+                                update_sanpham($ma_sp, $ten_sp, $img,$soluong, $gia, $mota, $luotxem, $ma_nsx, $ma_dm);
+                                 
+                                require_once "view/admin/sanpham/list.php";
+                            }else{
+                                require_once "view/admin/sanpham/list.php";
+                            }
                             break;
                             
                         
