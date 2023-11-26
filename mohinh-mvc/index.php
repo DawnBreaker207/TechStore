@@ -7,7 +7,7 @@ require_once "models/danhmuc.php";
 
 
 
-     if(isset($_SESSION['ma_vaitro'])&& $_SESSION['ma_vaitro']== 0){
+     if(isset($_SESSION['ma_vaitro'])&& $_SESSION['ma_vaitro']== 3){
         require_once "view/admin/ui_admin/header.php";
             if(isset($_GET['act'])){
                 $act=$_GET['act'];
@@ -77,6 +77,24 @@ require_once "models/danhmuc.php";
                             break;
                         
                         case 'update':
+                            if(isset($_GET['ma_tk'])){
+                                $ma_tk= $_GET['ma_tk'];                             
+                                $loadOneTK= loadOne_tk($ma_tk);
+                                require_once "view/admin/taikhoan/update.php";
+                                }
+                                if($_SERVER['REQUEST_METHOD'] == "POST"){
+                                    $ma_tk = $_POST['ma_tk'];
+                                    $user = $_POST['user'];
+                                    $pass = $_POST['pass'];
+                                    $email = $_POST['email'];
+                                    $dia_chi = $_POST['dia_chi'];            
+                                    $sdt = $_POST['sdt'];
+                                    $ma_vaitro = $_POST['ma_vaitro'];
+                                    update_taikhoan($ma_tk, $user, $pass, $email, $diachi, $sdt, $ma_vaitro);
+                                    $loalallTK = loadAll_tk();
+                                    require_once "view/admin/taikhoan/list.php";
+                                }
+                                
                             break;
 
                         case 'delete':
@@ -96,6 +114,39 @@ require_once "models/danhmuc.php";
                     require_once "view/admin/taikhoan/list.php";
                 }
                 break;
+
+                case 'binhluan':
+                    if (isset($_GET['nd'])) {
+                        switch ($_GET['nd']) {
+                            case 'addBl':
+                                if($_SERVER['REQUEST_METHOD'] == "POST"){                                   
+                                    $ma_bl = $_POST['ma_bl'];
+                                    $ma_tk = $_POST['ma_tk'];
+                                    $ma_sp = $_POST['ma_sp'];
+                                    $noidung = $_POST['noidung'];
+                                    $xephang = $_POST['xephang'];
+                                    insert_binhluan( $ma_bl, $ma_tk, $ma_sp, $noidung, $xephang);
+                                }else{
+                                    require_once "view/admin/binhluan/add.php";
+                                }
+                                    break;
+                                    
+                                case 'delete':
+                                    if(isset($_GET['ma_bl'])){
+                                        $ma_bl = $_GET['ma_bl'];
+                                        delete_binhluan($ma_bl);
+                                    }
+                                    break;
+                                case 'view':
+                                    $loadallBl = loadAll_binhluan();
+                                    require_once "view/admin/binhluan/list.php";
+                                    break;
+                            }
+                        }else{
+                            $loadallBl = loadAll_binhluan();
+                            require_once "view/admin/binhluan/list.php";
+                        }
+                    break;
             
             case 'dangxuat':
                 unset($_SESSION['ma_vaitro']);

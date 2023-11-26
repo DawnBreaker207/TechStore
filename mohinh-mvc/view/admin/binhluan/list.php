@@ -29,28 +29,22 @@
                 <td>xếp hạng</td>
                 <td>Tùy chỉnh</td>
             </tr>
+            <?php foreach($loadallBl as $bl){
+            extract($bl) ?>
             <tr>
-                <td>1</td>
-                <td>Tên người bình luận </td>
-                <td>Tên sản phẩm </td>
-                <td>Nội dung</td>
-                <td>xếp hạng</td>
+                <td><?php echo $ma_bl; ?></td>
+                <td><?php echo $ma_tk; ?> </td>
+                <td><?php echo $ma_sp; ?> </td>
+                <td><?php echo $noidung; ?></td>
+                <td><?php echo $xephang; ?></td>
 
                 <td>
-                    <a href="#" class="btn-sm">Xóa</a>
+                    <a href="index.php?act=binhLuan&nd=delete&ma_bl=<?php echo $ma_bl; ?>" class="btn-sm">Xóa</a>
                 </td>
 
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Tên người bình luận </td>
-                <td>Tên sản phẩm </td>
-                <td>Nội dung</td>
-                <td>xếp hạng</td>
-                <td>
-                    <a href="#" class="btn-sm">Xóa</a>
-                </td>
-            </tr>
+            <?php }?>
+             
         </table>
     </div>
 </body>
