@@ -22,8 +22,8 @@
                 <label for="hang">Hãng:</label>
                 <input type="text" id="hang" name="hang"><br>
 
-                <label for="iddm"> Danh Mục:</label>
-                <select name="iddm" id="">
+                <label for="ma_dm"> Danh Mục:</label>
+                <select name="ma_dm" id="">
                     <?php foreach ($loadallDm as $dm) {?>
                 <option value="<?php echo $dm['id_danh_muc']?>"><?php echo $dm['ten_danh_muc']?></option>
                 <?php } ?>

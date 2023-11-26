@@ -20,7 +20,7 @@
         </div> 
 
         <div>
-            <table class="table" border="0">
+            <table class="table" border ="0">
                 <tr>
                     <td>ID</td>
                     <td>Tên sản phẩm</td>                   
@@ -32,29 +32,22 @@
                     <td>Hãng</td>
                     <td>Tùy chỉnh</td>
                 </tr>
-                <?php foreach($loadallTk as $sp){
-
+                <?php foreach($loadall_sp as $sp){
                 extract($sp); ?>
                 <tr>
-                    <td>ID</td>
-                    <td>VGA Asus ROG Strix RTX 4090 OC 24GB Gaming </td>
+                    <td><?php echo $ma_sp;  ?></td>
+                    <td><?php echo $ten_sp; ?> </td>
                     
-                    <td><img src="accset/img/547953_9C2ST_8746_001_082_0000_Light-Gucci-Savoy-medium-duffle-bag 1.png"
+                    <td><img src="<?php echo $img; ?>"
                             class="img" alt="">
                     </td>
-                    <td>6500000</td>
-                    <td>VGA Asus ROG Strix RTX 4090 OC 24GB Gaming thiết kế nâng cấp với hiệu suất nhiệt đứng đầu biểu
-                        đồ.
-
-                        VGA Asus ROG Strix RTX 4090 OC 24GB Gaming mang đến một ý nghĩa hoàn toàn mới để hòa mình vào
-                        dòng chảy. Từ trong ra ngoài, mọi yếu tố của thẻ đều mang lại cho không gian GPU khổng lồ để thở
-                        thoải mái và đạt được hiệu suất cao nhất. Thời kỳ chưa được khai phá của kiến ​​trúc NVIDIA Ada
-                        Lovelace là ở đây.</td>
-                    <td>15 </td>
-                    <td>Danh mục</td>
-                    <td>Hãng</td>
-                    <td><a href="updateSP.html" class="btn-sm">Sửa</a>
-                        <a href="#" class="btn-sm">Xóa</a>
+                    <td><?php echo $gia; ?></td>
+                    <td><?php echo $mota; ?></td>
+                    <td><?php echo $soluong; ?></td>
+                    <td><?php echo $ma_dm; ?></td>
+                    <td><?php echo $ma_nsx; ?></td>
+                    <td><a href="index.php?act=sanPham&nd=update&ma_sp=<?php echo $ma_sp; ?>" class="btn-sm">Sửa</a>
+                        <a href="index.php?act=sanPham&nd=delete&ma_sp=<?php echo $ma_sp; ?>" class="btn-sm">Xóa</a>
                     </td>
                 </tr>
                 <?php } ?>
