@@ -1,45 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../accset/css/admin.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
     <section class="add-admin">
         <div class="add-tt">
             <h1>Sửa Tài Khoản</h1>
-            <form action="index.php?act=sach&nd=addS" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=taiKhoan&nd=update" method="post" enctype="multipart/form-data">
+               <?php 
+               foreach($loadOneTK as $tk){
+                extract($tk);
+              
+                ?>
+                 <input type="hidden" id="user" name="ma_tk" value="<?php echo $ma_tk; ?>"><br>
                 <label for="user"> User:</label>
-                <input type="text" id="user" name="user"><br>
-
+                <input type="text" id="user" name="user" value="<?php echo $user; ?>"><br>
+                
                 <label for="pass">Pass:</label>
-                <input type="text" id="pass" name="pass"><br>
+                <input type="password" id="pass" name="pass" value="<?php echo $pass; ?>"><br>
 
 
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email"><br>
+                <input type="email" id="email" name="email" value="<?php echo $email; ?>"><br>
 
                 <label for="diachi">Địa chỉ:</label>
-                <input type="text" id="diachi" name="diachi"><br>
+                <input type="text" id="diachi" name="diachi" value="<?php echo $dia_chi; ?>"><br>
 
                 <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone"><br>
+                <input type="number" id="phone" name="phone" value="<?php echo $sdt; ?>"><br>
 
                 <label for="tole">Vai trò :</label>
-                <input type="text" id="role" name="role"><br>
+                <input type="number" id="role" name="role" value="<?php echo $ma_vaitro; ?>"><br>
 
                 <input type="submit" value="Cập nhật" class="them">
+                <?php } ?>
             </form><br>
-            <a href="taikhoan.html" class="link_dstk">Danh sách tài khoản</a>
+            <a href="index.php?act=taiKhoan&nd=view" class="link_dstk">Danh sách tài khoản</a>
         </div>
     </section>
-</body>
-
-</html>

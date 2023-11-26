@@ -13,57 +13,7 @@ function connect()
     }
     return $conn;
 }
-function execute($sql){
-    $sql_args=array_slice(func_get_args(),1);
-    try{
-        $conn=  connect();
-        $stmt=$conn->prepare($sql);
-        $stmt->execute($sql_args);
 
-    }
-    catch(PDOException $e){
-        throw $e;
-    }
-    finally{
-        unset($conn);
-    }
-}
-// truy vấn nhiều dữ liệu
-function query($sql){
-    $sql_args=array_slice(func_get_args(),1);
-
-    try{
-        $conn=  connect();
-        $stmt=$conn->prepare($sql);
-        $stmt->execute($sql_args);
-        $rows=$stmt->fetchAll();
-        return $rows;
-    }
-    catch(PDOException $e){
-        throw $e;
-    }
-    finally{
-        unset($conn);
-    }
-}
-// truy vấn  1 dữ liệu
-function query_one($sql){
-    $sql_args=array_slice(func_get_args(),1);
-    try{
-        $conn=  connect();
-        $stmt=$conn->prepare($sql);
-        $stmt->execute($sql_args);
-        $row=$stmt->fetch(PDO::FETCH_ASSOC);
-        // thực thi và hiển thị danh sách dữ liệu 
-        return $row;
-    }
-    catch(PDOException $e){
-        throw $e;
-    }
-    finally{
-        unset($conn);
-    }
-}
 function get_time_present()
 {
     // hàm này để lấy thời gian hiện tại trên máy tính
@@ -93,14 +43,14 @@ function getData($query, $params = [], $getAll = true)
 }
 function img()
 {
-    if (isset($_FILES["hinhAnh"]) && $_FILES["hinhAnh"]["error"] === UPLOAD_ERR_OK) {
+    if (isset($_FILES["hinhanh"]) && $_FILES["hinhanh"]["error"] === UPLOAD_ERR_OK) {
         $target_dir = "accset/uploads/";
-        $target_file = $target_dir . basename($_FILES["hinhAnh"]["name"]);
+        $target_file = $target_dir . basename($_FILES["hinhanh"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
         // Kiểm tra file ảnh là ảnh thật hay ảnh giả
-        $check = getimagesize($_FILES["hinhAnh"]["tmp_name"]);
+        $check = getimagesize($_FILES["hinhanh"]["tmp_name"]);
         if ($check === false) {
             throw new Exception("File is not an image.");
         }
@@ -119,7 +69,7 @@ function img()
         //            }
 
         // Tải tập tin lên
-        if (!move_uploaded_file($_FILES["hinhAnh"]["tmp_name"], $target_file)) {
+        if (!move_uploaded_file($_FILES["hinhanh"]["tmp_name"], $target_file)) {
             throw new Exception("Sorry, there was an error uploading your file.");
         }
 

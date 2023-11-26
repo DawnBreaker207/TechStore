@@ -6,15 +6,16 @@
                 <?php foreach($loadOneSp as $sp){
                     extract($sp)
                  ?>
+                <input type="hidden" id="tensp" name="masp"><br>
                 <label for="tensp">Tên sản phẩm:</label>
                 <input type="text" id="tensp" name="tensp"><br>
 
                 <label for="gia">Giá bán:</label>
-                <input type="text" id="gia" name="gia"><br>
+                <input type="number" id="gia" name="gia"><br>
 
 
                 <label for="soLuong">Số Lượng:</label>
-                <input type="text" id="soLuong" name="soLuong"><br>
+                <input type="number" id="soLuong" name="soluong"><br>
 
                 <label for="hinhanh">Hình Ảnh:</label>
                 <input type="file" id="hinhanh" name="hinhanh"><br>
@@ -25,8 +26,8 @@
                 <label for="hang">Hãng:</label>
                 <input type="text" id="hang" name="hang"><br>
 
-                <label for="iddm"> Danh Mục:</label>
-                <select name="iddm" id="">
+                <label for="ma_dm"> Danh Mục:</label>
+                <select name="ma_dm" id="">
                     <?php foreach ($loadallDm as $dm) {?>
                 <option value="<?php echo $dm['id_danh_muc']?>"><?php echo $dm['ten_danh_muc']?></option>
                 <?php } ?>

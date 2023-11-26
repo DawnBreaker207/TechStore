@@ -29,7 +29,7 @@
                 <td>Role</td>
                 <td>Tùy chỉnh</td>
             </tr>
-            <?php foreach ($loadall_tk as $tk){
+            <?php foreach ($loalallTK as $tk){
                 extract($tk)?>
             
             <tr>

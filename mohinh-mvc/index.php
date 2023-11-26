@@ -10,7 +10,7 @@ require_once "models/donhang.php";
 
 
 
-if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
+if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
     require_once "view/admin/ui_admin/header.php";
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
@@ -65,14 +65,14 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
                     switch ($_GET['nd']) {
                         case 'addTk':
                             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                                $ma_tk = $_POST['ma_tk'];
                                 $user = $_POST['user'];
                                 $pass = $_POST['pass'];
                                 $email = $_POST['email'];
-                                $dia_chi = $_POST['dia_chi'];
-                                $sdt = $_POST['sdt'];
-                                $ma_vaitro = $_POST['ma_vaitro'];
-                                insert_taikhoan($ma_tk, $user, $pass, $email, $diachi, $sdt, $ma_vaitro);
+                                $dia_chi = $_POST['diachi'];
+                                $sdt = $_POST['phone'];
+                                $ma_vaitro = $_POST['role'];
+                                insert_taikhoan( $user, $pass, $email, $dia_chi, $sdt, $ma_vaitro);
+                                require_once "view/admin/taikhoan/add.php";
                             } else {
                                 require_once "view/admin/taikhoan/add.php";
                             }
@@ -85,14 +85,14 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
                                 require_once "view/admin/taikhoan/update.php";
                             }
                             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                                $ma_tk = $_POST['ma_tk'];
+                                $ma_tk=$_POST['ma_tk'];
                                 $user = $_POST['user'];
                                 $pass = $_POST['pass'];
                                 $email = $_POST['email'];
-                                $dia_chi = $_POST['dia_chi'];
-                                $sdt = $_POST['sdt'];
-                                $ma_vaitro = $_POST['ma_vaitro'];
-                                update_taikhoan($ma_tk, $user, $pass, $email, $diachi, $sdt, $ma_vaitro);
+                                $dia_chi = $_POST['diachi'];
+                                $sdt = $_POST['phone'];
+                                $ma_vaitro = $_POST['role'];
+                                update_taikhoan($ma_tk , $user, $pass, $email, $dia_chi, $sdt, $ma_vaitro);
                                 $loalallTK = loadAll_tk();
                                 require_once "view/admin/taikhoan/list.php";
                             }
@@ -103,20 +103,22 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
                             if (isset($_GET['ma_tk'])) {
                                 $ma_tk = $_GET['ma_tk'];
                                 delete_taikhoan($ma_tk);
+                                $loalallTK = loadAll_tk();
+                                require_once "view/admin/taikhoan/list.php";
                             }
                             break;
                         case 'view':
-                            $loadall_tk = loadAll_tk();
+                            $loalallTK = loadAll_tk();
                             require_once "view/admin/taikhoan/list.php";
                             break;
                     }
                 } else {
-                    $loadall_tk = loadAll_tk();
+                    $loalallTK = loadAll_tk();
                     require_once "view/admin/taikhoan/list.php";
                 }
                 break;
 
-            case 'binhluan':
+            case 'binhLuan':
                 if (isset($_GET['nd'])) {
                     switch ($_GET['nd']) {
                         case 'addBl':
@@ -136,6 +138,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
                             if (isset($_GET['ma_bl'])) {
                                 $ma_bl = $_GET['ma_bl'];
                                 delete_binhluan($ma_bl);
+                                $loadallBl = loadAll_binhluan();
+                                require_once "view/admin/binhluan/list.php";
                             }
                             break;
                         case 'view':
@@ -153,16 +157,17 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
                 if (isset($_GET['nd'])) {
                     switch ($_GET['nd']) {
                         case 'addSp':
+                            $loadallDm = loadAll_danhmuc();
+                            $loadallNSX=loadAll_nsx();
                             if($_SERVER['REQUEST_METHOD'] == "POST") {                              
                                 $ten_sp = $_POST['tensp'];
                                 $img = img();
                                 $gia = $_POST['gia'];
-                                $soluong = $_POST['soLuong'];
+                                $soluong = $_POST['soluong']; 
                                 $mota = $_POST['mota'];
-                                $luotxem = $_POST['luotxem'];
                                 $ma_nsx = $_POST['hang'];
                                 $ma_dm = $_POST['ma_dm'];
-                                insert_sanpham($ma_sp, $ten_sp, $img,$soluong, $gia, $mota, $luotxem, $ma_nsx, $ma_dm);
+                                insert_sanpham( $ten_sp, $img, $gia, $mota,$soluong, $ma_nsx, $ma_dm);
                             }else{
                                 require_once "view/admin/sanpham/add.php";
                             }
@@ -174,21 +179,17 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
                                 require_once "view/admin/sanpham/update.php";
                             }
                             if($_SERVER['REQUEST_METHOD'] == "POST"){
-                                $ten_sp = $_POST['ten_sp'];
+                                $ma_sp=$_POST['masp'];
+                                $ten_sp = $_POST['tensp'];
                                 $img = img();
                                 $gia = $_POST['gia'];
-                                $soluong = $_POST['soLuong'];
+                                $soluong = $_POST['soluong'];
                                 $mota = $_POST['mota'];
-                                $luotxem = $_POST['luotxem'];
                                 $ma_nsx = $_POST['hang'];
                                 $ma_dm = $_POST['ma_dm'];
-                                update_sanpham($ma_sp, $ten_sp, $img,$soluong, $gia, $mota, $luotxem, $ma_nsx, $ma_dm);
-                                 
-                                require_once "view/admin/sanpham/list.php";
-                            }else{
-                                require_once "view/admin/sanpham/list.php";
+                                update_sanpham($ma_sp, $ten_sp, $img,$soluong, $gia, $mota, $ma_nsx, $ma_dm);
+                               
                             }
-                            break;
                             
                         
                         case 'delete':
@@ -196,6 +197,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
                                 $ma_sp = $_GET['ma_sp'];
                                 delete_sanpham($ma_sp);
                             }
+                            $loadall_sp = loadAll_sanpham();
+                            require_once "view/admin/sanpham/list.php";
                             break;
                             
                         case 'view':

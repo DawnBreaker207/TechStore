@@ -5,7 +5,7 @@
                 <input type="search" class="input-search" placeholder="Tìm kiếm">
                 <input type="submit" value="Gửi" class="btn-sm">
             </form>
-            <a href="addSP.html" target="content" class="btn-add"><svg width="16" height="16" viewBox="0 0 20 20"
+            <a href="index.php?act=sanPham&nd=addSp" target="content" class="btn-add"><svg width="16" height="16" viewBox="0 0 20 20"
                     fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 15.8333L15.8333 10L18.3333 12.5L12.5 18.3333L10 15.8333Z" stroke="#FFFCFE"
                         stroke-linecap="round" stroke-linejoin="round" />
@@ -32,7 +32,7 @@
                     <td>Hãng</td>
                     <td>Tùy chỉnh</td>
                 </tr>
-                <?php foreach($loadall_sp as $sp){
+                <?php foreach ($loadall_sp as $sp){
                 extract($sp); ?>
                 <tr>
                     <td><?php echo $ma_sp;  ?></td>
