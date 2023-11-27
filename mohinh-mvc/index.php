@@ -10,7 +10,7 @@ require_once "models/donhang.php";
 
 
 
-if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
+if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
     require_once "view/admin/ui_admin/header.php";
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
@@ -212,6 +212,64 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 }
                 break;
 
+                case 'donHang':
+                    if (isset($_GET['nd'])) {
+                        switch ($_GET['nd']) {   
+                            case 'addBl':                 
+                            // if($_SERVER['REQUEST_METHOD'] == "POST"){
+                            //     $ma_dh = $_POST['ma_dh'];
+                            //     $ma_tk = $_POST['ma_tk'];
+                            //     $ngay_dat = $_POST['ngay_dat'];
+                            //     $tong_tien = $_POST['tong_tien'];
+                            //     $ma_trangthai = $_POST['ma_trangthai'];
+                            //     $ma_pttt = $_POST['ma_pttt'];
+                            //     insert_donhang($ma_tk, $ngay_dat, $tong_tien, $ma_trangthai, $ma_pttt);
+                            //     require_once "view/admin/donhang/add.php";
+                        // }else{
+                        //      require_once "view/admin/donhang/add.php";
+                        // }
+                        break;
+                        
+                            case 'update';
+                                if(isset($_GET['ma_dh'])){
+                                    $ma_dh = $_GET['ma_dh'];
+                                    $loadOneDH = loadOne_donhang($ma_dh);
+                                    require_once "view/admin/donhang/update.php";
+                                }
+                                if($_SERVER['REQUEST_METHOD'] == "POST"){
+                                    $ma_dh = $_POST['ma_dh'];
+                                    $ma_tk = $_POST['ma_tk'];
+                                    $ngay_dat = $_POST['ngay_dat'];
+                                    $tong_tien = $_POST['tong_tien'];
+                                    $ma_trangthai = $_POST['ma_trangthai'];
+                                    $ma_pttt  = $_POST['ma_pttt'];
+                                    update_donhang($ma_dh,$ma_tk, $ngay_dat,$tong_tien,$ma_trangthai, $ma_pttt);
+                                    $loadallDH = loadAll_donhang();
+                                    require_once "view/admin/donhang/list.php";
+                                }
+                                
+                                break;
+                            
+                                case 'delete':
+                                    if (isset($_GET['ma_dh'])) {
+                                        $ma_dh = $_GET['ma_dh'];
+                                        delete_donhang($ma_dh);
+                                        $loalallDH = loadAll_donhang();
+                                        require_once "view/admin/donhang/list.php";
+                                    }
+                                    break;
+
+                                case 'view':
+                                    break;
+                                    $loadallDH = loadAll_donhang();
+                                    require_once "view/admin/donhang/list.php";
+                                    break;
+                        }
+                    }else{
+                        $loadallDH = loadAll_donhang();
+                        require_once "view/admin/donhang/list.php";
+                    }   
+                    break;
             case 'dangxuat':
                 unset($_SESSION['ma_vaitro']);
                 unset($_SESSION['ma_tk']);

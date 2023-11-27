@@ -14,8 +14,6 @@
         $sql = "UPDATE danhmuc SET ten_dm=? WHERE ma_dm=?";
         return getData($sql,[$ten_dm,$ma_dm], false);
 
-
-
     }
 
     function loadAll_danhmuc(){

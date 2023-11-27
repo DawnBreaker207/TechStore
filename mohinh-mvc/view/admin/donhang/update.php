@@ -15,7 +15,7 @@
     <section class="add-admin">
         <div class="add-tt">
             <h1>Sửa đơn hàng</h1>
-            <form action="index.php?act=sach&nd=addS" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=donHang&nd=update" method="post" enctype="multipart/form-data">
                 <label for="user"> Tên tài khoản:</label>
                 <input type="text" id="user" name="user"><br>
 
@@ -37,7 +37,7 @@
 
                 <input type="submit" value="Cập nhật" class="them">
             </form><br>
-            <a href="donhang.html" class="link_dsdh">Danh sách đơn hàng</a>
+            <a href="view/admin/donhang/list.php" class="link_dsdh">Danh sách đơn hàng</a>
         </div>
     </section>
 </body>
