@@ -477,7 +477,7 @@
                     <a href="">
                       <img
                         src="accset/img/product/product.png"
-                        style="height: 200px; width: 200px"
+                        style="height: 250px; width: 250px"
                         alt=""
                         class="product__img"
                       />
