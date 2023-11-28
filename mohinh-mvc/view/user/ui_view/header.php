@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="accset/css/detail.css">
     <link rel="stylesheet" href="accset/css/common.css">
     <link rel="stylesheet" href="accset/css/header.css">
+    <link rel="stylesheet" href="accset/css/contact.css">
+    <link rel="stylesheet" href="accset/css/about.css">
     <link rel="stylesheet" href="accset/css/footer.css">
     <link rel="stylesheet" href="accset/css/sigin.css">
     <link rel="stylesheet" href="accset/css/account.css">
