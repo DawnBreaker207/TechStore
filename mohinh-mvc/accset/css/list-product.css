@@ -129,15 +129,19 @@
 
 .product-body {
     margin: 16px 0 8px 0;
+    max-width: 200px;
     font-family: var(--font-title);
 }
 
 .product-body a {
     text-decoration: none;
+    color: black;
 }
 
 .product__title {
     color: var(--text-color);
+    width: 200px;
+    height: 200px;
 }
 
 .product__price {
