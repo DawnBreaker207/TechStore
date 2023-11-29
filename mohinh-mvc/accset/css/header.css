@@ -82,10 +82,11 @@
     border-radius: 50%;
     color:white;
     /*visibility: hidden;*/
-
+    cursor: pointer;
+    position: relative;
 }
 .user-option{
-    position: fixed;
+    position: absolute;
     z-index: 1000;
     background-color: var(--primary-color);
     width: 225px;
@@ -94,8 +95,8 @@
     flex-direction: column;
     gap: 13px;
     border-radius: 4px;
-    right: 5%;
-    top: 12%;
+    right: 0;
+    top: 40px;
     visibility: hidden;
 }
 .option-item{

@@ -1,15 +1,9 @@
 /*Section*/
 
-.section-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
-}
 
-.section-footer {
-    margin: 125px 0 195px 0;
-    text-align: center;
-    font-family: var(--font-title);
+
+.section-number {
+    padding: 65px 0 195px 0;
     display: flex;
     justify-content: center;
     gap: 18px;
@@ -75,13 +69,6 @@
 
 /*Category*/
 
-.button-nav {
-    background-color: var(--bg-color);
-    padding: 11px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-}
 
 .category-row {
     display: flex;
@@ -112,9 +99,7 @@
 /*Product*/
 
 
-.product-header {
-    position: relative;
-}
+
 
 .product-tab {
     display: inline-flex;
@@ -127,39 +112,19 @@
 
 
 
-.product-body {
-    margin: 16px 0 8px 0;
-    max-width: 200px;
-    font-family: var(--font-title);
-}
 
 .product-body a {
     text-decoration: none;
     color: black;
 }
 
-.product__title {
-    color: var(--text-color);
-    width: 200px;
-    height: 200px;
-}
 
-.product__price {
-    color: var(--primary-color);
-    font-weight: var(--font-bold);
-}
 
-.product__sale {
-    margin: 0 0 0 12px;
-    /*text-decoration: ;*/
-    color: var(--text-color);
-    text-decoration: line-through;
 
-}
 
-.product__rate {
-    display: flex;
-}
+
+
+
 
 .product__total {
     padding: 0 0 0 8px;

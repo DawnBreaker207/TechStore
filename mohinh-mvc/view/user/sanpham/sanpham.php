@@ -16,14 +16,14 @@
                 <div class="section-nav">
                     <div class="button-nav">
                         <img
-                                src="image/icon/arrow-left-black.svg"
+                                src="accset/icon/arrow-left-black.svg"
                                 alt=""
                                 class="button__icon"
                         />
                     </div>
                     <div class="button-nav">
                         <img
-                                src="image/icon/arrow-right-black.svg"
+                                src="accset/icon/arrow-right-black.svg"
                                 alt=""
                                 class="button__icon"
                         />
@@ -142,7 +142,7 @@
               <div class="product">
                 <div class="product-header">
                   <div class="product-image">
-                    <a href="">
+                    <a href="index.php?act=ctsp">
                       <img
                         src="accset/img/product/product.png"
                         alt=""
@@ -182,7 +182,7 @@
                 <!-- End .section-col -->
             </div>
         </div>
-        <div class="section-footer">
+        <div class="section-footer section-number">
             <div class="section-btn">
                 <a href="" class="section__linkpage">1</a>
             </div>
@@ -200,7 +200,7 @@
             </div>
             <div class="section-btn">
                 <a href="" class="section__linkpage">
-                    <img src="image/icon/arrow-right-black.svg" class="icon-sm">
+                    <img src="accset/icon/arrow-right-black.svg" class="icon-sm">
                 </a>
             </div>
         </div>
