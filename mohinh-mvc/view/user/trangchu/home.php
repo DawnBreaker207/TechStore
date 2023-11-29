@@ -482,7 +482,7 @@
                         class="product__img"
                       />
                     </a>
-                    <a href="" class="product-cart">Add to cart</a>
+                    <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php  echo $ma_sp;?>" class="product-cart">Add to cart</a>
                   </div>
                   <div class="product-tab">
                     <div class="product-item">

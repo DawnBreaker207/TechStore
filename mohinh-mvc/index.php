@@ -177,19 +177,25 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                         case 'update':
                             if (isset($_GET['ma_sp'])) {
                                 $ma_sp = $_GET['ma_sp'];
+                                $laodAllNSX=loadAll_nsx();
+                                $loadallDm=loadAll_danhmuc();
                                 $loadOneSp = loadOne_sanpham($ma_sp);
                                 require_once "view/admin/sanpham/update.php";
                             }
                             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 $ma_sp = $_POST['masp'];
                                 $ten_sp = $_POST['tensp'];
-                                $img = img();
+                                $oldimg = $_POST['oldimg'];
+                                $hinhanh=$oldimg;
+                                if (isset($_FILES['hinhanh']) && $_FILES['hinhanh']['error'] === UPLOAD_ERR_OK) {
+                                    $hinhanh = img(); // kiểm tra lếu có ảnh mới thì lấy đường dẫn ảnh mới
+                                }
                                 $gia = $_POST['gia'];
                                 $soluong = $_POST['soluong'];
                                 $mota = $_POST['mota'];
-                                $ma_nsx = $_POST['hang'];
+                                $ma_nsx = $_POST['ma_nsx'];
                                 $ma_dm = $_POST['ma_dm'];
-                                update_sanpham($ma_sp, $ten_sp, $img, $soluong, $gia, $mota, $ma_nsx, $ma_dm);
+                                update_sanpham($ma_sp, $ten_sp, $hinhanh, $gia, $mota, $soluong,$ma_dm,$ma_nsx);
 
                             }
 
@@ -313,7 +319,14 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 require_once "view/user/sanpham/sanpham.php";
                 break;
             case 'ctsp':
-                require_once "view/user/ctsp/ctsp.php";
+                if (isset($_GET['ma_sp'])) {
+                    $ma_sp = $_GET['ma_sp'];
+                    $laodAllNSX=loadAll_nsx();
+                     $loadallDm=loadAll_danhmuc();
+                     $loadOneSp = loadOne_sanpham($ma_sp);
+                     $loadall_sp = loadAll_sanpham();
+                    require_once "view/user/ctsp/ctsp.php";
+                }
                 break;
             case 'contact':
                 require_once "view/user/contact/contact.php";
