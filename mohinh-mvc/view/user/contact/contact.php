@@ -18,7 +18,7 @@
         <div class="contact">
             <div class="contact-us">
                 <div class="contact-header">
-                    <a href="#"><img src="images/icons-phone.svg"></a>
+                    <a href="#"><img src="accset/icon/contact/phone.svg"></a>
                     <h2>Call To Us</h2>
                 </div>
                 <div class="contact-info">
@@ -27,7 +27,7 @@
                 </div>
                 <hr>
                 <div class="contact-header">
-                    <a href="#"><img src="images/icons-mail.svg"></a>
+                    <a href="#"><img src="accset/icon/contact/mail.svg"></a>
                     <h2>Write To Us</h2>
                 </div>
                 <div class="contact-info">

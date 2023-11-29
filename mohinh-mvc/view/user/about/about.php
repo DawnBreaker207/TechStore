@@ -21,39 +21,39 @@
                 <p>Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region. </p>
                 <p>Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer.</p>
             </section>
-            <img src="images/Side Image.png">
+            <img src="accset/img/about/shopping.png">
         </section>
 
         <section class="post">
             <section class="post-item">
-                <img src="images/tomcruise.png" alt="">
+                <img src="accset/img/about/tom_cruise.png" alt="">
                 <h2>Tom Cruise</h2>
                 <p>Founder & Chairman</p>
-                <section class="social-media">
-                    <a href="#"><img src="images/icon/Icon-Twitter.svg"></a>
-                    <a href="#"><img src="images/icon/icon-instagram.svg"></a>
-                    <a href="#"><img src="images/icon/Icon-Linkedin.svg"></a>
-                </section>
+                <div class="social-media">
+                    <a href="#"><img src="accset/icon/social/twitter_black.svg"></a>
+                    <a href="#"><img src="accset/icon/social/instagram_black.svg"></a>
+                    <a href="#"><img src="accset/icon/social/linkedin_black.svg"></a>
+                </div>
             </section>
             <section class="post-item">
-                <img src="images/emmawatson.png" alt="">
+                <img src="accset/img/about/emma_watson.png" alt="">
                 <h2>Emma Watson</h2>
                 <p>Managing Director</p>
-                <section class="social-media">
-                    <a href="#"><img src="images/icon/Icon-Twitter.svg"></a>
-                    <a href="#"><img src="images/icon/icon-instagram.svg"></a>
-                    <a href="#"><img src="images/icon/Icon-Linkedin.svg"></a>
-                </section>
+                <div class="social-media">
+                    <a href="#"><img src="accset/icon/social/twitter_black.svg"></a>
+                    <a href="#"><img src="accset/icon/social/instagram_black.svg"></a>
+                    <a href="#"><img src="accset/icon/social/linkedin_black.svg"></a>
+                </div>
             </section>
             <section class="post-item">
-                <img src="images/willsmith.png" alt="">
+                <img src="accset/img/about/will_smith.png" alt="">
                 <h2>Will Smith</h2>
                 <p>Product Designer</p>
-                <section class="social-media">
-                    <a href="#"><img src="images/icon/Icon-Twitter.svg"></a>
-                    <a href="#"><img src="images/icon/icon-instagram.svg"></a>
-                    <a href="#"><img src="images/icon/Icon-Linkedin.svg"></a>
-                </section>
+                <div class="social-media">
+                    <a href="#"><img src="accset/icon/social/twitter_black.svg"></a>
+                    <a href="#"><img src="accset/icon/social/instagram_black.svg"></a>
+                    <a href="#"><img src="accset/icon/social/linkedin_black.svg"></a>
+                </div>
             </section>
         </section>
         
