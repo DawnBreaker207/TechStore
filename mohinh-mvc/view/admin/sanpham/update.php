@@ -6,19 +6,19 @@
                 <?php foreach($loadOneSp as $sp){
                     extract($sp)
                  ?>
-                <input type="hidden" id="tensp" name="masp"><br>
+                <input type="hidden" id="tensp" name="masp" value="<?php $ma_sp;?>"><br>
                 <label for="tensp">Tên sản phẩm:</label>
-                <input type="text" id="tensp" name="tensp"><br>
+                <input type="text" id="tensp" name="tensp" value="<?php $ten_sp;?>"><br>
 
                 <label for="gia">Giá bán:</label>
-                <input type="number" id="gia" name="gia"><br>
+                <input type="number" id="gia" name="gia" value="<?php $gia;?>"><br>
 
 
                 <label for="soLuong">Số Lượng:</label>
-                <input type="number" id="soLuong" name="soluong"><br>
+                <input type="number" id="soLuong" name="soluong" value="<?php $soluong;?>"><br>
 
                 <label for="hinhanh">Hình Ảnh:</label>
-                <input type="file" id="hinhanh" name="hinhanh"><br>
+                <input type="file" id="hinhanh" name="hinhanh" value="<?php $img;?>"><br>
 
                 <label for="mota">Mô Tả:</label>
                 <input type="text" id="mota" name="mota"><br>

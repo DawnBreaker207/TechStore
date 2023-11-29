@@ -10,7 +10,9 @@ require_once "models/donhang.php";
 
 
 
-if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 1) {
+
+if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
+
     require_once "view/admin/ui_admin/header.php";
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
@@ -167,7 +169,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 1) {
                                 $gia = $_POST['gia'];
                                 $soluong = $_POST['soluong']; 
                                 $mota = $_POST['mota'];
-                                $ma_nsx = $_POST['hang'];
+                                $ma_nsx = $_POST['ma_nsx'];
                                 $ma_dm = $_POST['ma_dm'];
                                 insert_sanpham( $ten_sp, $img, $gia, $mota,$soluong, $ma_nsx, $ma_dm);
                             }else{
@@ -192,8 +194,11 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 1) {
                                 update_sanpham($ma_sp, $ten_sp, $img,$soluong, $gia, $mota, $ma_nsx, $ma_dm);
                                
                             }
+
                             
-                        break;
+                     
+                            break;
+
                         case 'delete':
                             if(isset($_GET['ma_sp'])){
                                 $ma_sp = $_GET['ma_sp'];
@@ -323,6 +328,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 1) {
                 require_once "view/user/account/account.php";
                 break;
             case 'home':
+                $loadall_sp=loadAll_sanpham();
                 require_once "view/user/trangchu/home.php";
                 break;
             case 'dangxuat':
@@ -333,6 +339,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 1) {
                 break;
         }
     } else {
+        $loadall_sp=loadAll_sanpham();
         require_once "view/user/trangchu/home.php";
     }
     require_once "view/user/ui_view/footer.php";
