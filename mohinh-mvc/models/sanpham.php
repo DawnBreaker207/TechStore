@@ -5,9 +5,9 @@
         return getData($sql, [$ten_sp, $img, $gia,$soluong, $mota, $ma_nsx, $ma_dm], false);
     }
     // insert_sanpham('loc','fghjkl',100,'đẹp',3,3);
-    echo "<pre>";
-    print_r(loadAll_sanpham());
-    echo "</pre>";
+    // echo "<pre>";
+    // print_r(loadAll_sanpham());
+    // echo "</pre>";
     function delete_sanpham($ma_sp){
         $sql = "DELETE FROM sanpham WHERE ma_sp = ? ";
         return getData($sql, [$ma_sp], false);

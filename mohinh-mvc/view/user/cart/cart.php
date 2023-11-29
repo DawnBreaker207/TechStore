@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Giỏ hàng</title>
-  <link rel="stylesheet" type="text/css" href="la.css">
-</head>
-
-<body>
-  <main class="wrapper">
+<main class="wrapper">
     <div class="path">
       <span class="tag">Home</span>
       /
@@ -26,24 +17,27 @@
           </tr>
         </thead>
         <tr>
-          <td>
-            <div class="img_cart"> <a href="" class="a-del"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+          <td> <div class="cart-item"><a href="" class="a-del"><svg width="16" height="16" viewBox="0 0 8 8" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 7L4 4M7 1L3.99943 4M3.99943 4L1 1M4 4L7 7" stroke="black" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
+            <div class="img_cart">
               <img src="mohinh-mvc/accset/img/product/product.png" alt="" srcset="" width="100px" height="100px">
+            </div>
             </div>
           </td>
           <td>Price</td>
-          <td><input type="number" name="" id="" min="1" class="ip_quantity"></td>
+          <td><form action="" method="post">
+            <input type="number" name="" id="" min="1" class="ip_quantity"></td>
           <td>Subtotal</td>
 
         </tr>
 
       </table>
       <a href="">Update Cart</a>
+      </form>
     </div>
     <div class="main">
       <div class="apply-coupon">
@@ -54,7 +48,6 @@
       </div>
       <div class="right-side">
         <div class="total">
-
           <div class="tb-total">
             <h3>Cart Total</h3>
             <div class="your-order-bottom">
@@ -78,17 +71,11 @@
               </ul>
             </div>
           </div>
-          <div class="footer">
+          <div class="link-checkout">
             <a href="#">Procees to checkout</a>
-
-
           </div>
         </div>
 
       </div>
     </div>
   </main>
-  <script src="script.js"></script>
-</body>
-
-</html>

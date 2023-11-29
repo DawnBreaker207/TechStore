@@ -1,0 +1,175 @@
+#cart-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: none;
+  margin-bottom: 10px;
+
+}
+
+.cart {
+  margin-bottom: 80px;
+}
+
+.cart>a {
+  display: block;
+  width: 120px;
+  height: 20px;
+  float: right;
+  border: 1px solid #808080;
+  text-align: center;
+  padding: 15px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+}
+
+th,
+td {
+  border: none;
+
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+
+}
+
+
+h1 {
+  text-align: center;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 470px;
+  height: 600px;
+}
+
+
+
+.apply-coupon input {
+  float: left;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.apply-coupon button {
+  float: left;
+  color: white;
+  background-color: var(--primary-color);
+  outline: none;
+  border: none;
+}
+
+.apply-coupon button:hover {
+  background-color: greenyellow;
+  color: black;
+}
+
+.cart-total {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 30px 150px;
+  border: none;
+}
+
+.link-checkout {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.link-checkout>a {
+  padding: 15px 24px;
+  background-color: blue;
+  width: 260px;
+  height: 56px;
+  text-decoration: none;
+  color: black;
+  border-radius: 4px;
+}
+
+
+.total {
+  border: 1px solid black;
+  height: 400px;
+  line-height: 2;
+}
+
+.tb-total {
+  padding: 15px;
+}
+
+.your-order-bottom ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.your-order-total ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.your-order-total ul>li {
+  font-weight: var(--font-bold);
+}
+
+
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+  width: 180px;
+  height: 100px;
+}
+
+.cart-item {
+  position: relative;
+}
+
+.a-del {
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+
+}
+
+.img_cart {
+
+  text-align: center;
+
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.apply-coupon>form>input [text] {
+  width: 500px;
+}
+
+.ip_quantity {
+  width: 50px;
+  height: 30px;
+
+}

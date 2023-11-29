@@ -315,6 +315,9 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
             case 'product':
                 require_once "view/user/sanpham/sanpham.php";
                 break;
+            case 'ctsp':
+                require_once "view/user/ctsp/ctsp.php";
+                break;
             case 'contact':
                 require_once "view/user/contact/contact.php";
                 break;
