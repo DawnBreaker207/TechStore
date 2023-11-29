@@ -227,3 +227,7 @@ form input {
     background-color: #0056b3;
     /* Màu nền khi rê chuột */
 }
+.error{
+    color:red;
+    font-size: 15px;
+}

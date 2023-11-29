@@ -10,12 +10,14 @@ require_once "models/donhang.php";
 
 
 
-if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
+if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 1) {
     require_once "view/admin/ui_admin/header.php";
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
         switch ($act) {
             case 'trangChu':
+                //Trang chủ đề biểu đồ được không ?
+                include "view/admin/thongke/thongke.php";
                 break;
             case 'danhMuc':
                 if (isset($_GET['nd'])) {
@@ -191,7 +193,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 3) {
                                
                             }
                             
-                        
+                        break;
                         case 'delete':
                             if(isset($_GET['ma_sp'])){
                                 $ma_sp = $_GET['ma_sp'];
