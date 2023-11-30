@@ -4,19 +4,19 @@
         <section class="category">
 
 
-            <a href="index.php?act=product&ma_dm=3">CPU<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&ma_dm=4">CPU<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">RAM<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&ma_dm=3">RAM<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">MainBoard<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&ma_dm=6">SSD<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">VGA<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&ma_dm=7">VGA<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">Cooling<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&ma_dm=5">HDD<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
             <a href="">Memory<img src="accset/icon/dropdown-black.svg" alt=""/></a>
@@ -104,7 +104,7 @@
                     <div class="brand-col">
                         <div class="brand-logo">
                            
-                            <a href="">
+                            <a href="index.php?act=product&nd=nsx&ma_nsx=3">
                                 <img
                                         src="<?php echo $nsx['img_nsx']; ?>"
                                         alt=""

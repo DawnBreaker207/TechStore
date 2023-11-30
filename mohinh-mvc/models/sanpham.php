@@ -50,6 +50,11 @@ function best_sell_sanpham()
     return getData($sql);
 }
 
+function getspbynsx($ma_nsx){
+    $sql = "SELECT * FROM sanpham join nhasanxuat on sanpham.ma_nsx=nhasanxuat.ma_nsx  WHERE sanpham.ma_nsx=?";
+    return getData($sql, [$ma_nsx]);
+}
+
 ?>
 
 
