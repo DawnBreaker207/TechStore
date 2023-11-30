@@ -139,20 +139,18 @@
         <div class="section-body">
             <div class="section-row">
 
-                <!--                --><?php //foreach ($loadall_sp as $sp) {
-                //                    extract($sp);
-                //                    ?>
+                              <?php 
+                              foreach ($loadall_sp as $sp) {
+                                   extract($sp);
+                                   ?>
                 <div class="section-col">
 
                     <div class="product">
                         <div class="product-header">
                             <div class="product-image">
-                                <a href="
-<!--                                    index.php?act=ctsp&nd=ctsp&ma_sp=--><?php //echo $ma_sp; ?>
-                                    ">
+                                <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?phpecho $ma_sp; ?>">
                                     <img
-                                            src="
-<!--                                            --><?php //echo $img; ?>
+                                            src="<?php echo $img; ?>
                                                 "
                                             style="height: 250px; "
                                             alt=""
@@ -173,12 +171,12 @@
                         <div class="product-body">
                             <a href="">
                                 <h3 href="" class="product__title">
-<!--                                    --><?php //echo $ten_sp; ?>
+                                  <?php echo $ten_sp; ?>
                                 </h3>
                             </a>
                             <div class="product__price">
-<!--                                --><?php //echo $gia; ?>
-                                VND<span class="product__sale">$1160</span>
+                              <?php echo $gia; ?>
+                                VND
                             </div>
                             <span class="product__rate">
                     <img src="accset/icon/star.svg" alt=""/>
@@ -193,7 +191,7 @@
 
                     <!-- End .product -->
                 </div>
-<!--                --><?php //} ?>
+                     <?php } ?>
                 <!-- End .section-col -->
             </div>
         </div>

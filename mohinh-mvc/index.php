@@ -322,12 +322,15 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 require_once "view/user/dangky/dangky.php";
                 break;
             case 'product':
+                $loadall_sp = loadAll_sanpham();
+                $loadAllNSX=loadAll_nsx();
+                     $loadallDm=loadAll_danhmuc();
                 require_once "view/user/sanpham/sanpham.php";
                 break;
             case 'ctsp':
                 if (isset($_GET['ma_sp'])) {
                     $ma_sp = $_GET['ma_sp'];
-                    $laodAllNSX=loadAll_nsx();
+                    $loadAllNSX=loadAll_nsx();
                      $loadallDm=loadAll_danhmuc();
                      $loadOneSp = loadOne_sanpham($ma_sp);
                      $loadall_sp = loadAll_sanpham();
