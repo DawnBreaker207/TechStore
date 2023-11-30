@@ -23,6 +23,10 @@
   color: black;
 }
 
+.cart>a:hover {
+  background-color: #d9d9d9;
+}
+
 th,
 td {
   border: none;
@@ -54,13 +58,6 @@ h1 {
   padding: 10px;
 }
 
-.apply-coupon button {
-  float: left;
-  color: white;
-  background-color: var(--primary-color);
-  outline: none;
-  border: none;
-}
 
 .apply-coupon button:hover {
   background-color: greenyellow;
@@ -81,14 +78,29 @@ h1 {
 
 .link-checkout>a {
   padding: 15px 24px;
-  background-color: blue;
+  background-color: var(--primary-color);
   width: 260px;
   height: 56px;
   text-decoration: none;
-  color: black;
+  color: #ffffff;
   border-radius: 4px;
 }
 
+.link-checkout>a:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.ip-submit {
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+}
+
+.ip-submit:hover {
+  background-color: var(--primary-color-hover);
+}
 
 .total {
   border: 1px solid black;

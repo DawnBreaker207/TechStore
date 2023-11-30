@@ -344,12 +344,16 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 require_once "view/user/about/about.php";
                 break;
             case 'cart':
-                require_once "view/user/cart/cart.php";
+                require_once "view/user/cart/cart.php"; 
                 break;
+            case 'checkout':
+                require_once "view/user/checkout/checkout.php";
+                break;   
             case 'user':
                 require_once "view/user/account/account.php";
                 break;
             case 'home':
+                $loadAllNSX=loadAll_nsx();
                 $loadall_sp = loadAll_sanpham();
                 require_once "view/user/trangchu/home.php";
                 break;
