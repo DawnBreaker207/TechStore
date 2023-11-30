@@ -4,7 +4,7 @@
         <section class="category">
 
 
-            <a href="">CPU<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&ma_dm=3">CPU<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
             <a href="">RAM<img src="accset/icon/dropdown-black.svg" alt=""/></a>

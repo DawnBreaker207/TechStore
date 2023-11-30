@@ -321,12 +321,20 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
             case 'signup':
                 require_once "view/user/dangky/dangky.php";
                 break;
-            case 'product':
-                $loadall_sp = loadAll_sanpham();
-                $loadAllNSX=loadAll_nsx();
-                     $loadallDm=loadAll_danhmuc();
-                require_once "view/user/sanpham/sanpham.php";
-                break;
+                case 'product':
+                    if(isset($_GET['ma_dm'])){
+                        $ma_dm = $_GET['ma_dm'];
+                        $loadall_sp = getSpByMadm($ma_dm);
+                        $loadall_dm = loadAll_danhmuc();
+                        require_once "view/user/sanpham/sanpham.php";
+                    }else{
+                        $loadall_sp = loadAll_sanpham();
+                    $loadAllNSX=loadAll_nsx();
+                         $loadallDm=loadAll_danhmuc();
+                    require_once "view/user/sanpham/sanpham.php";
+                    }
+                 
+                    break;
             case 'ctsp':
                 if (isset($_GET['ma_sp'])) {
                     $ma_sp = $_GET['ma_sp'];
@@ -365,6 +373,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 break;
         }
     } else {
+        $loadAllNSX=loadAll_nsx();
         $loadall_sp = loadAll_sanpham();
         require_once "view/user/trangchu/home.php";
     }

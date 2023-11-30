@@ -25,6 +25,10 @@
         $sql = "SELECT * FROM `danhmuc` WHERE ma_dm = ?";
        return getData($sql,[$ma_dm]);
     }
-    
+    function getSpByMadm($ma_dm)
+{
+    $sql = "SELECT * FROM sanpham join danhmuc on sanpham.ma_dm=danhmuc.ma_dm  WHERE sanpham.ma_dm=?";
+    return getData($sql, [$ma_dm]);
+}
     
 ?>
