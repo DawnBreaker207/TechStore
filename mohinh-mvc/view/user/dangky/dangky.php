@@ -1,6 +1,6 @@
  <!-- trang dang ky -->
  <div class="container-frm">
-    <img src="image/anh-dep-ha-noi-10.jpg" alt="" width="550px" height="550px" class="signup_img">
+    <img src="accset/img/about/shopping.png" alt="" width="550px" height="550px" class="signup_img">
 
 
     <div class="right-side">

@@ -8,7 +8,7 @@ require_once "models/sanpham.php";
 require_once "models/binhluan.php";
 require_once "models/donhang.php";
 
-
+//$top_seller= best_sell_sanpham();
 if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
 
     require_once "view/admin/ui_admin/header.php";
@@ -160,7 +160,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                     switch ($_GET['nd']) {
                         case 'addSp':
                             $loadallDm = loadAll_danhmuc();
-                            $loadallNSX = loadAll_nsx();
+                            $loadAllNSX = loadAll_nsx();
                             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 $ten_sp = $_POST['tensp'];
                                 $img = img();
@@ -177,8 +177,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                         case 'update':
                             if (isset($_GET['ma_sp'])) {
                                 $ma_sp = $_GET['ma_sp'];
-                                $laodAllNSX=loadAll_nsx();
-                                $loadallDm=loadAll_danhmuc();
+                                $loadAllNSX=loadAll_nsx();
+                                $loadAllDm=loadAll_danhmuc();
                                 $loadOneSp = loadOne_sanpham($ma_sp);
                                 require_once "view/admin/sanpham/update.php";
                             }
@@ -186,17 +186,20 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 $ma_sp = $_POST['masp'];
                                 $ten_sp = $_POST['tensp'];
                                 $oldimg = $_POST['oldimg'];
-                                $hinhanh=$oldimg;
-                                if (isset($_FILES['hinhanh']) && $_FILES['hinhanh']['error'] === UPLOAD_ERR_OK) {
-                                    $hinhanh = img(); // kiểm tra lếu có ảnh mới thì lấy đường dẫn ảnh mới
+                                $img=$oldimg;
+                                if (isset($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
+                                    $img = img(); // kiểm tra nếu có ảnh mới thì lấy đường dẫn ảnh mới
+                                }else {
+                                    $img = $_POST['oldimg']; // Sử dụng đường dẫn ảnh cũ nếu không có ảnh mới
                                 }
                                 $gia = $_POST['gia'];
                                 $soluong = $_POST['soluong'];
                                 $mota = $_POST['mota'];
                                 $ma_nsx = $_POST['ma_nsx'];
                                 $ma_dm = $_POST['ma_dm'];
-                                update_sanpham($ma_sp, $ten_sp, $hinhanh, $gia, $mota, $soluong,$ma_dm,$ma_nsx);
-
+                                update_sanpham($ma_sp,$ten_sp, $img, $gia, $mota, $soluong,$ma_nsx,$ma_dm);
+                                $loadall_sp =  loadAll_sanpham();
+                                require_once "view/admin/sanpham/list.php";
                             }
 
 
@@ -314,6 +317,9 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 } else {
                     require_once("view/login.php");
                 }
+                break;
+            case 'signup':
+                require_once "view/user/dangky/dangky.php";
                 break;
             case 'product':
                 require_once "view/user/sanpham/sanpham.php";

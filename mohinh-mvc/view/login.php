@@ -2,7 +2,7 @@
 <div class="container-frm">
   <div class="left-side">
     <div class="banner-frm">
-      <img src="image/anh-dep-ha-noi-10.jpg" alt="" width="550px" class="Signin-img">
+      <img src="accset/img/about/shopping.png" alt="" width="550px" class="Signin-img">
     </div>
   </div>
 
@@ -20,7 +20,7 @@
         <a href="https://trello.com/b/JzAzGMS0/project-management" class="a">Foget Password ?</a>
       </div>
       <div class="switch-signup">
-        <p>Bạn chưa có tài khoản ? <a href="https://trello.com/b/JzAzGMS0/project-management">Sign Up</a></p>
+        <p>Bạn chưa có tài khoản ? <a href="index.php?act=signup">Sign Up</a></p>
       </div>
 
     </form>

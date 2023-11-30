@@ -4,217 +4,117 @@
         <section class="category">
 
 
-            <a href="">CPU<img src="accset/icon/dropdown-black.svg" alt="" /></a>
+            <a href="">CPU<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">RAM<img src="accset/icon/dropdown-black.svg" alt="" /></a>
+            <a href="">RAM<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">MainBoard<img src="accset/icon/dropdown-black.svg" alt="" /></a>
+            <a href="">MainBoard<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">VGA<img src="accset/icon/dropdown-black.svg" alt="" /></a>
+            <a href="">VGA<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">Cooling<img src="accset/icon/dropdown-black.svg" alt="" /></a>
+            <a href="">Cooling<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">Memory<img src="accset/icon/dropdown-black.svg" alt="" /></a>
+            <a href="">Memory<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">Display<img src="accset/icon/dropdown-black.svg" alt="" /></a>
+            <a href="">Display<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">Power<img src="accset/icon/dropdown-black.svg" alt="" /></a>
+            <a href="">Power<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="">Others<img src="accset/icon/dropdown-black.svg" alt="" /></a>
+            <a href="">Others<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
         </section>
         <!-- End .category -->
-        <hr class="hero-column" />
+        <hr class="hero-column"/>
         <div class="hero-slider">
-            <div class="hero-slide active-slide" style="background-image: url(accset/img/slide/slide_image.png); width: 100%">
+            <div class="hero-slide active-slide"
+                 style="background-image: url(accset/img/slide/slide_0.png); width: 100%">
                 <div class="slide-title">
-                    <img src="image/slide/logo.png" alt="" />
+                    <img src="image/slide/logo.png" alt=""/>
                     <h1 class="hero__title">
                         Unlock Peak Performance Only With AMD
                         <span class="hero-link">
                             <a href="" class="product__link">Shop now</a>
-                            <img src="accset/icon/arrow-right-white.svg" alt="" />
+                            <img src="accset/icon/arrow-right-white.svg" alt=""/>
                         </span>
                     </h1>
                 </div>
             </div>
             <!-- End .hero-slide -->
-            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_image.png); width: 100%">
-                <div class="slide-title">
-                    <img src="image/slide/logo.png" alt="" />
-                    <h1 class="hero__title">
-                        Unlock Peak Performance Only With AMD
-                        <span class="hero-link">
-                            <a href="" class="product__link">Shop now</a>
-                            <img src="accset/icon/arrow-right-white.svg" alt="" />
-                        </span>
-                    </h1>
-                </div>
+            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_1.png); width: 100%">
+
             </div>
             <!-- End .hero-slide -->
-            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_image.png); width: 100%">
-                <div class="slide-title">
-                    <img src="image/slide/logo.png" alt="" />
-                    <h1 class="hero__title">
-                        Unlock Peak Performance Only With AMD
-                        <span class="hero-link">
-                            <a href="" class="product__link">Shop now</a>
-                            <img src="accset/icon/arrow-right-white.svg" alt="" />
-                        </span>
-                    </h1>
-                </div>
+            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_2.png); width: 100%">
+
+                <!-- End .hero-slide -->
             </div>
             <!-- End .hero-slide -->
-        </div>
-        <!-- End .hero-slide -->
+            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_3.png); width: 100%">
+                <!-- End .hero-slide -->
+            </div>
+            <!-- End .hero-slide -->
+            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_4.png); width: 100%">
+                <!-- End .hero-slide -->
+            </div>
+            <!-- End .hero-slide -->
     </section>
     <!-- End .hero -->
 
     <section class="brand">
         <!--    <hr/>-->
         <header class="section-header">
-          <div class="section-tag">
-            <div class="section-block"></div>
-            <p class="section-tag__title">Categories</p>
-          </div>
-          <div class="section-title">
-            <h2 class="section__title">Browse By Branding</h2>
-            <div class="section-nav">
-              <div class="button-nav" id="slide-pre">
-                <img
-                  src="accset/icon/arrow-left-black.svg"
-                  alt=""
-                  class="button__icon"
-                />
-              </div>
-              <div class="button-nav" id="slide-next">
-                <img
-                  src="accset/icon/arrow-right-black.svg"
-                  alt=""
-                  class="button__icon"
-                />
-              </div>
+            <div class="section-tag">
+                <div class="section-block"></div>
+                <p class="section-tag__title">Categories</p>
             </div>
-          </div>
+            <div class="section-title">
+                <h2 class="section__title">Browse By Branding</h2>
+                <div class="section-nav">
+                    <div class="button-nav" id="slide-pre">
+                        <img
+                                src="accset/icon/arrow-left-black.svg"
+                                alt=""
+                                class="button__icon"
+                        />
+                    </div>
+                    <div class="button-nav" id="slide-next">
+                        <img
+                                src="accset/icon/arrow-right-black.svg"
+                                alt=""
+                                class="button__icon"
+                        />
+                    </div>
+                </div>
+            </div>
         </header>
         <div class="section-body">
-        <div class="section-body">
-          <div class="brand-row snap-inline">
-            <div class="brand-col">
-              <div class="brand-logo">
-                <a href="">
-                  <img
-                    src="accset/img/brand/logo_asus.png"
-                    alt=""
-                    class="brand__img"
-                  />
-                </a>
-              </div>
-              <!--End .brand-logo-->
+            <div class="section-body">
+                <div class="brand-row snap-inline">
+                    <div class="brand-col">
+                        <div class="brand-logo">
+                            <a href="">
+                                <img
+                                        src="accset/img/brand/logo_asus.png"
+                                        alt=""
+                                        class="brand__img"
+                                />
+                            </a>
+                        </div>
+                        <!--End .brand-logo-->
+                    </div>
+                    <!--End .brand-col-->
+
+                </div>
             </div>
-            <!--End .brand-col-->
-            <div class="brand-col">
-              <div class="brand-logo">
-                <a href="">
-                  <img
-                    src="accset/img/brand/logo_msi.png"
-                    alt=""
-                    class="brand__img"
-                  />
-                </a>
-              </div>
-              <!--End .brand-logo-->
-            </div>
-            <!--End .brand-col-->
-            <div class="brand-col">
-              <div class="brand-logo">
-                <a href="">
-                  <img
-                    src="accset/img/brand/logo_amd.png"
-                    alt=""
-                    class="brand__img"
-                  />
-                </a>
-              </div>
-              <!--End .brand-logo-->
-            </div>
-            <!--End .brand-col-->
-            <div class="brand-col">
-              <div class="brand-logo">
-                <a href="">
-                  <img
-                    src="accset/img/brand/logo_asrock.png"
-                    alt=""
-                    class="brand__img"
-                  />
-                </a>
-              </div>
-              <!--End .brand-logo-->
-            </div>
-            <!--End .brand-col-->
-            <div class="brand-col">
-              <div class="brand-logo">
-                <a href="">
-                  <img
-                    src="accset/img/brand/logo_nvidia.png"
-                    alt=""
-                    class="brand__img"
-                  />
-                </a>
-              </div>
-              <!--End .brand-logo-->
-            </div>
-            <!--End .brand-col-->
-            <div class="brand-col">
-              <div class="brand-logo">
-                <a href="">
-                  <img
-                    src="accset/img/brand/logo_gigabyte.png"
-                    alt=""
-                    class="brand__img"
-                  />
-                </a>
-              </div>
-              <!--End .brand-logo-->
-            </div>
-            <!--End .brand-col-->
-            <div class="brand-col">
-              <div class="brand-logo">
-                <a href="">
-                  <img
-                    src="accset/img/brand/logo_gigabyte.png"
-                    alt=""
-                    class="brand__img"
-                  />
-                </a>
-              </div>
-              <!--End .brand-logo-->
-            </div>
-            <!--End .brand-col-->
-            <div class="brand-col">
-              <div class="brand-logo">
-                <a href="">
-                  <img
-                    src="accset/img/brand/logo_gigabyte.png"
-                    alt=""
-                    class="brand__img"
-                  />
-                </a>
-              </div>
-              <!--End .brand-logo-->
-            </div>
-            <!--End .brand-col-->
-          </div>
-        </div>
         </div>
         <!--    <hr/>-->
     </section>
@@ -237,175 +137,58 @@
         </header>
         <div class="section-body">
             <div class="section-row">
-            <div class="section-col">
-              <div class="product">
-                <div class="product-header">
-                  <div class="product-image">
-                    <a href="">
-                      <img
-                        src="accset/img/product/product.png"
-                        alt=""
-                        class="product__img"
-                      />
-                    </a>
-                    <a href="" class="product-cart">Add to cart</a>
-                  </div>
-                  <div class="product-tab">
-                    <div class="product-item">
-                      <img src="accset/icon/heart.svg" alt="" />
-                    </div>
-                    <div class="product-item">
-                      <img src="accset/icon/view.svg" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="product-body">
-                  <a href="">
-                    <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                  </a>
-                  <div class="product__price">
-                    $960<span class="product__sale">$1160</span>
-                  </div>
-                  <span class="product__rate">
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/half-star.svg" alt="" />
+
+                <?php foreach ($loadall_sp as $sp) {
+                    extract($sp);
+                    ?>
+                    <div class="section-col">
+
+                        <div class="product">
+                            <div class="product-header">
+                                <div class="product-image">
+                                    <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php echo $ma_sp; ?>">
+                                        <img
+                                                src="<?php echo $img; ?>"
+                                                style="height: 250px; "
+                                                alt=""
+                                                class="product__img"
+                                        />
+                                    </a>
+                                    <a href="" class="product-cart">Add to cart</a>
+                                </div>
+                                <div class="product-tab">
+                                    <a class="product-item" href="#">
+                                        <img src="accset/icon/heart.svg" alt=""/>
+                                    </a>
+                                    <a class="product-item" href="#">
+                                        <img src="accset/icon/view.svg" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-body">
+                                <a href="">
+                                    <h3 href="" class="product__title">
+                                        <?php echo $ten_sp; ?>
+                                    </h3>
+                                </a>
+                                <div class="product__price">
+                                    <?php echo $gia; ?> VND<span class="product__sale">$1160</span>
+                                </div>
+                                <span class="product__rate">
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/half-star.svg" alt=""/>
                     <span class="product__total">(65)</span>
                   </span>
-                </div>
-              </div>
-              <!-- End .product -->
-            </div>
-            <!-- End .section-col -->
-            <div class="section-col">
-              <div class="product">
-                <div class="product-header">
-                  <div class="product-image">
-                    <a href="">
-                      <img
-                        src="accset/img/product/product.png"
-                        alt=""
-                        class="product__img"
-                      />
-                    </a>
-                    <a href="" class="product-cart">Add to cart</a>
-                  </div>
-                  <div class="product-tab">
-                    <div class="product-item">
-                      <img src="accset/icon/heart.svg" alt="" />
+                            </div>
+                        </div>
+
+                        <!-- End .product -->
                     </div>
-                    <div class="product-item">
-                      <img src="accset/icon/view.svg" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="product-body">
-                  <a href="">
-                    <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                  </a>
-                  <div class="product__price">
-                    $960<span class="product__sale">$1160</span>
-                  </div>
-                  <span class="product__rate">
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/half-star.svg" alt="" />
-                    <span class="product__total">(65)</span>
-                  </span>
-                </div>
-              </div>
-              <!-- End .product -->
-            </div>
-            <!-- End .section-col -->
-            <div class="section-col">
-              <div class="product">
-                <div class="product-header">
-                  <div class="product-image">
-                    <a href="">
-                      <img
-                        src="accset/img/product/product.png"
-                        alt=""
-                        class="product__img"
-                      />
-                    </a>
-                    <a href="" class="product-cart">Add to cart</a>
-                  </div>
-                  <div class="product-tab">
-                    <div class="product-item">
-                      <img src="accset/icon/heart.svg" alt="" />
-                    </div>
-                    <div class="product-item">
-                      <img src="accset/icon/view.svg" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="product-body">
-                  <a href="">
-                    <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                  </a>
-                  <div class="product__price">
-                    $960<span class="product__sale">$1160</span>
-                  </div>
-                  <span class="product__rate">
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/half-star.svg" alt="" />
-                    <span class="product__total">(65)</span>
-                  </span>
-                </div>
-              </div>
-              <!-- End .product -->
-            </div>
-            <!-- End .section-col -->
-            <div class="section-col">
-              <div class="product">
-                <div class="product-header">
-                  <div class="product-image">
-                    <a href="">
-                      <img
-                        src="accset/img/product/product.png"
-                        alt=""
-                        class="product__img"
-                      />
-                    </a>
-                    <a href="" class="product-cart">Add to cart</a>
-                  </div>
-                  <div class="product-tab">
-                    <div class="product-item">
-                      <img src="accset/icon/heart.svg" alt="" />
-                    </div>
-                    <div class="product-item">
-                      <img src="accset/icon/view.svg" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="product-body">
-                  <a href="">
-                    <h3 class="product__title">AMD Ryzen 5 5600X</h3>
-                  </a>
-                  <div class="product__price">
-                    $960<span class="product__sale">$1160</span>
-                  </div>
-                  <span class="product__rate">
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/half-star.svg" alt="" />
-                    <span class="product__total">(65)</span>
-                  </span>
-                </div>
-              </div>
-              <!-- End .product -->
-            </div>
-            <!-- End .section-col -->
-         
+                <?php } ?>
+                <!-- End .section-col -->
             </div>
         </div>
     </section>
@@ -460,61 +243,64 @@
             <div class="section-title">
                 <h2 class="section__title">Explore Our Products</h2>
                 <div class="section-nav">
-                  
+
                 </div>
             </div>
         </header>
         <div class="section-body">
             <div class="section-row">
-            <?php foreach($loadall_sp as $sp){
-                  extract($sp);
-                 ?>
-            <div class="section-col">
-              
-              <div class="product">
-                <div class="product-header">
-                  <div class="product-image">
-                    <a href="">
-                      <img
-                        src="accset/img/product/product.png"
-                        style="height: 250px; width: 250px"
-                        alt=""
-                        class="product__img"
-                      />
-                    </a>
-                    <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php  echo $ma_sp;?>" class="product-cart">Add to cart</a>
-                  </div>
-                  <div class="product-tab">
-                    <div class="product-item">
-                      <img src="accset/icon/heart.svg" alt="" />
-                    </div>
-                    <div class="product-item">
-                      <img src="accset/icon/view.svg" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="product-body">
-                  <a href="">
-                      <?php echo $ten_sp; ?>
-                  </a>
-                  <div class="product__price">
-                    <p><?php echo $gia; ?></p>
-                  </div>
-                  <span class="product__rate">
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/star.svg" alt="" />
-                    <img src="accset/icon/half-star.svg" alt="" />
+
+                <?php foreach ($loadall_sp as $sp) {
+                    extract($sp);
+                    ?>
+                    <div class="section-col">
+
+                        <div class="product">
+                            <div class="product-header">
+                                <div class="product-image">
+                                    <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php echo $ma_sp; ?>">
+                                        <img
+                                                src="<?php echo $img; ?>"
+                                                style="height: 250px; "
+                                                alt=""
+                                                class="product__img"
+                                        />
+                                    </a>
+                                    <a href="" class="product-cart">Add to cart</a>
+                                </div>
+                                <div class="product-tab">
+                                    <a class="product-item" href="#">
+                                        <img src="accset/icon/heart.svg" alt=""/>
+                                    </a>
+                                    <a class="product-item" href="#">
+                                        <img src="accset/icon/view.svg" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-body">
+                                <a href="">
+                                    <h3 href="" class="product__title">
+                                        <?php echo $ten_sp; ?>
+                                    </h3>
+                                </a>
+                                <div class="product__price">
+                                    <?php echo $gia; ?> VND<span class="product__sale">$1160</span>
+                                </div>
+                                <span class="product__rate">
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/half-star.svg" alt=""/>
                     <span class="product__total">(65)</span>
                   </span>
-                </div>
-              </div>
-              
-              <!-- End .product -->
-            </div>
-            <?php } ?>
-            <!-- End .section-col -->
+                            </div>
+                        </div>
+
+                        <!-- End .product -->
+                    </div>
+                <?php } ?>
+                <!-- End .section-col -->
             </div>
         </div>
         <div class="section-footer">
@@ -596,7 +382,7 @@
         <div class="service-row">
             <div class="service-col">
                 <div class="service-image-wrapper">
-                    <img src="accset/icon/service/service_logo.svg" alt="" class="service__image" />
+                    <img src="accset/icon/service/service_logo.svg" alt="" class="service__image"/>
                 </div>
                 <div class="service-title">
                     <h3 class="service__title">FREE AND FAST DELIVERY</h3>
@@ -608,7 +394,7 @@
             <!--End .service-col-->
             <div class="service-col">
                 <div class="service-image-wrapper">
-                    <img src="accset/icon/service/service_logo_1.svg" alt="" class="service__image" />
+                    <img src="accset/icon/service/service_logo_1.svg" alt="" class="service__image"/>
                 </div>
                 <div class="service-title">
                     <h3 class="service__title">24/7 CUSTOMER SERVICE</h3>
@@ -618,7 +404,7 @@
             <!--End .service-col-->
             <div class="service-col">
                 <div class="service-image-wrapper">
-                    <img src="accset/icon/service/service_logo_2.svg" alt="" class="service__image" />
+                    <img src="accset/icon/service/service_logo_2.svg" alt="" class="service__image"/>
                 </div>
                 <div class="service-title">
                     <h3 class="service__title">MONEY BACK GUARANTEE</h3>

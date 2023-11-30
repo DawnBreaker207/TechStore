@@ -43,14 +43,15 @@ function getData($query, $params = [], $getAll = true)
 }
 function img()
 {
-    if (isset($_FILES["hinhanh"]) && $_FILES["hinhanh"]["error"] === UPLOAD_ERR_OK) {
+
+    if (isset($_FILES["img"]) && $_FILES["img"]["error"] === UPLOAD_ERR_OK) {
         $target_dir = "accset/uploads/";
-        $target_file = $target_dir . basename($_FILES["hinhanh"]["name"]);
+        $target_file = $target_dir . basename($_FILES["img"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
         // Kiểm tra file ảnh là ảnh thật hay ảnh giả
-        $check = getimagesize($_FILES["hinhanh"]["tmp_name"]);
+        $check = getimagesize($_FILES["img"]["tmp_name"]);
         if ($check === false) {
             throw new Exception("File is not an image.");
         }
@@ -69,7 +70,7 @@ function img()
         //            }
 
         // Tải tập tin lên
-        if (!move_uploaded_file($_FILES["hinhanh"]["tmp_name"], $target_file)) {
+        if (!move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
             throw new Exception("Sorry, there was an error uploading your file.");
         }
 
