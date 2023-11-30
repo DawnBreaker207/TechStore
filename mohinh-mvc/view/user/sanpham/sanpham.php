@@ -2,9 +2,9 @@
 
     <section class="category">
         <div class="path">
-            <span class="tag-product">Product</span>
-            /
-            <span class="tag-category">Cpu</span>
+            <span class="tag-product"><a href="index.php?act=product">Product /</a></span>
+            
+            <span class="tag-category"><a href="">Cpu</a></span>
         </div>
         <header class="section-header">
             <div class="section-tag">

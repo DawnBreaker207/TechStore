@@ -98,19 +98,24 @@
         </header>
         <div class="section-body">
             <div class="section-body">
-                <div class="brand-row snap-inline">
+                <div class="brand-row snap-inline"> 
+                    <?php foreach($loadAllNSX as $nsx){
+                                ?>
                     <div class="brand-col">
                         <div class="brand-logo">
+                           
                             <a href="">
                                 <img
-                                        src="accset/img/brand/logo_asus.png"
+                                        src="<?php echo $nsx['img_nsx']; ?>"
                                         alt=""
-                                        class="brand__img"
+                                        class="brand__img" width="150px" height="150px"
                                 />
                             </a>
+                           
                         </div>
                         <!--End .brand-logo-->
-                    </div>
+                    </div> 
+                    <?php  }  ?>
                     <!--End .brand-col-->
 
                 </div>
@@ -146,7 +151,7 @@
                         <div class="product">
                             <div class="product-header">
                                 <div class="product-image">
-                                    <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php echo $ma_sp; ?>">
+                                    <a href="index.php?act=ctsp&ma_sp=<?php echo $ma_sp; ?>">
                                         <img
                                                 src="<?php echo $img; ?>"
                                                 style="height: 250px; "
