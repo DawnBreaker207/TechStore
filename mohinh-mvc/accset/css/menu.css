@@ -61,6 +61,7 @@
   font-weight: var(--font-bold);
   line-height: 48px;
   word-spacing: 4px;
+  text-align: start;
 }
 
 .hero-link {

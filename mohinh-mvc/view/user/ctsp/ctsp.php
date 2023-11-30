@@ -13,28 +13,10 @@
 
    
         <header class="product-image">
-            <div class="product-row">
-                <div class="product-col">
-                    <div class="product-item">
-                        <img src="<?php echo $ctsp['img'];?>" alt="" class="product__img">
-                    </div>
-                    <div class="product-item">
-                        <img src="<?php echo $ctsp['img'];?>" alt="" class="product__img">
-                    </div>
-                    <div class="product-item">
-                        <img src="<?php echo $ctsp['img'];?>" alt="" class="product__img">
-                    </div>
-                    <div class="product-item">
-                        <img src="<?php echo $ctsp['img'];?>" alt="" class="product__img">
-                    </div>
-                </div>
-                <div class="product-col">
-                    <div class="product-item">
-                        <img src="<?php echo $ctsp['img'];?>" alt=""  class="product__img">
-                    </div>
-                </div>
 
-            </div>
+                <img src="<?php echo $ctsp['img'];?>" alt=""  class="product__img">
+
+
 
 
         </header>
@@ -163,53 +145,60 @@
         </header>
         <div class="section-body">
             <div class="section-row">
-                <div class="section-col">
-                    <div class="product">
-                        <?php  foreach ($loadall_sp as $sp){
 
-                        ?>
-                        <div class="product-header">
-                            <div class="product-image">
+                <?php foreach ($loadall_sp as $sp) {
+                    extract($sp);
+                    ?>
+                    <div class="section-col">
+
+                        <div class="product">
+                            <div class="product-header">
+                                <div class="product-image">
+                                    <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php echo $ma_sp; ?>">
+                                        <img
+                                                src="<?php echo $img; ?>"
+                                                style="height: 250px; "
+                                                alt=""
+                                                class="product__img"
+                                        />
+                                    </a>
+                                    <a href="" class="product-cart">Add to cart</a>
+                                </div>
+                                <div class="product-tab">
+                                    <a class="product-item" href="#">
+                                        <img src="accset/icon/heart.svg" alt=""/>
+                                    </a>
+                                    <a class="product-item" href="#">
+                                        <img src="accset/icon/view.svg" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-body">
                                 <a href="">
-                                <img
-                                    src="accset/img/product/product.png"
-                                    alt=""
-                                    class="product__img"
-                                />
+                                    <h3 href="" class="product__title">
+                                        <?php echo $ten_sp; ?>
+                                    </h3>
                                 </a>
-                                <a href="" class="product-cart">Add to cart</a>
+                                <div class="product__price">
+                                    <?php echo $gia; ?> VND<span class="product__sale">$1160</span>
+                                </div>
+                                <span class="product__rate">
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/star.svg" alt=""/>
+                    <img src="accset/icon/half-star.svg" alt=""/>
+                    <span class="product__total">(65)</span>
+                  </span>
                             </div>
-                        <div class="product-tab">
-                            <div class="product-item">
-                            <img src="accset/icon/heart.svg" alt="" />
-                            </div>
-                            <div class="product-item">
-                            <img src="accset/icon/view.svg" alt="" />
-                            </div>
+                        </div>
+
+                        <!-- End .product -->
                     </div>
-                    </div>
-                    <div class="product-body">
-                    <a href="">
-                        <h3 class="product__title"><?php echo $sp['ten_sp']; ?></h3>
-                    </a>
-                    <div class="product__price">
-                    <?php echo $sp['gia']; ?><span class="product__sale">$1160</span>
-                    </div>
-                    <span class="product__rate">
-                        <img src="accset/icon/star.svg" alt="" />
-                        <img src="accset/icon/star.svg" alt="" />
-                        <img src="accset/icon/star.svg" alt="" />
-                        <img src="accset/icon/star.svg" alt="" />
-                        <img src="accset/icon/half-star.svg" alt="" />
-                        <span class="product__total">(65)</span>
-                    </span>
-                    </div>
-                </div>
-                <!-- End .product -->
-                </div>
-               
+                <?php } ?>
+                <!-- End .section-col -->
             </div>
-            <?php } ?>
+
         </div>
     </section>
     <section class="comment">

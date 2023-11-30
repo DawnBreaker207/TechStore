@@ -19,6 +19,7 @@
     /*Font Family*/
     --font-heading: Inter, san-serif;
     --font-title: Poppins, san-serif;
+    --clr-status: #00ff66;
 }
 
 ul {
@@ -26,7 +27,10 @@ ul {
     padding: 0;
     box-sizing: border-box;
 }
-
+.icon-m {
+    height: 24px;
+    width: 24px;
+  }
 
 .icon-sm {
     width: 16px;
@@ -104,6 +108,7 @@ ul {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+    /* justify-content: flex-start; */
 }
 
 .section-footer {
@@ -210,7 +215,7 @@ ul {
 }
 .header-nav{
     display: flex;
-    gap:16px
+    gap:16px;
 }
 .header-cart--notifi{
     display: inline-block;
