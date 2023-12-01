@@ -274,7 +274,7 @@
                                                 class="product__img"
                                         />
                                     </a>
-                                    <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data">
+                                    <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data" >
                                     <input type="hidden" name="masp" value="<?php echo $ma_sp; ?>">
                                     <input type="hidden" name="tensp" value="<?php echo $ten_sp; ?>">
                                     <input type="hidden" name="img" value="<?php echo $img;?>">

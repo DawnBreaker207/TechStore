@@ -11,6 +11,7 @@
     <form action="index.php?act=sigin" method="post">
       <div class="form-group">
         <input type="text" id="loginUsername" name="user" placeholder="Username" required>
+
       </div>
       <div class="form-group">
         <input type="password" id="loginPassword" name="pass" placeholder="Password" required>
