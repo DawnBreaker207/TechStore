@@ -1,7 +1,7 @@
 <section class="add-admin">
     <div class="add-tt">
         <h1>Sửa Sản Phẩm</h1>
-        <form action="index.php?act=sanPham&nd=update" method="post" enctype="multipart/form-data">
+        <form action="index.php?act=sanPham&nd=update" method="post" enctype="multipart/form-data"  id="myForm">
             <?php foreach ($loadOneSp as $sp) {
 
                 ?>

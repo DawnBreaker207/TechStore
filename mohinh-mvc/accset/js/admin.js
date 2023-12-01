@@ -19,12 +19,13 @@ links.forEach(function (link) {
 // Validate account add
 document.getElementById("myForm").addEventListener("submit", function (event) {
     event.preventDefault();
-    validateForm();
-
-
+    validateFormAccount();
+});document.getElementById("myForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    validateFormCategory();
 });
 
-function validateForm() {
+function validateFormAccount() {
     let user = document.getElementById("user").value;
     let pass = document.getElementById("pass").value;
     let email = document.getElementById("email").value;
@@ -40,20 +41,32 @@ function validateForm() {
     document.getElementById("roleError").innerText = role === "" ? "Không được bỏ trống mục này" : "";
 
     if (user !== "" && pass !== "" && email !== "" && diachi !== "" && phone !== "" && role !== "") {
-        sendData(user, pass, email, diachi, phone, role);
+        sendDataAccount(user, pass, email, diachi, phone, role);
     }
-    ;
+
+}
+function sendDataAccount(user, pass, email, diachi, phone, role) {
+
+    let form = document.getElementById("myForm");
+
+    form.submit();
 }
 
-function sendData(user, pass, email, diachi, phone, role) {
-    // Thực hiện các bước để gửi dữ liệu đi (ví dụ: sử dụng AJAX để gửi dữ liệu đến server)
-    console.log("Dữ liệu đã được gửi:");
-    console.log("User:", user);
-    console.log("Pass:", pass);
-    console.log("Email:", email);
-    console.log("Địa chỉ:", diachi);
-    console.log("Phone:", phone);
-    console.log("Role:", role);
+function validateFormCategory() {
+    let madm = document.getElementById("madm").value;
+    let tendm = document.getElementById("tendm").value;
+
+
+    document.getElementById("madmError").innerText = madm === "" ? "Không được bỏ trống mục này" : "";
+    document.getElementById("tendmError").innerText = tendm === "" ? "Không được bỏ trống mục này" : "";
+
+
+    if (madm !== "" && tendm !== "" ) {
+        sendDataAccountCategory(madm, tendm);
+    }
+
+}
+function sendDataAccountCategory(madm, tendm) {
 
     let form = document.getElementById("myForm");
 
