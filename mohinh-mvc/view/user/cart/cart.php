@@ -1,3 +1,4 @@
+
 <main class="wrapper">
     <div class="path">
       <span class="tag">Home</span>
@@ -7,13 +8,18 @@
     <h1>Giỏ hàng</h1>
     <div class="cart">
       <table id="cart-table">
+        <?php foreach($_SESSION['mycart'] as $key => $cart){
+          // echo "<pre>";
+          // print_r($_SESSION['cart']);
+          // echo "</pre>";
+          
+         ?>
         <thead>
           <tr>
             <th>Product</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Subtotal</th>
-        
           </tr>
         </thead>
         <tr>
@@ -24,16 +30,18 @@
                 </svg>
               </a>
             <div class="img_cart">
-              <img src="mohinh-mvc/accset/img/product/product.png" alt="" srcset="" width="100px" height="100px">
+              <img src="<?php echo $cart[2];?>" alt="<?php echo $cart[2] ;?>" srcset="" width="100px" height="100px">
+              <p><?php echo $cart[1];?></p>
             </div>
             </div>
           </td>
-          <td>Price</td>
+          <td><?php echo $cart[3];?></td>
           <td><form action="" method="post">
             <input type="number" name="" id="" min="1" class="ip_quantity"></td>
-          <td>Subtotal</td>
+          <td><?php echo $cart[4];?></td>
 
         </tr>
+        <?php }?>
 
       </table>
       <a href="" >Update Cart</a>

@@ -4,19 +4,19 @@
         <section class="category">
 
 
-            <a href="index.php?act=product&ma_dm=4">CPU<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&nd=maDm&ma_dm=4">CPU<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="index.php?act=product&ma_dm=3">RAM<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&nd=maDm&ma_dm=3">RAM<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="index.php?act=product&ma_dm=6">SSD<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&nd=maDm&ma_dm=6">SSD<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="index.php?act=product&ma_dm=7">VGA<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&nd=maDm&ma_dm=7">VGA<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
-            <a href="index.php?act=product&ma_dm=5">HDD<img src="accset/icon/dropdown-black.svg" alt=""/></a>
+            <a href="index.php?act=product&nd=maDm&ma_dm=5">HDD<img src="accset/icon/dropdown-black.svg" alt=""/></a>
 
 
             <a href="">Memory<img src="accset/icon/dropdown-black.svg" alt=""/></a>
@@ -146,6 +146,8 @@
                 <?php foreach ($loadall_sp as $sp) {
                     extract($sp);
                     ?>
+                    <!-- form thông tin sp -->
+                   
                     <div class="section-col">
 
                         <div class="product">
@@ -258,6 +260,7 @@
                 <?php foreach ($loadall_sp as $sp) {
                     extract($sp);
                     ?>
+                    
                     <div class="section-col">
 
                         <div class="product">
@@ -271,8 +274,16 @@
                                                 class="product__img"
                                         />
                                     </a>
-                                    <a href="" class="product-cart">Add to cart</a>
+                                    <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="masp" value="<?php echo $ma_sp; ?>">
+                                    <input type="hidden" name="tensp" value="<?php echo $ten_sp; ?>">
+                                    <input type="hidden" name="img" value="<?php echo $img;?>">
+                                    <input type="hidden" name="soluong" value="<?php echo $soluong; ?>">
+                                    <input type="hidden" name="gia" value="<?php echo $gia; ?>">
+                                    <input class="product-cart"  type="submit" value="Add to cart">
+                                    </form>
                                 </div>
+                                
                                 <div class="product-tab">
                                     <a class="product-item" href="#">
                                         <img src="accset/icon/heart.svg" alt=""/>
@@ -285,7 +296,7 @@
                             <div class="product-body">
                                 <a href="">
                                     <h3 href="" class="product__title">
-                                        <?php echo $ten_sp; ?>
+                                        <?php echo $ten_sp;?>
                                     </h3>
                                 </a>
                                 <div class="product__price">

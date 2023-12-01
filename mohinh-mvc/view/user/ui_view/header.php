@@ -61,9 +61,10 @@
                         <div class="header-cart">
                             <a href="index.php?act=cart" class="header-cart__link">
                                 <img src="accset/icon/cart.svg" alt="" class="cart__img " />
-                                <span class="header-cart--notifi">2</span>
+                                <span class="header-cart--notifi" id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                             </a>
                         </div>
+        
                         <div class="header-user">
                             <div class="user-block">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="transparent" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-l user__account">

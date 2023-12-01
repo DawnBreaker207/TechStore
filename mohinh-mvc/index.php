@@ -8,6 +8,10 @@ require_once "models/sanpham.php";
 require_once "models/binhluan.php";
 require_once "models/donhang.php";
 
+if(!isset($_SESSION['mycart'])) {
+    $_SESSION['mycart'] = [];
+}
+
 //$top_seller= best_sell_sanpham();
 if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
 
@@ -325,34 +329,38 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 case 'product':
                     if (isset($_GET['nd'])) {
                         switch ($_GET['nd']) {
-                   
-                   case 'maDm':
-                        if(isset($_GET['ma_dm'])){
-                        $ma_dm = $_GET['ma_dm'];
-                        $loadall_sp = getSpByMadm($ma_dm);
-                        $loadall_dm = loadAll_danhmuc();
-                        require_once "view/user/sanpham/sanpham.php";
-                    }else{
-                        $loadall_sp = loadAll_sanpham();
+                            case 'maDm':
+                                if(isset($_GET['ma_dm'])){
+                                $ma_dm = $_GET['ma_dm'];
+                                $loadall_sp = getSpByMadm($ma_dm);
+                                $loadall_dm = loadAll_danhmuc();
+                                require_once "view/user/sanpham/sanpham.php";
+                                }else{
+                                    $loadall_sp = loadAll_sanpham();
+                                $loadAllNSX=loadAll_nsx();
+                                    $loadallDm=loadAll_danhmuc();
+                                require_once "view/user/sanpham/sanpham.php";
+                                }
+                                break;
+                            case 'nsx':
+                                if(isset($_GET['ma_nsx'])){
+                                    $ma_nsx = $_GET['ma_nsx'];
+                                    $loadall_sp = getspbynsx($ma_nsx);
+                                    $loadall_nsx = loadAll_nsx();
+                                    require_once "view/user/sanpham/sanpham.php";
+                                }else{
+                                    $loadall_sp = loadAll_sanpham();
+                                    $loadAllNSX=loadAll_nsx();
+                                    $loadallDm=loadAll_danhmuc();
+                                require_once "view/user/sanpham/sanpham.php";
+                                }
+                            break;
+                } 
+                }else{
+                    $loadall_sp = loadAll_sanpham();
                     $loadAllNSX=loadAll_nsx();
-                         $loadallDm=loadAll_danhmuc();
-                    require_once "view/user/sanpham/sanpham.php";
-                    }
-                    break;
-                    case 'nsx':
-                        if(isset($_GET['ma_nsx'])){
-                            $ma_nsx = $_GET['ma_nsx'];
-                            $loadall_sp = getspbynsx($ma_nsx);
-                            $loadall_nsx = loadAll_nsx();
-                            require_once "view/user/sanpham/sanpham.php";
-                        }else{
-                            $loadall_sp = loadAll_sanpham();
-                        $loadAllNSX=loadAll_nsx();
-                             $loadallDm=loadAll_danhmuc();
-                        require_once "view/user/sanpham/sanpham.php";
-                    }
-                    break;
-                }
+                    $loadallDm=loadAll_danhmuc();
+                require_once "view/user/sanpham/sanpham.php";
             }
                     break;
             case 'ctsp':
@@ -374,6 +382,40 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
             case 'cart':
                 require_once "view/user/cart/cart.php"; 
                 break;
+            case 'addToCart':
+                if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                        $ma_sp = $_POST['masp'];
+                        $ten_sp = $_POST['tensp'];
+                        $img = $_POST['img'];
+                        $gia = $_POST['gia'];
+                        $soluong = $_POST['soluong'];
+                        $tien = $soluong * $gia;
+                        $giohang = [$ma_sp,$ten_sp,$img,$gia,$tien,$soluong];
+                        if (isset($_SESSION['mycart'])) {
+                            $cartItems = $_SESSION['mycart'];
+                            $existingItemKey = null;
+                            foreach ($cartItems as $key => $item) {
+                                if ($item[0] == $ma_sp) {
+                                    $existingItemKey = $key;
+                                    break;
+                                }
+                            }
+                        }  
+                        if ($existingItemKey !== null) {
+                            // Nếu sản phẩm đã tồn tại, tăng số lượng
+                            $cartItems[$existingItemKey][4] += $tien; // Cập nhật tổng tiền
+                            $cartItems[$existingItemKey][5]++; // Tăng số lượng
+                        } else {
+                            // Nếu sản phẩm chưa tồn tại, thêm mới sản phẩm vào giỏ hàng
+                            array_push($cartItems, $giohang);
+                        }  
+                        $_SESSION['mycart'] = $cartItems;
+                    }
+                    require_once "view/user/cart/cart.php";
+                break;
+            case 'cart':
+                    require_once "view/user/cart/cart.php";
+                    break;  
             case 'checkout':
                 require_once "view/user/checkout/checkout.php";
                 break;   
