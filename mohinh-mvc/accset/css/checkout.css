@@ -29,7 +29,7 @@
 .form-group-ck label {
     margin-bottom: 5px;
     display: block;
-    font-size: 23px;
+    font-size: 15px;
     color: gray;
 }
 
@@ -37,7 +37,7 @@
     display: block;
     margin-bottom: 5px;
     width: 470px;
-    height: 50px;
+    padding: 10px;
     border: none;
     border: 1px solid gray;
 }

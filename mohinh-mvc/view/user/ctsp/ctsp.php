@@ -1,29 +1,29 @@
 <main class="wrapper">
-<?php foreach ($loadOneSp as $ctsp){
-            
-            ?>
+    <?php foreach ($loadOneSp
+
+    as $ctsp){
+
+    ?>
     <div class="path">
         <span class="tag-product">Account</span>
         /
         <span class="tag-category">Gaming</span>
         /
-        <span class="tag-detail"><?php echo $ctsp['ten_sp'];  ?></span>
+        <span class="tag-detail"><?php echo $ctsp['ten_sp']; ?></span>
     </div>
     <section class="product-ctsp">
 
-   
+
         <header class="product-image">
 
-                <img src="<?php echo $ctsp['img'];?>" alt=""  class="product__img">
-
-
+            <img src="<?php echo $ctsp['img']; ?>" alt="" class="product__img">
 
 
         </header>
         <div class="product-detail">
-       
+
             <div class="detail-col">
-                <h3 class="product__title"><?php echo $ctsp['ten_sp'];  ?></h3>
+                <h3 class="product__title"><?php echo $ctsp['ten_sp']; ?></h3>
 
                 <span class="product__rate">
                             <img src="accset/icon/star.svg" alt="">
@@ -39,10 +39,10 @@
                         <span class="product__status">In Stock</span>
                     </span>
                 <h4 class="product__price">
-                <?php echo $ctsp['gia'];  ?>
+                    <?php echo $ctsp['gia']; ?>
                 </h4>
                 <p class="product__desc">
-                <?php echo $ctsp['mota'];  ?>
+                    <?php echo $ctsp['mota']; ?>
                 </p>
             </div>
             <div class="detail-col">
@@ -50,7 +50,7 @@
 
 
                     <div class="product-btn">
-                        <div class="btn btn-minus">
+                        <div class="btn btn-minus" onclick="decrementValue()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" class="icon-m">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15"/>
@@ -58,22 +58,29 @@
 
                         </div>
                         <div class="btn-quantity">2</div>
-                        <div class="btn btn-add">
+                        <div class="btn btn-add" onclick="incrementValue()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" class="icon-m">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
                             </svg>
                         </div>
                     </div>
-                    <div class="btn-buy">
+                    <a class="btn-buy" href="">
                         Buy Now
-                    </div>
-                    <div class="btn-add-cart">
+                    </a>
+                    <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="masp" value="<?php echo $ctsp['ma_sp']; ?>">
+                        <input type="hidden" name="tensp" value="<?php echo $ctsp['ten_sp']; ?>">
+                        <input type="hidden" name="img" value="<?php echo $ctsp['img']; ?>">
+                        <input type="hidden" name="soluong" value="<?php echo $ctsp['soluong']; ?>">
+                        <input type="hidden" name="gia" value="<?php echo $ctsp['gia']; ?>">
+                        <button class="btn-add-cart" type="submit" >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                              stroke="currentColor" class="icon-m">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
                         </svg>
-                    </div>
+                        </button>
+                    </form>
                 </div>
                 <div class="product-deliver">
                     <div class="deliver-item free-deliver">
@@ -131,7 +138,7 @@
                 </div>
             </div>
         </div>
-      
+
         <?php } ?>
 
 
@@ -146,7 +153,7 @@
         <div class="section-body">
             <div class="section-row">
 
-                <?php foreach ($loadall_sp as $sp) {
+                <?php foreach ($top_seller as $sp) {
                     extract($sp);
                     ?>
                     <div class="section-col">

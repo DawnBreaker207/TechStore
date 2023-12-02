@@ -54,7 +54,7 @@
                     </div>
                     <div class="submit">
                         <button type="button">Cancel</button>
-                        <button type="submit">Save Changes</button>
+                        <button type="submit" class="submit-account">Save Changes</button>
                     </div>
                 </form>
             </div>

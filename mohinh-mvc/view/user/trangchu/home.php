@@ -143,7 +143,7 @@
         <div class="section-body">
             <div class="section-row">
 
-                <?php foreach ($loadall_sp as $sp) {
+                <?php foreach ($top_seller as $sp) {
                     extract($sp);
                     ?>
                     <!-- form thông tin sp -->
@@ -257,7 +257,7 @@
         <div class="section-body">
             <div class="section-row">
 
-                <?php foreach ($loadall_sp as $sp) {
+                <?php foreach ($product as $sp) {
                     extract($sp);
                     ?>
                     

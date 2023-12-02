@@ -119,6 +119,8 @@
   color: var(--text-color-2);
   border-radius: 4px;
   font-family: var(--font-title);
+  display: inline-block;
+  text-decoration: none;
 }
 
 .btn-add-cart {
@@ -128,6 +130,7 @@
   align-items: center;
   border-radius: 5px;
   cursor: pointer;
+  background: transparent;
 }
 
 .product-deliver {

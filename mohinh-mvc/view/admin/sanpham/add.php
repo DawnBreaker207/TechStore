@@ -2,7 +2,7 @@
     <section class="add-admin">
         <div class="add-tt">
             <h1>Thêm Sản Phẩm</h1>
-            <form action="index.php?act=sanPham&nd=addSp" method="post" enctype="multipart/form-data"  id="myForm">
+            <form action="index.php?act=sanPham&nd=addSp" method="post" enctype="multipart/form-data"  >
 
             
                 <label for="tensp">Tên sản phẩm:</label>

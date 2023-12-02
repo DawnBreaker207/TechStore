@@ -12,7 +12,8 @@ if(!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
 
-//$top_seller= best_sell_sanpham();
+$top_seller= best_sell_sanpham();
+$product=  menu_sanpham();
 if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
 
     require_once "view/admin/ui_admin/header.php";
