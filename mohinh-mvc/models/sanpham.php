@@ -46,7 +46,12 @@ function loadAll_nsx()
 
 function best_sell_sanpham()
 {
-    $sql = "SELECT * FROM sanpham WHERE 1 ORDER BY VIEW DESC LIMIT 0,4";
+    $sql = "SELECT * FROM sanpham WHERE 1 ORDER BY luotxem DESC LIMIT 0,4";
+    return getData($sql);
+}
+function menu_sanpham()
+{
+    $sql = "SELECT * FROM sanpham WHERE 1 ORDER BY luotxem DESC LIMIT 0,8";
     return getData($sql);
 }
 

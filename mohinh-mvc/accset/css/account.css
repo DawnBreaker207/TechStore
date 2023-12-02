@@ -73,7 +73,7 @@ button[type=button]{
     border: 1px solid gray;
 }
 
-button[type=submit]{
+.submit-account{
     width: 150px;
     height: 35px;
     background-color: rgb(232, 89, 89);

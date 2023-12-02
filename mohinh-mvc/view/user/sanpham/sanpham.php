@@ -148,7 +148,7 @@
                     <div class="product">
                         <div class="product-header">
                             <div class="product-image">
-                                <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?phpecho $ma_sp; ?>">
+                                <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php echo $ma_sp; ?>">
                                     <img
                                             src="<?php echo $img; ?>
                                                 "
