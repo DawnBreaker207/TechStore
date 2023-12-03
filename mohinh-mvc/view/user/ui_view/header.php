@@ -48,14 +48,17 @@
                     <li><a href="index.php?act=product" class="header__link">Product</a></li>
                     <li><a href="index.php?act=contact" class="header__link">Contact</a></li>
                     <li><a href="index.php?act=about" class="header__link">About</a></li>
-                    <li><a href="index.php?act=sigin" class="header__link">Sign Up</a></li>
+                    <li><a href="index.php?act=signin" class="header__link">Sign Up</a></li>
                 </ul>
             </div>  
             <div class="header-col">
                 <div class="header-function">
                     <div class="header-search">
-                        <input type="text" name="" id="" placeholder="What are you looking for?" />
+                        
+                    <form action="index.php?act=product&nd=seach" method="post">
+                        <input type="text" name="keyword" id="" placeholder="What are you looking for?" />
                         <img src="accset/icon/search.svg" alt="" class="cart__img" />
+                    </form>
                     </div>
                     <div class="header-nav">
                         <div class="header-cart">

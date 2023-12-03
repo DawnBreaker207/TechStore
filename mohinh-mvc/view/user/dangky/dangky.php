@@ -5,9 +5,9 @@
 
     <div class="right-side">
       <h2 class="right-side_heading">Đăng ký</h2>
-      <form>
+      <form action="index.php?act=signup" method="POST">
         <div class="form-group">
-          <input type="text" id="username" name="username" placeholder="Tên đăng nhập" required>
+          <input type="text" id="username" name="username"  placeholder="Tên đăng nhập" required>
           <span></span>
         </div>
         <div class="form-group">
@@ -23,7 +23,7 @@
           <button type="submit" class="btn-sigin">Đăng ký</button>
         </div>
         <div class="switch-signup ">
-          <p>Bạn đã có tài khoản ? <a href="https://trello.com/b/JzAzGMS0/project-management">Log in</a></p>
+          <p>Bạn đã có tài khoản ? <a href="index.php?act=signin">Log in</a></p>
 
         </div>
       </form>

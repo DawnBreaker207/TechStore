@@ -54,6 +54,13 @@ function getspbynsx($ma_nsx){
     $sql = "SELECT * FROM sanpham join nhasanxuat on sanpham.ma_nsx=nhasanxuat.ma_nsx  WHERE sanpham.ma_nsx=?";
     return getData($sql, [$ma_nsx]);
 }
+function getSearch( $txt)
+{
+    
+    $keyword = '%' . $txt . '%'; // Thêm '%' ở đầu và cuối chuỗi tìm kiếm
+    $sql = "SELECT * FROM `sanpham`  WHERE `ten_sp` LIKE '$keyword' ";
+    return getData($sql );
+}
 
 ?>
 
