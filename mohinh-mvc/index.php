@@ -305,7 +305,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
         switch ($act) {
-            case 'sigin':
+            case 'signin':
                 if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     $user = $_POST['user'];
                     $pass = $_POST['pass'];
@@ -324,8 +324,19 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 }
                 break;
             case 'signup':
+                if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                    $user = $_POST['username'];                  
+                    $pass = $_POST['pass']; 
+                    $email = $_POST['email'];
+                    $dia_chi = '';
+                    $sdt = '';
+                    $ma_vaitro = 2;
+                   insert_taikhoan($user, $pass, $email, $dia_chi, $sdt, $ma_vaitro);
+                   header("Location: index.php?act=signin");
+                }
                 require_once "view/user/dangky/dangky.php";
                 break;
+            
                 
                 case 'product':
                     if (isset($_GET['nd'])) {
@@ -354,6 +365,14 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                     $loadAllNSX=loadAll_nsx();
                                     $loadallDm=loadAll_danhmuc();
                                 require_once "view/user/sanpham/sanpham.php";
+                                }
+                                break;
+                            case 'seach':
+                                if($_SERVER['REQUEST_METHOD']== "POST"){
+                                   $keyword = $_POST['keyword']; 
+                                  
+                                   $loadall_sp = getsearch($keyword);
+                                   require_once "view/user/sanpham/sanpham.php";
                                 }
                             break;
                 } 

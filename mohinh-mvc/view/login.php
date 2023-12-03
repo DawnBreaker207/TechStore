@@ -8,7 +8,7 @@
 
   <div class="right-side">
     <h2 class="right-side_heading">Đăng nhập</h2>
-    <form action="index.php?act=sigin" method="post">
+    <form action="index.php?act=signin" method="post">
       <div class="form-group">
         <input type="text" id="loginUsername" name="user" placeholder="Username" required>
 
