@@ -93,4 +93,5 @@
     <!--End .footer-->
 </body>
     <script src="accset/js/menu.js"></script>
+    <script src="accset/js/function.js"></script>
 </html>

@@ -21,6 +21,7 @@
                 <ul>
                     <li><a href="index.php?act=trangChu">Trang chủ</a></li>
                     <li><a href="index.php?act=danhMuc">Danh mục</a></li>
+                    <li><a href="index.php?act=nsx">Nhà sản xuất</a></li>
                     <li><a href="index.php?act=sanPham">Sản phẩm</a></li>
                     <li><a href="index.php?act=taiKhoan">Tài khoản</a></li>
                     <li><a href="index.php?act=donHang">Đơn hàng</a></li>

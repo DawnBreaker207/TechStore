@@ -15,8 +15,8 @@
                 <label for="soLuong">Số Lượng:</label>
                 <input type="number" id="soLuong" name="soluong"><br>
 
-                <label for="hinhanh">Hình Ảnh:</label>
-                <input type="file" id="hinhanh" name="hinhanh"><br>
+                <label for="img">Hình Ảnh:</label>
+                <input type="file" id="img" name="img"><br>
 
                 <label for="mota">Mô Tả:</label>
                 <input type="text" id="mota" name="mota"><br>

@@ -12,6 +12,10 @@
                 <input type="text" id="tendm" name="tendm"><br>
                 <span class="error" id="tendmError"></span><br>
 
+                <label for="img">Ảnh:</label>
+                <input type="file" id="img" name="img"><br>
+                <span class="error" id="imgError"></span><br>
+
                 <input type="submit" value="Thêm" class="them">
             </form><br>
             <a href="index.php?act=danhMuc&nd=view" class="link_dsdm">Danh sách danh mục</a>
