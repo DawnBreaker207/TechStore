@@ -161,7 +161,14 @@
                                                 class="product__img"
                                         />
                                     </a>
-                                    <a href="" class="product-cart">Add to cart</a>
+                                    <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data" >
+                                    <input type="hidden" name="masp" value="<?php echo $ma_sp; ?>">
+                                    <input type="hidden" name="tensp" value="<?php echo $ten_sp; ?>">
+                                    <input type="hidden" name="img" value="<?php echo $img;?>">
+                                    <input type="hidden" name="soluong" value="<?php echo $soluong; ?>">
+                                    <input type="hidden" name="gia" value="<?php echo $gia; ?>">
+                                    <input class="product-cart"  type="submit" value="Add to cart">
+                                    </form>
                                 </div>
                                 <div class="product-tab">
                                     <a class="product-item" href="#">

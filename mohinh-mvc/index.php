@@ -372,6 +372,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                     $vaitro = checkInfo($user, $pass);
                     extract($vaitro);
                     if ($vaitro != null) {
+
                         $_SESSION['ma_tk'] = $ma_tk;
                         $_SESSION['ma_vaitro'] = $ma_vaitro;
                         header("Location: index.php");
@@ -420,6 +421,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 $loadall_sp = getspbynsx($ma_nsx);
                                 $loadall_nsx = loadAll_nsx();
                                 require_once "view/user/sanpham/sanpham.php";
+
                             } else {
                                 $loadall_sp = loadAll_sanpham();
                                 $loadAllNSX = loadAll_nsx();
@@ -427,16 +429,19 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 require_once "view/user/sanpham/sanpham.php";
                             }
                             break;
-                        case 'seach':
-                            if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                                $keyword = $_POST['keyword'];
-
-                                $loadall_sp = getsearch($keyword);
-                                require_once "view/user/sanpham/sanpham.php";
-                            }
+                             
+                            case 'seach':
+                                if($_SERVER['REQUEST_METHOD']== "POST"){
+                                   $keyword = $_POST['keyword']; 
+                                   $loadallDm = loadAll_danhmuc();
+                                   $loadall_sp = getsearch($keyword);
+                                   require_once "view/user/sanpham/sanpham.php";
+                                }
                             break;
-                    }
-                } else {
+                            
+                } 
+                }else{
+
                     $loadall_sp = loadAll_sanpham();
                     $loadAllNSX = loadAll_nsx();
                     $loadallDm = loadAll_danhmuc();
@@ -500,7 +505,14 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 require_once "view/user/checkout/checkout.php";
                 break;
             case 'user':
-                require_once "view/user/account/account.php";
+                if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2) {
+                    if(isset($_SESSION['']))
+                    require_once "view/user/account/account.php";
+
+                }else{
+                    require_once "view/login.php";  
+                }
+              
                 break;
             case 'home':
                 $loadAllNSX = loadAll_nsx();
@@ -515,7 +527,12 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 break;
         }
     } else {
+
         $loadAllNSX = loadAll_nsx();
+
+        $loadallDm = loadAll_danhmuc();
+   
+
         $loadall_sp = loadAll_sanpham();
         require_once "view/user/trangchu/home.php";
     }
