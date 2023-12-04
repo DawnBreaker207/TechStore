@@ -312,6 +312,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                     $vaitro = checkInfo($user, $pass);
                     extract($vaitro);
                     if ($vaitro != null) {
+
                         $_SESSION['ma_tk'] = $ma_tk;
                         $_SESSION['ma_vaitro'] = $ma_vaitro;
                         header("Location: index.php");
@@ -370,11 +371,12 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             case 'seach':
                                 if($_SERVER['REQUEST_METHOD']== "POST"){
                                    $keyword = $_POST['keyword']; 
-                                  
+                                   $loadallDm = loadAll_danhmuc();
                                    $loadall_sp = getsearch($keyword);
                                    require_once "view/user/sanpham/sanpham.php";
                                 }
                             break;
+                            
                 } 
                 }else{
                     $loadall_sp = loadAll_sanpham();
@@ -440,7 +442,14 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 require_once "view/user/checkout/checkout.php";
                 break;   
             case 'user':
-                require_once "view/user/account/account.php";
+                if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2) {
+                    if(isset($_SESSION['']))
+                    require_once "view/user/account/account.php";
+
+                }else{
+                    require_once "view/login.php";  
+                }
+              
                 break;
             case 'home':
                 $loadAllNSX=loadAll_nsx();
@@ -455,6 +464,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 break;
         }
     } else {
+        $loadallDm = loadAll_danhmuc();
         $loadAllNSX=loadAll_nsx();
         $loadall_sp = loadAll_sanpham();
         require_once "view/user/trangchu/home.php";
