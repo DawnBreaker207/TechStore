@@ -17,31 +17,32 @@
                     <a href="#">My Returns</a>
                     <a href="#">My Cancellations</a>
                 </div>
-                <h2>My Wishlist</h2>
+                
             </div>
             <div class="edit">
                 <h2>Edit Your Profile</h2>
                 <form action="" method="">
                     <div class="name">
                         <div class="miniform">
+                            <?php foreach ?>
                             <div class="miniform-group">
-                                <label>First Name</label>
+                                <label><?php echo  ?></label> <br>
                                 <input type="text" name="firstname" id="firstname">
                             </div>
                             <div class="miniform-group">
-                                <label>Last Name</label>
-                                <input type="text" name="lastname" id="lastname">
-                            </div>
-                        </div>
+                                <label>Phone Number</label><br>
+                                <input type="text" name="phonenumber" id="phonenumber">
+                            </div>                                   
+                        </div>                      
                     </div>
                     <div class="name">
                         <div class="miniform">
                             <div class="miniform-group">
-                                <label>Email</label>
+                                <label>Email</label> <br>
                                 <input type="text" name="email" id="email">
                             </div>
                             <div class="miniform-group">
-                                <label>Address</label>
+                                <label>Address</label> <br>
                                 <input type="text" name="address" id="address">
                             </div>
                         </div>
