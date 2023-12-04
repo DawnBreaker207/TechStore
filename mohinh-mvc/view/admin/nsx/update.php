@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,18 +15,18 @@
 <section class="add-admin">
     <div class="add-tt">
         <h1>Sửa danh mục</h1>
-        <form action="index.php?act=danhMuc&nd=update" method="post" enctype="multipart/form-data" id="myForm">
+        <form action="index.php?act=nsx&nd=update" method="post" enctype="multipart/form-data" >
 
-            <?php foreach ($loadOneDM as $dm) {
-                extract($dm)
+            <?php foreach ($loadOneNsx as $list) {
+                extract($list)
                 ?>
-                <label for="madm">Mã danh mục:</label>
-                <input type="text" id="madm" name="madm" value="<?php echo $ma_dm; ?>"><br>
-                <span class="error" id="madmError"></span><br>
+                <label for="mansx">Mã nhà sản xuất:</label>
+                <input type="text" id="mansx" name="mansx" value="<?php echo $ma_nsx; ?>"><br>
+                <span class="error" id="mansxError"></span><br>
 
-                <label for="tendm">Tên danh mục:</label>
-                <input type="text" id="tendm" name="tendm" value="<?php echo $ten_dm; ?>"><br>
-                <span class="error" id="tendmError"></span><br>
+                <label for="tennsx">Tên nhà sản xuất:</label>
+                <input type="text" id="tennsx" name="tennsx" value="<?php echo $ten_nsx; ?>"><br>
+                <span class="error" id="tennsxError"></span><br>
 
                 <label for="img">Hình Ảnh:</label>
                 <input type="file" id="img" name="img" value="<?php echo $img; ?>"><br>
@@ -37,7 +38,7 @@
         <br>
 
 
-        <a href="view/admin/danhmuc/list.php" class="link_dsdm">Danh sách danh mục</a>
+        <a href="view/admin/nsx/list.php" class="link_dsdm">Danh sách danh mục</a>
     </div>
 </section>
 </body>

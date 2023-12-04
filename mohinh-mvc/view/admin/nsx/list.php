@@ -1,12 +1,11 @@
 
-    
     <main>
         <div class="form">
             <form action="" method="post" class="form-serch">
                 <input type="search" class="input-search" placeholder="Tìm kiếm">
                 <input type="submit" value="Gửi" class="btn-sm">
             </form>
-            <a href="index.php?act=danhMuc&nd=addDm" class="btn-add"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"
+            <a href="index.php?act=nsx&nd=addNsx" class="btn-add"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 15.8333L15.8333 10L18.3333 12.5L12.5 18.3333L10 15.8333Z" stroke="#FFFCFE"
                         stroke-linecap="round" stroke-linejoin="round" />
@@ -23,19 +22,19 @@
             <table class="table" border="0">
                 <tr>
                     <td>ID</td>
-                    <td>Tên Danh Mục</td>
+                    <td>Tên nhà sản xuát</td>
                     <td>Ảnh</td>
                     <td>Tùy chỉnh</td>
                 </tr>
-                <?php foreach ($loadallDm as $dm){
-                    extract($dm)?>
+                <?php foreach ($loadallNsx as $list){
+                    extract($list)?>
                 <tr>
 
-                    <td><?php echo $ma_dm; ?></td>
-                    <td><?php  echo $ten_dm; ?></td>
+                    <td><?php echo $ma_nsx; ?></td>
+                    <td><?php  echo $ten_nsx; ?></td>
                     <td><img src="<?php  echo $img; ?>" alt="" style="height: 50px"></td>
-                    <td><a href="index.php?act=danhMuc&nd=update&ma_dm=<?php echo $ma_dm;?>" class="btn-sm">Sửa</a>
-                        <a href="index.php?act=danhMuc&nd=delete&ma_dm=<?php echo $ma_dm;?>" class="btn-sm">Xóa</a>
+                    <td><a href="index.php?act=nsx&nd=update&ma_nsx=<?php echo $ma_nsx;?>" class="btn-sm">Sửa</a>
+                        <a href="index.php?act=nsx&nd=delete&ma_nsx=<?php echo $ma_nsx;?>" class="btn-sm">Xóa</a>
                     </td>
                 </tr>
                 <?php } ?>

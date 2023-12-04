@@ -7,13 +7,14 @@ require_once "models/danhmuc.php";
 require_once "models/sanpham.php";
 require_once "models/binhluan.php";
 require_once "models/donhang.php";
+require_once "models/nsx.php";
 
-if(!isset($_SESSION['mycart'])) {
+if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
 
-$top_seller= best_sell_sanpham();
-$product=  menu_sanpham();
+$top_seller = best_sell_sanpham();
+$product = menu_sanpham();
 if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
 
     require_once "view/admin/ui_admin/header.php";
@@ -31,7 +32,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 $ten_dm = $_POST['tendm'];
                                 $ma_dm = $_POST['madm'];
-                                insert_danhmuc($ten_dm);
+                                $img = img();
+                                insert_danhmuc($ten_dm, $img);
                             } else {
                                 require_once "view/admin/danhmuc/add.php";
                             }
@@ -45,7 +47,15 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 $ten_dm = $_POST['tendm'];
                                 $ma_dm = $_POST['madm'];
-                                update_danhmuc($ma_dm, $ten_dm);
+                                $oldimg = $_POST['oldimg'];
+                                $img = $oldimg;
+                                if (isset($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
+                                    $img = img(); // kiểm tra nếu có ảnh mới thì lấy đường dẫn ảnh mới
+                                } else {
+                                    $img = $_POST['oldimg']; // Sử dụng đường dẫn ảnh cũ nếu không có ảnh mới
+                                }
+                                update_danhmuc($ma_dm, $ten_dm, $img);
+
                                 $loadallDm = loadAll_danhmuc();
                                 require_once "view/admin/danhmuc/list.php";
                             }
@@ -64,6 +74,56 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 } else {
                     $loadallDm = loadAll_danhmuc();
                     require_once "view/admin/danhmuc/list.php";
+                }
+                break;
+            case 'nsx':
+                if (isset($_GET['nd'])) {
+                    switch ($_GET['nd']) {
+                        case 'addNsx':
+                            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                                $ten_nsx = $_POST['tennsx'];
+                                $ma_nsx = $_POST['mansx'];
+                                $img = img();
+                                insert_nsx($ten_nsx, $img);
+                            } else {
+                                require_once "view/admin/nsx/add.php";
+                            }
+                            break;
+                        case 'update':
+                            if (isset($_GET['ma_nsx'])) {
+                                $ma_nsx = $_GET['ma_nsx'];
+                                $loadOneNsx = loadOne_nsx($ma_nsx);
+                                require_once "view/admin/nsx/update.php";
+                            }
+                            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                                $ten_nsx = $_POST['tennsx'];
+                                $ma_nsx = $_POST['mansx'];
+                                $oldimg = $_POST['oldimg'];
+                                $img = $oldimg;
+                                if (isset($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
+                                    $img = img(); // kiểm tra nếu có ảnh mới thì lấy đường dẫn ảnh mới
+                                } else {
+                                    $img = $_POST['oldimg']; // Sử dụng đường dẫn ảnh cũ nếu không có ảnh mới
+                                }
+                                update_nsx($ma_nsx, $ten_nsx, $img);
+                                $loadallNsx = loadAll_nsx();
+                                require_once "view/admin/nsx/list.php";
+                            }
+                            break;
+                        case 'delete':
+                            if (isset($_GET['ma_nsx'])) {
+                                $ma_nsx = $_GET['ma_nsx'];
+                                delete_nsx($ma_nsx);
+                            }
+                            break;
+                        case 'view':
+                            $loadallNsx = loadAll_nsx();
+                            require_once "view/admin/nsx/list.php";
+                            break;
+                    }
+                } else {
+                    $loadallNsx = loadAll_nsx();
+                    require_once "view/admin/nsx/list.php";
                 }
                 break;
 
@@ -182,8 +242,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                         case 'update':
                             if (isset($_GET['ma_sp'])) {
                                 $ma_sp = $_GET['ma_sp'];
-                                $loadAllNSX=loadAll_nsx();
-                                $loadAllDm=loadAll_danhmuc();
+                                $loadAllNSX = loadAll_nsx();
+                                $loadAllDm = loadAll_danhmuc();
                                 $loadOneSp = loadOne_sanpham($ma_sp);
                                 require_once "view/admin/sanpham/update.php";
                             }
@@ -191,10 +251,10 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 $ma_sp = $_POST['masp'];
                                 $ten_sp = $_POST['tensp'];
                                 $oldimg = $_POST['oldimg'];
-                                $img=$oldimg;
+                                $img = $oldimg;
                                 if (isset($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
                                     $img = img(); // kiểm tra nếu có ảnh mới thì lấy đường dẫn ảnh mới
-                                }else {
+                                } else {
                                     $img = $_POST['oldimg']; // Sử dụng đường dẫn ảnh cũ nếu không có ảnh mới
                                 }
                                 $gia = $_POST['gia'];
@@ -202,8 +262,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 $mota = $_POST['mota'];
                                 $ma_nsx = $_POST['ma_nsx'];
                                 $ma_dm = $_POST['ma_dm'];
-                                update_sanpham($ma_sp,$ten_sp, $img, $gia, $mota, $soluong,$ma_nsx,$ma_dm);
-                                $loadall_sp =  loadAll_sanpham();
+                                update_sanpham($ma_sp, $ten_sp, $img, $gia, $mota, $soluong, $ma_nsx, $ma_dm);
+                                $loadall_sp = loadAll_sanpham();
                                 require_once "view/admin/sanpham/list.php";
                             }
 
@@ -325,71 +385,71 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 break;
             case 'signup':
                 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                    $user = $_POST['username'];                  
-                    $pass = $_POST['pass']; 
+                    $user = $_POST['username'];
+                    $pass = $_POST['pass'];
                     $email = $_POST['email'];
                     $dia_chi = '';
                     $sdt = '';
                     $ma_vaitro = 2;
-                   insert_taikhoan($user, $pass, $email, $dia_chi, $sdt, $ma_vaitro);
-                   header("Location: index.php?act=signin");
+                    insert_taikhoan($user, $pass, $email, $dia_chi, $sdt, $ma_vaitro);
+                    header("Location: index.php?act=signin");
                 }
                 require_once "view/user/dangky/dangky.php";
                 break;
-            
-                
-                case 'product':
-                    if (isset($_GET['nd'])) {
-                        switch ($_GET['nd']) {
-                            case 'maDm':
-                                if(isset($_GET['ma_dm'])){
+
+
+            case 'product':
+                if (isset($_GET['nd'])) {
+                    switch ($_GET['nd']) {
+                        case 'maDm':
+                            if (isset($_GET['ma_dm'])) {
                                 $ma_dm = $_GET['ma_dm'];
                                 $loadall_sp = getSpByMadm($ma_dm);
                                 $loadall_dm = loadAll_danhmuc();
                                 require_once "view/user/sanpham/sanpham.php";
-                                }else{
-                                    $loadall_sp = loadAll_sanpham();
-                                $loadAllNSX=loadAll_nsx();
-                                    $loadallDm=loadAll_danhmuc();
+                            } else {
+                                $loadall_sp = loadAll_sanpham();
+                                $loadAllNSX = loadAll_nsx();
+                                $loadallDm = loadAll_danhmuc();
                                 require_once "view/user/sanpham/sanpham.php";
-                                }
-                                break;
-                            case 'nsx':
-                                if(isset($_GET['ma_nsx'])){
-                                    $ma_nsx = $_GET['ma_nsx'];
-                                    $loadall_sp = getspbynsx($ma_nsx);
-                                    $loadall_nsx = loadAll_nsx();
-                                    require_once "view/user/sanpham/sanpham.php";
-                                }else{
-                                    $loadall_sp = loadAll_sanpham();
-                                    $loadAllNSX=loadAll_nsx();
-                                    $loadallDm=loadAll_danhmuc();
-                                require_once "view/user/sanpham/sanpham.php";
-                                }
-                                break;
-                            case 'seach':
-                                if($_SERVER['REQUEST_METHOD']== "POST"){
-                                   $keyword = $_POST['keyword']; 
-                                  
-                                   $loadall_sp = getsearch($keyword);
-                                   require_once "view/user/sanpham/sanpham.php";
-                                }
+                            }
                             break;
-                } 
-                }else{
+                        case 'nsx':
+                            if (isset($_GET['ma_nsx'])) {
+                                $ma_nsx = $_GET['ma_nsx'];
+                                $loadall_sp = getspbynsx($ma_nsx);
+                                $loadall_nsx = loadAll_nsx();
+                                require_once "view/user/sanpham/sanpham.php";
+                            } else {
+                                $loadall_sp = loadAll_sanpham();
+                                $loadAllNSX = loadAll_nsx();
+                                $loadallDm = loadAll_danhmuc();
+                                require_once "view/user/sanpham/sanpham.php";
+                            }
+                            break;
+                        case 'seach':
+                            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                                $keyword = $_POST['keyword'];
+
+                                $loadall_sp = getsearch($keyword);
+                                require_once "view/user/sanpham/sanpham.php";
+                            }
+                            break;
+                    }
+                } else {
                     $loadall_sp = loadAll_sanpham();
-                    $loadAllNSX=loadAll_nsx();
-                    $loadallDm=loadAll_danhmuc();
-                require_once "view/user/sanpham/sanpham.php";
-            }
-                    break;
+                    $loadAllNSX = loadAll_nsx();
+                    $loadallDm = loadAll_danhmuc();
+                    require_once "view/user/sanpham/sanpham.php";
+                }
+                break;
             case 'ctsp':
                 if (isset($_GET['ma_sp'])) {
                     $ma_sp = $_GET['ma_sp'];
-                    $loadAllNSX=loadAll_nsx();
-                     $loadallDm=loadAll_danhmuc();
-                     $loadOneSp = loadOne_sanpham($ma_sp);
-                     $loadall_sp = loadAll_sanpham();
+                    $loadAllNSX = loadAll_nsx();
+                    $loadallDm = loadAll_danhmuc();
+                    $loadOneSp = loadOne_sanpham($ma_sp);
+                    $loadall_sp = loadAll_sanpham();
                     require_once "view/user/ctsp/ctsp.php";
                 }
                 break;
@@ -400,50 +460,50 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 require_once "view/user/about/about.php";
                 break;
             case 'cart':
-                require_once "view/user/cart/cart.php"; 
+                require_once "view/user/cart/cart.php";
                 break;
             case 'addToCart':
                 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                        $ma_sp = $_POST['masp'];
-                        $ten_sp = $_POST['tensp'];
-                        $img = $_POST['img'];
-                        $gia = $_POST['gia'];
-                        $soluong = $_POST['soluong'];
-                        $tien = $soluong * $gia;
-                        $giohang = [$ma_sp,$ten_sp,$img,$gia,$tien,$soluong];
-                        if (isset($_SESSION['mycart'])) {
-                            $cartItems = $_SESSION['mycart'];
-                            $existingItemKey = null;
-                            foreach ($cartItems as $key => $item) {
-                                if ($item[0] == $ma_sp) {
-                                    $existingItemKey = $key;
-                                    break;
-                                }
+                    $ma_sp = $_POST['masp'];
+                    $ten_sp = $_POST['tensp'];
+                    $img = $_POST['img'];
+                    $gia = $_POST['gia'];
+                    $soluong = $_POST['soluong'];
+                    $tien = $soluong * $gia;
+                    $giohang = [$ma_sp, $ten_sp, $img, $gia, $tien, $soluong];
+                    if (isset($_SESSION['mycart'])) {
+                        $cartItems = $_SESSION['mycart'];
+                        $existingItemKey = null;
+                        foreach ($cartItems as $key => $item) {
+                            if ($item[0] == $ma_sp) {
+                                $existingItemKey = $key;
+                                break;
                             }
-                        }  
-                        if ($existingItemKey !== null) {
-                            // Nếu sản phẩm đã tồn tại, tăng số lượng
-                            $cartItems[$existingItemKey][4] += $tien; // Cập nhật tổng tiền
-                            $cartItems[$existingItemKey][5]++; // Tăng số lượng
-                        } else {
-                            // Nếu sản phẩm chưa tồn tại, thêm mới sản phẩm vào giỏ hàng
-                            array_push($cartItems, $giohang);
-                        }  
-                        $_SESSION['mycart'] = $cartItems;
+                        }
                     }
-                    require_once "view/user/cart/cart.php";
+                    if ($existingItemKey !== null) {
+                        // Nếu sản phẩm đã tồn tại, tăng số lượng
+                        $cartItems[$existingItemKey][4] += $tien; // Cập nhật tổng tiền
+                        $cartItems[$existingItemKey][5]++; // Tăng số lượng
+                    } else {
+                        // Nếu sản phẩm chưa tồn tại, thêm mới sản phẩm vào giỏ hàng
+                        array_push($cartItems, $giohang);
+                    }
+                    $_SESSION['mycart'] = $cartItems;
+                }
+                require_once "view/user/cart/cart.php";
                 break;
             case 'cart':
-                    require_once "view/user/cart/cart.php";
-                    break;  
+                require_once "view/user/cart/cart.php";
+                break;
             case 'checkout':
                 require_once "view/user/checkout/checkout.php";
-                break;   
+                break;
             case 'user':
                 require_once "view/user/account/account.php";
                 break;
             case 'home':
-                $loadAllNSX=loadAll_nsx();
+                $loadAllNSX = loadAll_nsx();
                 $loadall_sp = loadAll_sanpham();
                 require_once "view/user/trangchu/home.php";
                 break;
@@ -455,7 +515,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 break;
         }
     } else {
-        $loadAllNSX=loadAll_nsx();
+        $loadAllNSX = loadAll_nsx();
         $loadall_sp = loadAll_sanpham();
         require_once "view/user/trangchu/home.php";
     }

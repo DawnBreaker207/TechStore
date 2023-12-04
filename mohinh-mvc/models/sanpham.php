@@ -18,10 +18,10 @@ function delete_sanpham($ma_sp)
 }
 
 
-function update_sanpham($ma_sp, $ten_sp, $hinhanh, $gia, $mota, $soluong, $ma_nsx, $ma_dm)
+function update_sanpham($ma_sp, $ten_sp, $img, $gia, $mota, $soluong, $ma_nsx, $ma_dm)
 {
     $sql = "UPDATE sanpham SET ten_sp=?,img=?,gia=?,mota=?,soluong=?,ma_nsx=?,ma_dm=? WHERE sanpham.ma_sp =?";
-    return getData($sql, [$ten_sp, $hinhanh, $gia, $mota, $soluong, $ma_nsx, $ma_dm, $ma_sp], false);
+    return getData($sql, [$ten_sp, $img, $gia, $mota, $soluong, $ma_nsx, $ma_dm, $ma_sp], false);
 }
 
 // update_sanpham();
@@ -38,11 +38,7 @@ function loadOne_sanpham($ma_sp)
     return getData($sql, [$ma_sp]);
 }
 
-function loadAll_nsx()
-{
-    $sql = "SELECT * FROM nhasanxuat ";
-    return getData($sql);
-}
+
 
 function best_sell_sanpham()
 {
