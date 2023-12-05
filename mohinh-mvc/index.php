@@ -420,6 +420,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 $ma_nsx = $_GET['ma_nsx'];
                                 $loadall_sp = getspbynsx($ma_nsx);
                                 $loadallNSX = loadAll_nsx();
+                                $loadallDm = loadAll_danhmuc();
                                 require_once "view/user/sanpham/sanpham.php";
                             } else {
                                 $loadall_sp = loadAll_sanpham();
@@ -439,8 +440,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             }
                             break;
                     }
-                }
-                else {
+                } else {
 
                     $loadall_sp = loadAll_sanpham();
                     $loadAllNSX = loadAll_nsx();
