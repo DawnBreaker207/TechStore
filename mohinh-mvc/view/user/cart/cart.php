@@ -8,12 +8,7 @@
     <h1>Giỏ hàng</h1>
     <div class="cart">
       <table id="cart-table">
-        <?php foreach($_SESSION['mycart'] as $key => $cart){
-          // echo "<pre>";
-          // print_r($_SESSION['cart']);
-          // echo "</pre>";
-          
-         ?>
+       
         <thead>
           <tr>
             <th>Product</th>
@@ -23,23 +18,37 @@
           </tr>
         </thead>
         <tr>
-          <td> <div class="cart-item"><a href="" class="a-del"><svg width="16" height="16" viewBox="0 0 8 8" fill="none"
+          <?php $sum_total=0; ?>
+        <?php foreach($_SESSION['mycart'] as $cart){
+          // echo "<pre>";
+          // print_r($_SESSION['mycart']);
+          // echo "</pre>";
+          extract($cart);
+      
+         
+          
+         ?>
+          <td> <div class="cart-item"><a href="index.php?act=deletecart&ma_sp=<?php echo $ma_sp;?>" class="a-del"><svg width="16" height="16" viewBox="0 0 8 8" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 7L4 4M7 1L3.99943 4M3.99943 4L1 1M4 4L7 7" stroke="black" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
             <div class="img_cart">
-              <img src="<?php echo $cart[2];?>" alt="<?php echo $cart[2] ;?>" srcset="" width="100px" height="100px">
-              <p><?php echo $cart[1];?></p>
+              <img src="<?php echo $img;?>" alt="<?php echo $img ;?>" srcset="" width="100px" height="100px">
+              <p><?php echo $ten_sp;?></p>
             </div>
             </div>
           </td>
-          <td><?php echo $cart[3];?></td>
-          <td><form action="" method="post">
-            <input type="number" name="" id="" min="1" class="ip_quantity"></td>
-          <td><?php echo $cart[4];?></td>
+          <td width="50px"><?php echo $gia;?></td>
+          <td width="100px"><form action="" method="post">
+            <input type="number" name="" id="" min="1" class="ip_quantity" value="<?php echo $soluong;?>"></td>
+          <td width="100px"><?php echo ($gia*$soluong);?></td>
+          <?php  $sum_total += (($gia*$soluong));
 
+        // Lưu tổng giá trị vào sesion
+        $_SESSION['resultTotal'] = $sum_total;
+        ?>
         </tr>
         <?php }?>
 
@@ -58,10 +67,14 @@
         <div class="total">
           <div class="tb-total">
             <h3>Cart Total</h3>
+            <?php 
+           
+              
+               ?>
             <div class="your-order-bottom">
               <ul>
                 <li class="your-order-shipping">Subtotal:</li>
-                <li>$1750</li>
+                <li><?php echo number_format((int)$sum_total, 0, ",", ".")?></li>
               </ul>
             </div>
             <hr>
@@ -75,9 +88,11 @@
             <div class="your-order-total">
               <ul>
                 <li class="order-total">Total</li>
-                <li>$100</li>
+                
+                <li><?php echo number_format((int)$sum_total, 0, ",", ".")?><u>đ</u></li>
               </ul>
             </div>
+         
           </div>
           <div class="link-checkout">
             <a href="index.php?act=checkout">Procees to checkout</a>

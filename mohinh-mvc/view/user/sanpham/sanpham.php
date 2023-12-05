@@ -38,7 +38,7 @@
                  ?>
                 <div class="category-col">
                     <a href="" class="category-icon">
-                        <img src="<?php echo $img; ?>" alt="">
+                        <img src="<?php echo $img_dm; ?>" alt="">
                         <div class="icon-name"><?php echo $ten_dm; ?></div>
                     </a>
                 </div>
@@ -69,19 +69,19 @@
         <div class="section-body">
             <div class="section-row">
 
-                              <?php 
-                              foreach ($product as $sp) {
-                                   extract($sp);
+                         <?php foreach ($loadall_sp as $sp) {
+                                    // echo "<pre>";
+                                    // var_dump($sp);
+                                    // echo "</pre>";
                                    ?>
                 <div class="section-col">
 
                     <div class="product">
                         <div class="product-header">
                             <div class="product-image">
-                                <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php echo $ma_sp; ?>">
+                                <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php echo $sp['ma_sp']; ?>">
                                     <img
-                                            src="<?php echo $img; ?>
-                                                "
+                                            src="<?php echo $sp['img']; ?>"
                                             style="height: 250px; "
                                             alt=""
                                             class="product__img"
@@ -109,11 +109,11 @@
                         <div class="product-body">
                             <a href="">
                                 <h3 href="" class="product__title">
-                                  <?php echo $ten_sp; ?>
+                                <?php echo $sp['ten_sp']; ?>
                                 </h3>
                             </a>
                             <div class="product__price">
-                              <?php echo number_format((int)$gia, 0, ",", "."); ?>
+                              <?php echo number_format((int)$sp['gia'], 0, ",", "."); ?>
                                 đ
                             </div>
                             <span class="product__rate">

@@ -1,10 +1,5 @@
-
-
-
-
-
 .path {
-    margin: 80px 0 80px 0;
+    margin: 30px 0 50px 0;
     display: inline-flex;
     gap: 12px;
     font-family: var(--font-title);
@@ -72,7 +67,9 @@
     margin-top: 100px 0;
 }
 
-
+.checkout-cart {
+    margin-bottom: 50px;
+}
 
 .cart-purchase {
     margin: 25px 0;

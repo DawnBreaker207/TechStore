@@ -49,7 +49,7 @@ ul {
 }
 
 .wrapper {
-    margin: 0 135px;
+    margin: 50px 135px;
 }
 
 .long {
@@ -162,10 +162,12 @@ ul {
     font-family: var(--font-title);
     color: var(--text-color);
 }
+
 .path__link {
     text-decoration: none;
     color: var(--text-color);
 }
+
 .header {
     margin: 40px 0 16px 0;
 }

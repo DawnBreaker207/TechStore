@@ -10,7 +10,7 @@
         <table class="table" border="0">
             <tr>
                 <td>ID</td>
-                <td>Tên sản phẩm</td>
+                <td>Tên khách hàng </td>
                 <td>Ngày đặt </td>
                 <td>Tổng tiền </td>
                 <td>Trạng thái </td>
@@ -22,7 +22,7 @@
             ?>
             <tr>           
                 <td><?php echo $ma_dh; ?></td>
-                <td><?php echo $ma_tk; ?></td>
+                <td><?php echo $name; ?></td>
                 <td><?php echo $ngay_dat; ?></td>
                 <td><?php echo $tong_tien; ?> </td>
                 <td><?php echo $ma_trangthai; ?> </td>

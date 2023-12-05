@@ -94,9 +94,8 @@
                     ?>
                         <div class="brand-col">
                             <div class="brand-logo">
-
-                                <a href="index.php?act=product&nd=nsx&ma_nsx=3">
-                                    <img src="<?php echo $nsx['img']; ?>" alt="" class="brand__img" width="150px" height="150px" />
+                                <a href="index.php?act=product&nd=nsx&ma_nsx=<?php echo $nsx['ma_nsx']; ?>">
+                                    <img src="<?php echo $nsx['img_nsx']; ?>" alt="" class="brand__img" width="150px" height="150px" />
                                 </a>
 
                             </div>
@@ -143,7 +142,14 @@
                                     <a href="index.php?act=ctsp&ma_sp=<?php echo $ma_sp; ?>">
                                         <img src="<?php echo $img; ?>" style="height: 250px; " alt="" class="product__img" />
                                     </a>
-                                    <a href="" class="product-cart">Add to cart</a>
+                                    <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="masp" value="<?php echo $ma_sp; ?>">
+                                        <input type="hidden" name="tensp" value="<?php echo $ten_sp; ?>">
+                                        <input type="hidden" name="img" value="<?php echo $img; ?>">
+                                        <input type="hidden" name="soluong" value="1">
+                                        <input type="hidden" name="gia" value="<?php echo $gia; ?>">
+                                        <input class="product-cart" type="submit" value="Add to cart">
+                                    </form>
                                 </div>
                                 <div class="product-tab">
                                     <a class="product-item" href="#">
@@ -255,7 +261,7 @@
                                         <input type="hidden" name="masp" value="<?php echo $ma_sp; ?>">
                                         <input type="hidden" name="tensp" value="<?php echo $ten_sp; ?>">
                                         <input type="hidden" name="img" value="<?php echo $img; ?>">
-                                        <input type="hidden" name="soluong" value="<?php echo $soluong; ?>">
+                                        <input type="hidden" name="soluong" value="1">
                                         <input type="hidden" name="gia" value="<?php echo $gia; ?>">
                                         <input class="product-cart" type="submit" value="Add to cart">
                                     </form>
@@ -298,7 +304,7 @@
         </div>
         <div class="section-footer">
             <div class="section-btn">
-                <a href="" class="section__link">View All Products</a>
+                <a href="index.php?act=product" class="section__link">View All Products</a>
             </div>
         </div>
     </section>

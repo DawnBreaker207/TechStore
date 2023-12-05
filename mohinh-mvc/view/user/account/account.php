@@ -24,9 +24,9 @@
                 <form action="" method="">
                     <div class="name">
                         <div class="miniform">
-                            <?php foreach ?>
+                       
                             <div class="miniform-group">
-                                <label><?php echo  ?></label> <br>
+                                <label>Username</label> <br>
                                 <input type="text" name="firstname" id="firstname">
                             </div>
                             <div class="miniform-group">

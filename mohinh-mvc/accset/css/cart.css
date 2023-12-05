@@ -158,7 +158,7 @@ td {
 .img_cart {
   display: flex;
   text-align: center;
-
+  padding-left: 50px;
 }
 
 ul {

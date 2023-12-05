@@ -1,4 +1,4 @@
-<main class="wrapper">
+<main class="wrapper" >
         <div class="path">
             <span class="tag">Account</span>
             /
@@ -15,28 +15,15 @@
         </div>
         <div class="checkout-info">
             <div class="checkout-form">
+                <form action="index.php?act=checkout" method="POST">
                 <div class="form-group-ck">
                     <label>First Name<span class="required">*</span></label>
                     <input type="text" id="firstname" name="firstname" required>
                     <span></span>
                 </div>
                 <div class="form-group-ck">
-                    <label>Company Name</label>
+                    <label>Delivery Address</label>
                     <input type="text" id="companyname" name="companyname">
-                </div>
-                <div class="form-group-ck">
-                    <label>Street Address<span class="required">*</span></label>
-                    <input type="text" id="streetaddress" name="streetaddress" required>
-                    <span></span>
-                </div>
-                <div class="form-group-ck">
-                    <label>Apartment, floor, etc. (optional)</label>
-                    <input type="text" id="apartment" name="apartment">
-                </div>
-                <div class="form-group-ck">
-                    <label>Town/City<span class="required">*</span></label>
-                    <input type="text" id="towncity" name="towncity" required>
-                    <span></span>
                 </div>
                 <div class="form-group-ck">
                     <label>Phone Number<span class="required">*</span></label>
@@ -49,28 +36,32 @@
                     <span></span>
                 </div>
                 <div class="form-group-ck">
+                    <label>Note<span class="required">*</span></label>
+                    <textarea name="note" id="" cols="60" rows="10"></textarea>
+                    <span></span>
+                </div>
+                <div class="form-group-ck">
                     <input type="checkbox"> Save this information for faster check-out next time 
                 </div>
             </div>
             <div class="checkout-cart">
+                    <?php  foreach($cart as $sp) {
+                        extract($sp);
+                     ?>
                 <div class="product-checkout">
-                    <div class="product-info">
-                        <img src="images/controller.png">
-                        <span>LCD Monitor</span>
-                    </div>
-                    <div class="price">$650</div>
+                    
+                    
+                     <div class="product-checkout"><img src="<?php echo $img; ?>" width="60px" heigth="60px">
+                     <p><?php echo $ten_sp; ?></p>
+                   <p>X<?php echo $soluong; ?></p></div>
+                    <div class="price"><span><?php echo number_format((int)$gia, 0, ",", ".") ?></span></div>
                 </div>
-                <div class="product-checkout">
-                    <div class="product-info">
-                        <img src="images/screen.png">
-                        <span>H1 Gamepad</span>
-                    </div>
-                    <div class="price">$1100</div>
-                </div>
+                <?php  } ?>
+               
                 <div class="cart-info">
                     <span>Subtotal:</span>
-                    <span>$1750</span>
-                </div>
+                    <span><?php echo number_format((int)$_SESSION['resultTotal'], 0, ",", ".") ?></span>
+                </div> 
                 <hr>
                 <div class="cart-info">
                     <span>Shipping:</span>
@@ -79,20 +70,22 @@
                 <hr>
                 <div class="cart-info">
                     <span>Total:</span>
-                    <span>$1750</span>
+                    <span><?php echo number_format((int)$_SESSION['resultTotal'], 0, ",", ".") ?></span>
                 </div>
                 <div class="cart-purchase">
-                    <input type="radio" name="bank" id="bank"><label for="">Bank</label>
+                    <input type="radio" name="pttt" id="bank" value="3"><label for="">Bank</label>
                 </div>
                 <div class="cart-purchase">
-                    <input type="radio" name="cash" id="cash"><label for="">Cash on delivery</label>
+                    <input type="radio" name="pttt" id="cash" value="4"><label for="">Cash on delivery</label>
                 </div>
                 <div class="coupon">
                     <input type="text" name="coupon" id="coupon" placeholder="Coupon Code">
                     <button type="submit">Apply Coupon</button>
                 </div>
                 <div class="order">
+               
                     <button type="submit">Place Order</button>
+                    </form>
                 </div>
             </div>
         </div>
