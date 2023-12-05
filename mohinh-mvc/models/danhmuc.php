@@ -28,7 +28,11 @@
     }
     function getSpByMadm($ma_dm)
 {
-    $sql = "SELECT * FROM sanpham join danhmuc on sanpham.ma_dm=danhmuc.ma_dm  WHERE sanpham.ma_dm=?";
+    $sql = "SELECT sanpham.*, danhmuc.img AS danhmuc_img, sanpham.img AS sanpham_img
+FROM sanpham
+JOIN danhmuc ON sanpham.ma_dm = danhmuc.ma_dm
+WHERE sanpham.ma_dm = ?
+";
     return getData($sql, [$ma_dm]);
 }
     

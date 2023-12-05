@@ -406,7 +406,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             if (isset($_GET['ma_dm'])) {
                                 $ma_dm = $_GET['ma_dm'];
                                 $loadall_sp = getSpByMadm($ma_dm);
-                                $loadall_dm = loadAll_danhmuc();
+                                $loadallDm = loadAll_danhmuc();
                                 require_once "view/user/sanpham/sanpham.php";
                             } else {
                                 $loadall_sp = loadAll_sanpham();
@@ -419,28 +419,28 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             if (isset($_GET['ma_nsx'])) {
                                 $ma_nsx = $_GET['ma_nsx'];
                                 $loadall_sp = getspbynsx($ma_nsx);
-                                $loadall_nsx = loadAll_nsx();
+                                $loadallNSX = loadAll_nsx();
                                 require_once "view/user/sanpham/sanpham.php";
-
                             } else {
                                 $loadall_sp = loadAll_sanpham();
                                 $loadAllNSX = loadAll_nsx();
                                 $loadallDm = loadAll_danhmuc();
                                 require_once "view/user/sanpham/sanpham.php";
                             }
+
                             break;
-                             
-                            case 'seach':
-                                if($_SERVER['REQUEST_METHOD']== "POST"){
-                                   $keyword = $_POST['keyword']; 
-                                   $loadallDm = loadAll_danhmuc();
-                                   $loadall_sp = getsearch($keyword);
-                                   require_once "view/user/sanpham/sanpham.php";
-                                }
+
+                        case 'seach':
+                            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                                $keyword = $_POST['keyword'];
+                                $loadallDm = loadAll_danhmuc();
+                                $loadall_sp = getsearch($keyword);
+                                require_once "view/user/sanpham/sanpham.php";
+                            }
                             break;
-                            
-                } 
-                }else{
+                    }
+                }
+                else {
 
                     $loadall_sp = loadAll_sanpham();
                     $loadAllNSX = loadAll_nsx();
@@ -506,13 +506,12 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 break;
             case 'user':
                 if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2) {
-                    if(isset($_SESSION['']))
-                    require_once "view/user/account/account.php";
-
-                }else{
-                    require_once "view/login.php";  
+                    if (isset($_SESSION['']))
+                        require_once "view/user/account/account.php";
+                } else {
+                    require_once "view/login.php";
                 }
-              
+
                 break;
             case 'home':
                 $loadAllNSX = loadAll_nsx();
@@ -531,7 +530,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
         $loadAllNSX = loadAll_nsx();
 
         $loadallDm = loadAll_danhmuc();
-   
+
 
         $loadall_sp = loadAll_sanpham();
         require_once "view/user/trangchu/home.php";
