@@ -96,7 +96,7 @@
                             <div class="brand-logo">
 
                                 <a href="index.php?act=product&nd=nsx&ma_nsx=3">
-                                    <img src="<?php echo $nsx['img']; ?>" alt="" class="brand__img" width="150px" height="150px" />
+                                    <img src="<?php echo $nsx['img_nsx']; ?>" alt="" class="brand__img" width="150px" height="150px" />
                                 </a>
 
                             </div>

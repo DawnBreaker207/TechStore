@@ -40,18 +40,16 @@
             </div>
             </div>
           </td>
-          <td width="50px"><?php echo $gia;?></td>
+          <td width="50px"><?php  echo number_format((int)$gia, 0, ",", ".") ;?></td>
           <td width="100px"><form action="" method="post">
             <input type="number" name="" id="" min="1" class="ip_quantity" value="<?php echo $soluong;?>"></td>
-          <td width="100px"><?php echo ($gia*$soluong);?></td>
+          <td width="100px"><?php  echo number_format((int)($gia*$soluong), 0, ",", ".") ;?></td>
           <?php  $sum_total += (($gia*$soluong));
-
         // Lưu tổng giá trị vào sesion
         $_SESSION['resultTotal'] = $sum_total;
         ?>
         </tr>
         <?php }?>
-
       </table>
       <a href="" >Update Cart</a>
       </form>

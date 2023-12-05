@@ -69,16 +69,10 @@
         <div class="section-body">
             <div class="section-row">
 
-<<<<<<< HEAD
                          <?php foreach ($loadall_sp as $sp) {
                                     // echo "<pre>";
                                     // var_dump($sp);
                                     // echo "</pre>";
-=======
-                              <?php
-                              foreach ($loadall_sp as $sp) {
-                                   extract($sp);
->>>>>>> ecdf18d76d3384361c63db0799ba4ee65395c059
                                    ?>
                 <div class="section-col">
 
@@ -119,8 +113,7 @@
                                 </h3>
                             </a>
                             <div class="product__price">
-                              <?php echo number_format((int)$sp['gia'], 0, ",", "."); ?>
-                                đ
+                              <?php echo number_format((int)$sp['gia'], 0, ",", "."); ?><u>đ</u>
                             </div>
                             <span class="product__rate">
                     <img src="accset/icon/star.svg" alt=""/>
