@@ -35,7 +35,7 @@
         <!-- End .category -->
         <hr class="hero-column" />
         <div class="hero-slider">
-            <div class="hero-slide active-slide" style="background-image: url(accset/img/slide/slide_0.png); width: 100%">
+            <div class="hero-slide active-slide" style="background-image: url('accset/img/slide/slide_0.png'); width: 100%">
                 <div class="slide-title">
                     <img src="image/slide/logo.png" alt="" />
                     <h1 class="hero__title">
@@ -48,20 +48,20 @@
                 </div>
             </div>
             <!-- End .hero-slide -->
-            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_1.png); width: 100%">
+            <div class="hero-slide " style="background-image: url('accset/img/slide/slide_1.png'); width: 100%">
 
             </div>
             <!-- End .hero-slide -->
-            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_2.png); width: 100%">
+            <div class="hero-slide " style="background-image: url('accset/img/slide/slide_2.png'); width: 100%">
 
                 <!-- End .hero-slide -->
             </div>
             <!-- End .hero-slide -->
-            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_3.png); width: 100%">
+            <div class="hero-slide " style="background-image: url('accset/img/slide/slide_3.png'); width: 100%">
                 <!-- End .hero-slide -->
             </div>
             <!-- End .hero-slide -->
-            <div class="hero-slide " style="background-image: url(accset/img/slide/slide_4.png); width: 100%">
+            <div class="hero-slide " style="background-image: url('accset/img/slide/slide_4.png'); width: 100%">
                 <!-- End .hero-slide -->
             </div>
             <!-- End .hero-slide -->
@@ -94,8 +94,9 @@
                     ?>
                         <div class="brand-col">
                             <div class="brand-logo">
-                                <a href="index.php?act=product&nd=nsx&ma_nsx=<?php echo $nsx['ma_nsx']; ?>">
-                                    <img src="<?php echo $nsx['img_nsx']; ?>" alt="" class="brand__img" width="150px" height="150px" />
+
+                                <a href="index.php?act=product&nd=nsx&ma_nsx=3">
+                                    <img src="<?php echo $nsx['img']; ?>" alt="" class="brand__img" width="150px" height="150px" />
                                 </a>
 
                             </div>

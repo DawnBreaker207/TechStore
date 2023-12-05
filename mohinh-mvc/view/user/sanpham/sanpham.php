@@ -69,10 +69,16 @@
         <div class="section-body">
             <div class="section-row">
 
+<<<<<<< HEAD
                          <?php foreach ($loadall_sp as $sp) {
                                     // echo "<pre>";
                                     // var_dump($sp);
                                     // echo "</pre>";
+=======
+                              <?php
+                              foreach ($loadall_sp as $sp) {
+                                   extract($sp);
+>>>>>>> ecdf18d76d3384361c63db0799ba4ee65395c059
                                    ?>
                 <div class="section-col">
 

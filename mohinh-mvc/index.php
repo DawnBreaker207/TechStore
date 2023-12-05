@@ -323,6 +323,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 }
                 require_once "view/user/dangky/dangky.php";
                 break;
+<<<<<<< HEAD
             
                 
                 case 'product':
@@ -376,6 +377,59 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                         require_once "view/user/sanpham/sanpham.php";
                     }
                     break;
+=======
+
+
+            case 'product':
+                if (isset($_GET['nd'])) {
+                    switch ($_GET['nd']) {
+                        case 'maDm':
+                            if (isset($_GET['ma_dm'])) {
+                                $ma_dm = $_GET['ma_dm'];
+                                $loadall_sp = getSpByMadm($ma_dm);
+                                $loadallDm = loadAll_danhmuc();
+                                require_once "view/user/sanpham/sanpham.php";
+                            } else {
+                                $loadall_sp = loadAll_sanpham();
+                                $loadAllNSX = loadAll_nsx();
+                                $loadallDm = loadAll_danhmuc();
+                                require_once "view/user/sanpham/sanpham.php";
+                            }
+                            break;
+                        case 'nsx':
+                            if (isset($_GET['ma_nsx'])) {
+                                $ma_nsx = $_GET['ma_nsx'];
+                                $loadall_sp = getspbynsx($ma_nsx);
+                                $loadallNSX = loadAll_nsx();
+                                $loadallDm = loadAll_danhmuc();
+                                require_once "view/user/sanpham/sanpham.php";
+                            } else {
+                                $loadall_sp = loadAll_sanpham();
+                                $loadAllNSX = loadAll_nsx();
+                                $loadallDm = loadAll_danhmuc();
+                                require_once "view/user/sanpham/sanpham.php";
+                            }
+
+                            break;
+
+                        case 'seach':
+                            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                                $keyword = $_POST['keyword'];
+                                $loadallDm = loadAll_danhmuc();
+                                $loadall_sp = getsearch($keyword);
+                                require_once "view/user/sanpham/sanpham.php";
+                            }
+                            break;
+                    }
+                } else {
+
+                    $loadall_sp = loadAll_sanpham();
+                    $loadAllNSX = loadAll_nsx();
+                    $loadallDm = loadAll_danhmuc();
+                    require_once "view/user/sanpham/sanpham.php";
+                }
+                break;
+>>>>>>> ecdf18d76d3384361c63db0799ba4ee65395c059
             case 'ctsp':
                 if (isset($_GET['ma_sp'])) {
                     $ma_sp = $_GET['ma_sp'];
@@ -479,7 +533,17 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                     require_once "view/user/checkout/checkout.php";
                         break; 
             case 'user':
+<<<<<<< HEAD
                 require_once "view/user/account/account.php";
+=======
+                if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2) {
+                    if (isset($_SESSION['']))
+                        require_once "view/user/account/account.php";
+                } else {
+                    require_once "view/login.php";
+                }
+
+>>>>>>> ecdf18d76d3384361c63db0799ba4ee65395c059
                 break;
             case 'home':
                 $loadAllNSX=loadAll_nsx();
@@ -494,8 +558,17 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 break;
         }
     } else {
+<<<<<<< HEAD
         $loadAllNSX=loadAll_nsx();
         $loadallDm=loadAll_danhmuc();
+=======
+
+        $loadAllNSX = loadAll_nsx();
+
+        $loadallDm = loadAll_danhmuc();
+
+
+>>>>>>> ecdf18d76d3384361c63db0799ba4ee65395c059
         $loadall_sp = loadAll_sanpham();
         require_once "view/user/trangchu/home.php";
     }
