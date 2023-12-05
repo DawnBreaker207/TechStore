@@ -1,5 +1,5 @@
 <?php
-
+require_once "pdo.php";
 
 function insert_nsx($ten_nsx, $img)
 {

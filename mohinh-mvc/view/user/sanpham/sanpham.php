@@ -69,8 +69,8 @@
         <div class="section-body">
             <div class="section-row">
 
-                              <?php 
-                              foreach ($product as $sp) {
+                              <?php
+                              foreach ($loadall_sp as $sp) {
                                    extract($sp);
                                    ?>
                 <div class="section-col">
