@@ -1,7 +1,7 @@
 
     <div class="form">
-        <form action="" method="post" class="form-serch">
-            <input type="search" class="input-search" placeholder="Tìm kiếm">
+        <form action="index.php?act=taiKhoan&nd=seach" method="post" class="form-serch">
+            <input type="search" name="keyword" class="input-search" placeholder="Tìm kiếm">
             <input type="submit" value="Gửi" class="btn-sm">
         </form>
         <a href="index.php?act=taiKhoan&nd=addTk" class="btn-add"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"
@@ -29,7 +29,7 @@
                 <td>Role</td>
                 <td>Tùy chỉnh</td>
             </tr>
-            <?php foreach ($loalallTK as $tk){
+            <?php foreach ($loadallTK as $tk){
                 extract($tk)?>
             
             <tr>

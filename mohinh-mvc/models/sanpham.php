@@ -1,16 +1,12 @@
 <?php
-require_once "pdo.php";
+
 function insert_sanpham($ten_sp, $img, $gia, $soluong, $mota, $ma_nsx, $ma_dm)
 {
     $sql = "INSERT INTO sanpham( ten_sp, img, gia,soluong, mota, ma_nsx, ma_dm) VALUES (?,?,?,?,?,?,?)";
     return getData($sql, [$ten_sp, $img, $gia, $soluong, $mota, $ma_nsx, $ma_dm], false);
 }
 
-// insert_sanpham('loc','fghjkl',100,'đẹp',3,3);
 
-// echo "<pre>";
-// print_r(loadAll_sanpham());
-// echo "</pre>";
 function delete_sanpham($ma_sp)
 {
     $sql = "DELETE FROM sanpham WHERE ma_sp = ? ";
@@ -55,7 +51,7 @@ function getspbynsx($ma_nsx){
     $sql = "SELECT * FROM sanpham join nhasanxuat on sanpham.ma_nsx=nhasanxuat.ma_nsx  WHERE sanpham.ma_nsx=?";
     return getData($sql, [$ma_nsx]);
 }
-function getSearch( $txt)
+function getSearchsp( $txt)
 {
     
     $keyword = '%' . $txt . '%'; // Thêm '%' ở đầu và cuối chuỗi tìm kiếm

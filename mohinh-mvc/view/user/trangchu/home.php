@@ -95,7 +95,7 @@
                         <div class="brand-col">
                             <div class="brand-logo">
 
-                                <a href="index.php?act=product&nd=nsx&ma_nsx=3">
+                                <a href="index.php?act=product&nd=nsx&ma_nsx=<?php echo $nsx['ma_nsx']; ?>">
                                     <img src="<?php echo $nsx['img_nsx']; ?>" alt="" class="brand__img" width="150px" height="150px" />
                                 </a>
 
@@ -168,7 +168,7 @@
                                     </h3>
                                 </a>
                                 <div class="product__price">
-                                    <?php echo $gia; ?> VND<span class="product__sale">$1160</span>
+                                    <?php echo $gia; ?><u>đ</u>
                                 </div>
                                 <span class="product__rate">
                                     <img src="accset/icon/star.svg" alt="" />
@@ -284,7 +284,7 @@
                                     </h3>
                                 </a>
                                 <div class="product__price">
-                                    <?php echo $gia; ?> VND<span class="product__sale">$1160</span>
+                                    <?php echo $gia; ?> <u>đ</u>
                                 </div>
                                 <span class="product__rate">
                                     <img src="accset/icon/star.svg" alt="" />

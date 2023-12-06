@@ -40,10 +40,10 @@
             </div>
             </div>
           </td>
-          <td width="50px"><?php  echo number_format((int)$gia, 0, ",", ".") ;?></td>
+          <td width="50px"><?php  echo number_format((int)$gia , 0, "," , ".") ;?></td>
           <td width="100px"><form action="" method="post">
             <input type="number" name="" id="" min="1" class="ip_quantity" value="<?php echo $soluong;?>"></td>
-          <td width="100px"><?php  echo number_format((int)($gia*$soluong), 0, ",", ".") ;?></td>
+          <td width="100px"><?php  echo number_format((int)($gia*$soluong), 0, ",", ".") ;?><u>đ</u></td>
           <?php  $sum_total += (($gia*$soluong));
         // Lưu tổng giá trị vào sesion
         $_SESSION['resultTotal'] = $sum_total;
@@ -72,7 +72,7 @@
             <div class="your-order-bottom">
               <ul>
                 <li class="your-order-shipping">Subtotal:</li>
-                <li><?php echo number_format((int)$sum_total, 0, ",", ".")?></li>
+                <li><?php echo number_format((int)$sum_total, 0, ",", ".")?><u>đ</u></li>
               </ul>
             </div>
             <hr>

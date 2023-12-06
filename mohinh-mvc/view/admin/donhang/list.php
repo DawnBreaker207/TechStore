@@ -1,7 +1,7 @@
 
     <div class="form">
-        <form action="" method="post" class="form-serch">
-            <input type="search" class="input-search" placeholder="Tìm kiếm">
+        <form action="index.php?act=donHang&nd=seach" method="post" class="form-serch">
+            <input type="search" name="keyword" class="input-search" placeholder="Tìm kiếm">
             <input type="submit" value="Gửi" class="btn-sm">
         </form>
 

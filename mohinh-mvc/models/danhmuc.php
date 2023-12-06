@@ -31,5 +31,13 @@
     $sql = "SELECT * FROM sanpham join danhmuc on sanpham.ma_dm=danhmuc.ma_dm  WHERE sanpham.ma_dm=?";
     return getData($sql, [$ma_dm]);
 }
+
+function getSearchdm( $txt)
+{
+    
+    $keyword = '%' . $txt . '%'; // Thêm '%' ở đầu và cuối chuỗi tìm kiếm
+    $sql = "SELECT * FROM `danhmuc`  WHERE `ten_dm` LIKE '$keyword' ";
+    return getData($sql );
+}
     
 ?>

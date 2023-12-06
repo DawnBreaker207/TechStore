@@ -14,7 +14,7 @@
 <body>
     <header class="header-admin">
         <div class="name-admin">
-            <h1>Thư</h1>
+            <h1>TechStore</h1>
         </div>
           
             <div class="menu-admin">

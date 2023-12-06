@@ -1,6 +1,6 @@
 
 <?php
-    include_once "pdo.php";
+    
 
     function insert_donhang($ma_tk,$name,$sdt,$email,$diachi,$ghichu, $tong_tien, $ma_trangthai, $ma_pttt){
         
@@ -66,6 +66,13 @@ function updateHuy($id)
     $trangThaiMoi = 0;
     $sql = "UPDATE donhang SET trang_thai = ? WHERE id_dang_ky = ?";
     return getData($sql, [$trangThaiMoi, $id], false);
+}
+function getSearchdh( $txt)
+{
+    
+    $keyword = '%' . $txt . '%'; // Thêm '%' ở đầu và cuối chuỗi tìm kiếm
+    $sql = "SELECT * FROM `donhang`  WHERE `name` LIKE '$keyword' ";
+    return getData($sql );
 }
 
 ?>
