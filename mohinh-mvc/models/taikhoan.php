@@ -40,5 +40,12 @@
             return null;
         }
     }
+    function getSearchtk( $txt)
+{
+    
+    $keyword = '%' . $txt . '%'; // Thêm '%' ở đầu và cuối chuỗi tìm kiếm
+    $sql = "SELECT * FROM `taikhoan`  WHERE `user` LIKE '$keyword' ";
+    return getData($sql );
+}
 
 ?>

@@ -1,8 +1,8 @@
 
     <main>
         <div class="form">
-            <form action="" method="post" class="form-serch btn">
-                <input type="search" class="input-search" placeholder="Tìm kiếm">
+            <form action="index.php?act=sanPham&nd=seach" method="post" class="form-serch btn">
+                <input type="search" name="keyword" class="input-search" placeholder="Tìm kiếm">
                 <input type="submit" value="Gửi" class="btn-sm">
             </form>
             <a href="index.php?act=sanPham&nd=addSp" target="content" class="btn-add"><svg width="16" height="16" viewBox="0 0 20 20"
