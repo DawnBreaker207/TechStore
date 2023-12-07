@@ -46,26 +46,44 @@
         $sql = "SELECT * FROM donhang";
         return getData($sql);
     }
-    function updateDangGiao($id)
+  
+    function loadAll_donhangUser($ma_tk){
+        $sql = "SELECT * FROM donhang where ma_tk =?  order by ma_dh desc";
+        return getData($sql,[$ma_tk]);
+    }
+    function loadOne_pttt($ma_pttt){
+        $sql = "SELECT * FROM `phuongthucthanhtoan` WHERE ma_pttt=?";
+        return getData($sql,[$ma_pttt]);
+    }
+    function loadOne_ttdh($ma_ttdh){
+        $sql = "SELECT * FROM `trangthai` WHERE ma_trangthai=?";
+        return getData($sql,[$ma_ttdh]);
+    }
+
+    function updateDangGiao($ma_dh)
 {
 
     $trangThaiMoi = 2;
 
-    $sql = "UPDATE donhang SET trang_thai = ? WHERE ma_dh = ?";
-    return getData($sql, [$trangThaiMoi, $id], false);
+    $sql = "UPDATE donhang SET ma_trangthai=? WHERE ma_dh=?";
+    return getData($sql, [$trangThaiMoi, $ma_dh], false);
 }
 // Cập nhật trạng thái của đăng ký có ID $id thành "Đang giao" (giả sử 1 là trạng thái đang giao)
-function updateDaGiao($id)
+function updateDaGiao($ma_dh)
 {
-    $trangThaiMoi = 3;
-    $sql = "UPDATE donhang SET trang_thai = ? WHERE id_dang_ky = ?";
-    return getData($sql, [$trangThaiMoi, $id], false);
-}
-function updateHuy($id)
-{
-    $trangThaiMoi = 0;
-    $sql = "UPDATE donhang SET trang_thai = ? WHERE id_dang_ky = ?";
-    return getData($sql, [$trangThaiMoi, $id], false);
-}
 
+    $trangThaiMoi = 3;
+
+    $sql = "UPDATE donhang SET ma_trangthai=? WHERE ma_dh=?";
+    return getData($sql, [$trangThaiMoi, $ma_dh], false);
+}
+function updateHuy($ma_dh)
+{
+
+    $trangThaiMoi = 4;
+
+    $sql = "UPDATE donhang SET ma_trangthai=? WHERE ma_dh=?";
+    return getData($sql, [$trangThaiMoi, $ma_dh], false);
+}
+      
 ?>

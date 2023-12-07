@@ -70,29 +70,27 @@
             <div class="section-row">
 
                          <?php foreach ($loadall_sp as $sp) {
-                                    // echo "<pre>";
-                                    // var_dump($sp);
-                                    // echo "</pre>";
+                               extract($sp)
                                    ?>
                 <div class="section-col">
 
                     <div class="product">
                         <div class="product-header">
                             <div class="product-image">
-                                <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php echo $sp['ma_sp']; ?>">
+                                <a href="index.php?act=ctsp&nd=ctsp&ma_sp=<?php echo $ma_sp; ?>">
                                     <img
-                                            src="<?php echo $sp['img']; ?>"
+                                            src="<?php echo $img;?>"
                                             style="height: 250px; "
                                             alt=""
                                             class="product__img"
                                     />
                                 </a>
                                 <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data" >
-                                    <input type="hidden" name="masp" value="<?php echo $ma_sp; ?>">
-                                    <input type="hidden" name="tensp" value="<?php echo $ten_sp; ?>">
+                                    <input type="hidden" name="masp" value="<?php echo $ma_sp;?>">
+                                    <input type="hidden" name="tensp" value="<?php echo $ten_sp;?>">
                                     <input type="hidden" name="img" value="<?php echo $img;?>">
-                                    <input type="hidden" name="soluong" value="<?php echo $soluong; ?>">
-                                    <input type="hidden" name="gia" value="<?php echo $gia; ?>">
+                                    <input type="hidden" name="soluong" value="1">
+                                    <input type="hidden" name="gia" value="<?php echo $gia;?>">
                                     <input class="product-cart"  type="submit" value="Add to cart">
                                     </form>
 
