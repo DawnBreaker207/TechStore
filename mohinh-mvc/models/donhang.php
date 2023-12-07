@@ -46,27 +46,32 @@
         $sql = "SELECT * FROM donhang";
         return getData($sql);
     }
-    function updateDangGiao($id)
+    function updateDangGiao($ma_dh)
 {
 
     $trangThaiMoi = 2;
 
-    $sql = "UPDATE donhang SET trang_thai = ? WHERE ma_dh = ?";
-    return getData($sql, [$trangThaiMoi, $id], false);
+    $sql = "UPDATE donhang SET ma_trangthai=? WHERE ma_dh=?";
+    return getData($sql, [$trangThaiMoi, $ma_dh], false);
 }
 // Cập nhật trạng thái của đăng ký có ID $id thành "Đang giao" (giả sử 1 là trạng thái đang giao)
-function updateDaGiao($id)
+function updateDaGiao($ma_dh)
 {
+
     $trangThaiMoi = 3;
-    $sql = "UPDATE donhang SET trang_thai = ? WHERE id_dang_ky = ?";
-    return getData($sql, [$trangThaiMoi, $id], false);
+
+    $sql = "UPDATE donhang SET ma_trangthai=? WHERE ma_dh=?";
+    return getData($sql, [$trangThaiMoi, $ma_dh], false);
 }
-function updateHuy($id)
+function updateHuy($ma_dh)
 {
-    $trangThaiMoi = 0;
-    $sql = "UPDATE donhang SET trang_thai = ? WHERE id_dang_ky = ?";
-    return getData($sql, [$trangThaiMoi, $id], false);
+
+    $trangThaiMoi = 4;
+
+    $sql = "UPDATE donhang SET ma_trangthai=? WHERE ma_dh=?";
+    return getData($sql, [$trangThaiMoi, $ma_dh], false);
 }
+    
 function getSearchdh( $txt)
 {
     

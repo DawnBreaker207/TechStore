@@ -40,8 +40,12 @@
                 <td><?php echo $dia_chi; ?></td>
                 <td><?php echo $sdt;?></td>
                 <td><?php echo $ma_vaitro;?></td>           
-                <td><a onclick="return confirm('Bạn có muốn sửa không?');" href="index.php?act=taiKhoan&nd=update&ma_tk=<?php echo $ma_tk; ?>" class="btn-sm">Sửa</a>
+                <td> <?php  if($ma_vaitro>0) {?> 
+                    <a onclick="return confirm('Bạn có muốn sửa không?');" href="index.php?act=taiKhoan&nd=update&ma_tk=<?php echo $ma_tk; ?>" class="btn-sm">Sửa</a>
                     <a onclick="return confirm('Bạn có muốn xóa không?');" href="index.php?act=taiKhoan&nd=delete&ma_tk=<?php echo $ma_tk; ?>" class="btn-sm">Xóa</a>
+                <?php } else {?>
+                    
+                <?php } ?> 
                 </td>
             </tr>
                 <?php } ?>

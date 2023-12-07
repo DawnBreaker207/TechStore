@@ -22,7 +22,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
         switch ($act) {
             case 'trangChu':
                 //Trang chủ đề biểu đồ được không ?
-                include "view/admin/thongke/thongke.php";
+                include "view/admin/home/home.php";
                 break;
             case 'danhMuc':
                 if (isset($_GET['nd'])) {
@@ -259,51 +259,58 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 }
                 break;
 
-            case 'donHang':
-                if (isset($_GET['nd'])) {
-                    switch ($_GET['nd']) {
-                        case 'dangGiao':
-                            if (isset($_GET['id'])) {
-                                $id = $_GET['id'];
-                                updateDangGiao($id);
-                                $loadallDH = loadAll_donhang();
-                                require_once "views/admin/dangKy/list.php";
-                            }
-                            break;
-                        case 'daGiao':
-                            if (isset($_GET['id'])) {
-                                $id = $_GET['id'];
-                                updateDaGiao($id);
-                                $loadallDH = loadAll_donhang();
-                                require_once "views/admin/dangKy/list.php";
-                            }
-                            break;
-                        case 'huy':
-                            if (isset($_GET['id'])) {
-                                $id = $_GET['id'];
-                                updateHuy($id);
-                                $loadallDH = loadAll_donhang();
-                                require_once "views/admin/dangKy/list.php";
-                            }
-                            break;
-                            case 'seach':
-                                if($_SERVER['REQUEST_METHOD'] == "POST"){
-                                   $keyword = $_POST['keyword']; 
-                                   $loadallDH =  getSearchdh($keyword);
-                                     
-                                   require_once "view/admin/donhang/list.php";
-                                }
+                case 'donHang':
+                    if (isset($_GET['nd'])) {
+                        switch ($_GET['nd']) {
+                            case 'viewCtdh':
+                                $loadallDH=loadAll_donhang();
+                                require_once "view/admin/donhang/list.php";
                                 break;
-                        default:
-                            $loadallDH = loadAll_donhang();
-                            require_once "views/admin/donhang/list.php";
-                            break;
-                    }
-                } else {
-                    $loadallDH = loadAll_donhang();
-                    require_once "view/admin/donhang/list.php";
-                }
-                break;
+                            case 'trangthai':
+                                if (isset($_GET['tt'])){
+                                    switch ($_GET['tt']) {
+                                        case 'dangGiao':
+                                            if (isset($_GET['ma_dh'])) {
+                                                $ma_dh = $_GET['ma_dh'];
+                                                updateDangGiao($ma_dh);
+                                                $loadallDH=loadAll_donhang();
+                                                require_once "view/admin/donhang/list.php";
+                                            }
+                                            break;
+                                        case 'daGiao':
+                                            if (isset($_GET['ma_dh'])) {
+                                                $ma_dh = $_GET['ma_dh'];
+                                                updateDaGiao($ma_dh);
+                                                $loadallDH=loadAll_donhang();
+                                                require_once "view/admin/donhang/list.php";
+                                            }
+                                            break;
+                                        case 'huy':
+                                            if (isset($_GET['ma_dh'])) {
+                                                $ma_dh = $_GET['ma_dh'];
+                                                updateHuy($ma_dh);
+                                                $loadallDH=loadAll_donhang();
+                                            require_once "view/admin/donhang/list.php";
+                                            }
+                                            break;
+                                        default:
+                                        $loadallDH=loadAll_donhang();
+                                        require_once "view/admin/donhang/list.php";
+                                            break;
+                                    }
+                                    } 
+                                    else {
+                                        $loadallDH=loadAll_donhang();
+                                        require_once "view/admin/donhang/list.php";
+                                 }
+                             break;
+                            }
+                        }
+                        else {
+                            $loadallDH=loadAll_donhang();
+                            require_once "view/admin/donhang/list.php";
+                        }
+                    break;
 
                 case 'nsx':
                     if (isset($_GET['nd'])) {
@@ -377,7 +384,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
     } else {
         $loadallDm = loadAll_danhmuc();
         
-        require_once "view/admin/danhmuc/list.php";
+        require_once "view/admin/home/home.php";
     }
 
     require_once "view/admin/ui_admin/footer.php";
@@ -487,6 +494,58 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
             case 'cart':
                 require_once "view/user/cart/cart.php";
                 break;
+            case 'donHang':
+            if (isset($_GET['nd'])) {
+                switch ($_GET['nd']) {
+                    case 'viewCtdh':
+                        $loadallDH=loadAll_donhang();
+                        require_once "view/admin/donhang/list.php";
+                        break;
+                    case 'trangthai':
+                        if (isset($_GET['tt'])){
+                            switch ($_GET['tt']) {
+                                case 'dangGiao':
+                                    if (isset($_GET['ma_dh'])) {
+                                        $ma_dh = $_GET['ma_dh'];
+                                        updateDangGiao($ma_dh);
+                                        $loadallDH=loadAll_donhang();
+                                        require_once "view/admin/donhang/list.php";
+                                    }
+                                    break;
+                                case 'daGiao':
+                                    if (isset($_GET['ma_dh'])) {
+                                        $ma_dh = $_GET['ma_dh'];
+                                        updateDaGiao($ma_dh);
+                                        $loadallDH=loadAll_donhang();
+                                        require_once "view/admin/donhang/list.php";
+                                    }
+                                    break;
+                                case 'huy':
+                                    if (isset($_GET['ma_dh'])) {
+                                        $ma_dh = $_GET['ma_dh'];
+                                        updateHuy($ma_dh);
+                                        $loadallDH=loadAll_donhang();
+                                    require_once "view/admin/donhang/list.php";
+                                    }
+                                    break;
+                                default:
+                                $loadallDH=loadAll_donhang();
+                                require_once "view/admin/donhang/list.php";
+                                    break;
+                            }
+                            } 
+                            else {
+                                $loadallDH=loadAll_donhang();
+                                require_once "view/admin/donhang/list.php";
+                         }
+                     break;
+                    }
+                }
+                else {
+                    $loadallDH=loadAll_donhang();
+                    require_once "view/admin/donhang/list.php";
+                }
+            break;
             case 'addToCart':
                 if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     $ma_sp = $_POST['masp'];
@@ -573,8 +632,24 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 require_once "view/user/checkout/checkout.php";
                 break;
             case 'user':
-                require_once "view/user/account/account.php";
+                if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2){
+                    if (isset($_GET['nd'])) {
+                        switch ($_GET['nd']) {
+                            case 'myoder':
+                                require_once "view/user/cart/myoder.php";
+                                break;
+                            case 'myProfile':
+                                break;
+                            case 'editProfile':
+                                    break;
+
+                        }}
+                }else {
+                    require_once "view/user/account/account.php";
+                }
+                
                 break;
+           
             case 'home':
                 $loadAllNSX = loadAll_nsx();
                 $loadall_sp = loadAll_sanpham();

@@ -6,11 +6,11 @@
         </div>
         <div class="account">
             <div class="edit">
-                <h2>My Profile</h2>
+                <h2>Edit Your Profile</h2>
                 <form action="" method="">
                     <div class="name">
                         <div class="miniform">
-                            
+                       
                             <div class="miniform-group">
                                 <label>Username</label> <br>
                                 <input type="text" name="firstname" id="firstname">
@@ -40,7 +40,7 @@
                         <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password">
                     </div>
                     <div class="submit">
-                        
+                        <button type="button">Cancel</button>
                         <button type="submit" class="submit-account">Save Changes</button>
                     </div>
                 </form>
