@@ -20,7 +20,7 @@
           <input type="password" id="repass" name="repass" placeholder="Repassword" required>
         </div>
         <div class="form-group mg-top">
-          <button type="submit" class="btn-sigin">Đăng ký</button>
+          <button onclick="return confirm('Đăng ký thành công');" type="submit" class="btn-sigin">Đăng ký</button>
         </div>
         <div class="switch-signup ">
           <p>Bạn đã có tài khoản ? <a href="index.php?act=signin">Log in</a></p>

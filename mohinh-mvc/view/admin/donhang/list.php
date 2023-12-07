@@ -27,8 +27,8 @@
                 <td><?php echo $tong_tien; ?> </td>
                 <td><?php echo $ma_trangthai; ?> </td>
                 <td><?php echo $ma_pttt; ?> </td>
-                <td><a href="index.php?act=donHang&nd=update&ma_dh=<?php echo $ma_dh; ?>" class="btn-sm">Sửa</a>
-                    <a href="index.php?act=donhang&nd=delete&ma_dh=<?php echo $ma_dh; ?>" class="btn-sm">Xóa</a>
+                <td><a href="index.php?act=donHang&nd=update&ma_dh=<?php echo $ma_dh; ?>" class="btn-sm">Hủy</a>
+                    <a onclick="return confirm('Bạn có muốn xóa không?');" href="index.php?act=donhang&nd=delete&ma_dh=<?php echo $ma_dh; ?>" class="btn-sm">Xóa</a>
                 </td>
             </tr>
             <?php }?>

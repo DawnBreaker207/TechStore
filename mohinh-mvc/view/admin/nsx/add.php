@@ -1,7 +1,7 @@
 <section class="add-admin">
     <div class="add-tt">
         <h1>Thêm nhà sản xuất</h1>
-        <form action="index.php?act=nsx&nd=addNsx" method="post" enctype="multipart/form-data" id="myForm"
+        <form action="index.php?act=nsx&nd=addNsx" method="post" enctype="multipart/form-data" id=""
         >
             <label for="mansx">Mã nhà sản xuất:</label>
             <input type="text" id="mansx" name="mansx"><br>

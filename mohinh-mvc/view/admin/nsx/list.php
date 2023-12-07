@@ -33,8 +33,8 @@
                     <td><?php echo $ma_nsx; ?></td>
                     <td><?php  echo $ten_nsx; ?></td>
                     <td><img src="<?php  echo $img_nsx; ?>" alt="" style="height: 50px"></td>
-                    <td><a href="index.php?act=nsx&nd=update&ma_nsx=<?php echo $ma_nsx;?>" class="btn-sm">Sửa</a>
-                        <a href="index.php?act=nsx&nd=delete&ma_nsx=<?php echo $ma_nsx;?>" class="btn-sm">Xóa</a>
+                    <td><a onclick="return confirm('Bạn có muốn sửa không?');" href="index.php?act=nsx&nd=update&ma_nsx=<?php echo $ma_nsx;?>" class="btn-sm">Sửa</a>
+                        <a onclick="return confirm('Bạn có muốn xóa không?');" href="index.php?act=nsx&nd=delete&ma_nsx=<?php echo $ma_nsx;?>" class="btn-sm">Xóa</a>
                     </td>
                 </tr>
                 <?php } ?>

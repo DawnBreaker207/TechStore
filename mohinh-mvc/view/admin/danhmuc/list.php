@@ -34,8 +34,8 @@
                     <td><?php echo $ma_dm; ?></td>
                     <td><?php  echo $ten_dm; ?></td>
                     <td><img src="<?php  echo $img_dm; ?>" alt="" style="height: 50px"></td>
-                    <td><a href="index.php?act=danhMuc&nd=update&ma_dm=<?php echo $ma_dm;?>" class="btn-sm">Sửa</a>
-                        <a href="index.php?act=danhMuc&nd=delete&ma_dm=<?php echo $ma_dm;?>" class="btn-sm">Xóa</a>
+                    <td><a onclick="return confirm('Bạn có muốn sủa không?');" href="index.php?act=danhMuc&nd=update&ma_dm=<?php echo $ma_dm;?>" class="btn-sm">Sửa</a>
+                        <a onclick="return confirm('Bạn có muốn xóa không?');" href="index.php?act=danhMuc&nd=delete&ma_dm=<?php echo $ma_dm;?>" class="btn-sm">Xóa</a>
                     </td>
                 </tr>
                 <?php } ?>
