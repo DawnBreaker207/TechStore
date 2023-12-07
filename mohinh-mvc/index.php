@@ -312,8 +312,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                     $ten_nsx = $_POST['tennsx'];
                                     $ma_nsx = $_POST['mansx'];
-                                    $img = img();
-                                    insert_nsx($ten_nsx, $img);
+                                    $img_nsx = img();
+                                    insert_nsx($ten_nsx, $img_nsx);
                                 } else {
                                     require_once "view/admin/nsx/add.php";
                                 }

@@ -1,8 +1,8 @@
 <?php
   
-    function insert_danhmuc($ten_dm,$img){
-       $sql = "INSERT INTO  danhmuc (ten_dm,img) VALUES (?,?)";
-       return getData($sql,[$ten_dm,$img], false);
+    function insert_danhmuc($ten_dm,$img_dm){
+       $sql = "INSERT INTO  danhmuc (ten_dm,img_dm) VALUES (?,?)";
+       return getData($sql,[$ten_dm,$img_dm], false);
     }
 
     function delete_danhmuc($ma_dm){

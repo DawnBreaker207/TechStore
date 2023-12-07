@@ -46,8 +46,8 @@
                     <td><?php echo $soluong; ?></td>
                     <td><?php echo $ma_dm; ?></td>
                     <td><?php echo $ma_nsx; ?></td>
-                    <td><a href="index.php?act=sanPham&nd=update&ma_sp=<?php echo $ma_sp; ?>" class="btn-sm">Sửa</a>
-                        <a href="index.php?act=sanPham&nd=delete&ma_sp=<?php echo $ma_sp; ?>" class="btn-sm">Xóa</a>
+                    <td><a onclick="return confirm('Bạn có muốn sửa không?');" href="index.php?act=sanPham&nd=update&ma_sp=<?php echo $ma_sp; ?>" class="btn-sm">Sửa</a>
+                        <a onclick="return confirm('Bạn có muốn xóa không?');" href="index.php?act=sanPham&nd=delete&ma_sp=<?php echo $ma_sp; ?>" class="btn-sm">Xóa</a>
                     </td>
                 </tr>
                 <?php } ?>

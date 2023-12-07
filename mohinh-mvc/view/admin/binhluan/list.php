@@ -26,7 +26,7 @@
                 <td><?php echo $xephang; ?></td>
 
                 <td>
-                    <a href="index.php?act=binhLuan&nd=delete&ma_bl=<?php echo $ma_bl; ?>" class="btn-sm">Xóa</a>
+                    <a onclick="return confirm('Bạn có muốn xóa không?');" href="index.php?act=binhLuan&nd=delete&ma_bl=<?php echo $ma_bl; ?>" class="btn-sm">Xóa</a>
                 </td>
 
             </tr>

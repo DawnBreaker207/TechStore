@@ -168,7 +168,7 @@
                                     </h3>
                                 </a>
                                 <div class="product__price">
-                                    <?php echo $gia; ?><u>đ</u>
+                                <span><?php echo number_format((int)$gia, 0, ",", ".")  ?><u>đ</u></span>
                                 </div>
                                 <span class="product__rate">
                                     <img src="accset/icon/star.svg" alt="" />
@@ -284,7 +284,7 @@
                                     </h3>
                                 </a>
                                 <div class="product__price">
-                                    <?php echo $gia; ?> <u>đ</u>
+                                <span><?php echo number_format((int)$gia, 0, ",", ".")  ?><u>đ</u></span>
                                 </div>
                                 <span class="product__rate">
                                     <img src="accset/icon/star.svg" alt="" />

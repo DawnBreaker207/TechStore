@@ -3,7 +3,7 @@
 
 function insert_nsx($ten_nsx, $img)
 {
-    $sql = "INSERT INTO  nhasanxuat (ten_nsx,img) VALUES (?,?)";
+    $sql = "INSERT INTO  `nhasanxuat` (ten_nsx,img_nsx) VALUES (?,?)";
     return getData($sql, [$ten_nsx, $img], false);
 }
 

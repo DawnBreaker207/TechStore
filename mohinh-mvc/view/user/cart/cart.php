@@ -5,7 +5,7 @@
       /
       <span class="tag">My Account</span>
     </div>
-    <h1>Giỏ hàng</h1>
+    <h1>CART</h1>
     <div class="cart">
       <table id="cart-table">
        
@@ -28,7 +28,7 @@
          
           
          ?>
-          <td> <div class="cart-item"><a href="index.php?act=deletecart&ma_sp=<?php echo $ma_sp;?>" class="a-del"><svg width="16" height="16" viewBox="0 0 8 8" fill="none"
+          <td> <div class="cart-item"><a onclick="return confirm ('Bạn có đồng ý xóa hay không?'); "  href="index.php?act=deletecart&ma_sp=<?php echo $ma_sp; ?>" class="a-del"><svg width="16" height="16" viewBox="0 0 8 8" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 7L4 4M7 1L3.99943 4M3.99943 4L1 1M4 4L7 7" stroke="black" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" />

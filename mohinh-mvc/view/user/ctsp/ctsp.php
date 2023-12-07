@@ -39,7 +39,7 @@
                         <span class="product__status">In Stock</span>
                     </span>
                 <h4 class="product__price">
-                    <?php echo $ctsp['gia']; ?>
+                    <span><?php echo number_format((int)$ctsp['gia'], 0, ",", ".")  ?><u>đ</u></span>
                 </h4>
                 <p class="product__desc">
                     <?php echo $ctsp['mota']; ?>
@@ -56,8 +56,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15"/>
                             </svg>
 
-                        </div>
-                        <div class="btn-quantity">2</div>
+                        </div> 
+                        <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data">
+                        <input type="number" name="soluong" id=""class="btn-quantity 1 " min = "1" value="1">
                         <div class="btn btn-add" onclick="incrementValue()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" class="icon-m">
@@ -68,11 +69,11 @@
                     <a class="btn-buy" href="">
                         Buy Now
                     </a>
-                    <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data">
+                   
                         <input type="hidden" name="masp" value="<?php echo $ctsp['ma_sp']; ?>">
                         <input type="hidden" name="tensp" value="<?php echo $ctsp['ten_sp']; ?>">
                         <input type="hidden" name="img" value="<?php echo $ctsp['img']; ?>">
-                        <input type="hidden" name="soluong" value="<?php echo $ctsp['soluong']; ?>">
+                       
                         <input type="hidden" name="gia" value="<?php echo $ctsp['gia']; ?>">
                         <button class="btn-add-cart" type="submit" >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
