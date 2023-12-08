@@ -637,16 +637,47 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                     if (isset($_GET['nd'])) {
                         switch ($_GET['nd']) {
                             case 'myoder':
+                                if (isset($_SESSION['ma_tk'])) {
+                                    $ma_tk = $_SESSION['ma_tk'];
+                                    $loadallTK = getdonhangBymatk($ma_tk);
+                                
+                               
+                                }
                                 require_once "view/user/cart/myoder.php";
-                                break;
+                                break; 
+                                
                             case 'myProfile':
+                                if (isset($_SESSION['ma_tk'])) {
+                                    $ma_tk = $_SESSION['ma_tk'];
+                                    $loadOneTK = loadOne_tk($ma_tk);
+                                    
+                                require_once "view/user/account/account.php";
+                                }
                                 break;
                             case 'editProfile':
+                                if (isset($_SESSION['ma_tk'])) {
+                                    $ma_tk = $_SESSION['ma_tk'];
+                                    $loadOneTK = loadOne_tk($ma_tk);
+                                    require_once "view/user/account/editprofile.php";
+                                }
+                                if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                                    $ma_tk = $_SESSION['ma_tk'];
+                                    $user = $_SESSION['user'];
+                                    $pass = $_POST['newpassword'];
+                                    $email = $_POST['email'];
+                                    $dia_chi = $_POST['address'];
+                                    $sdt = $_POST['phonenumber'];
+                                    $ma_vaitro = $_SESSION['ma_vaitro'];
+                                    update_taikhoan($ma_tk, $user, $pass, $email, $dia_chi, $sdt, $ma_vaitro);
+                                    $loadallTK = loadAll_tk();
+                                    
+                                require_once "view/user/account/editprofile.php";
                                     break;
-
-                        }}
+                                }
+                            }
+                        }
                 }else {
-                    require_once "view/user/account/account.php";
+                    require_once "view/user/account/account.php";   
                 }
                 
                 break;

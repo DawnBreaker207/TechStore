@@ -12,57 +12,40 @@
                                     <tr>
                                         <th>Mã đơn hàng</th>
                                         <th>Ngày đặt</th>
-                                        <th>Số lượng mặt hàng</th>
+                                        <!-- <th>Số lượng mặt hàng</th> -->
                                         <th>Tổng tiền</th>
                                         <th>Tình trạng đơn hàng</th>
                                         <th>Tình trạng thanh toán</th>
+                                        <th>Hủy</th>
+                                        <th>Xem chi tiết đơn hàng</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
-                                        <?php foreach($loadAllDHUser as $cart) { ?>
-                                            <?php extract($cart) ;
-                                                $ttdh=get_ttdh($ma_trangthai);
-                                            //     extract($ttdh);
-                                            //    echo  $ttdh['ten_trangthai'];
-                                                // echo "<pre>";
-                                                // var_dump($ttdh);
-                                                // echo "</pre>";
-                                                // $countsp=load_cart_count($bill['id']);
-                                                $pttt=loadOne_pttt($ma_pttt)
-                                                // $tttt = get_tttt($bill['bill_thanhtoan']);
-                                            ?>
-                                            <tr>
-                                            <td><?= $ma_dh ;?></td>
-                                            <td><?=$ngay_dat;?></td>
-                                          
-                                            <td><?=number_format($tong_tien) ?>$</td>
-                                            <td><?= $ttdh?></td>
+                                    <?php foreach($loadallTK as $tk){
+                                        extract($tk);
+                                     ?>
+                                    <td><?php echo $ma_dh ?></td>
+                                    <td><?php echo $ngay_dat ?></td>
+                                    <td> <?php echo number_format((int)$tong_tien, 0, ",", ".")  ?><u>đ</u></td>
+                                    <td><?php  ?></td>
+                                    <td><?php  ?></td>
+                                    <td></td>
+                                    <td></td>
+                                       
                                             
-                                            </tr>
-                                        <?php } ?>
-                              
+
+                                            
+                                            
+                                       
+                            
                                 </tbody>
+                                <?php } ?>
                             </table>
+                            
             </div>
         </div>
     </div>
     </div>
 
-    <!-- <script type="text/javascript">
-        function selects(){
-var ele=document.getElementsByName('chk');  
-                for(var i=0; i<ele.length; i++){  
-                    if(ele[i].type=='checkbox')  
-                        ele[i].checked=true;  
-                }  
-            }  
-            function deSelect(){  
-                var ele=document.getElementsByName('chk');  
-                for(var i=0; i<ele.length; i++){  
-                    if(ele[i].type=='checkbox')  
-                        ele[i].checked=false;  
-                }  
-            }  
-    </script> -->
+
     

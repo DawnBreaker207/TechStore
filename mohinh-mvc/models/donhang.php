@@ -80,6 +80,12 @@ function getSearchdh( $txt)
     return getData($sql );
 }
 
+function getdonhangBymatk($ma_tk){
+$sql = "SELECT * FROM `donhang` WHERE ma_tk= ?";
+return getData($sql,[$ma_tk]);
+}
+
+
 function getCtdhbyUser($ma_dh){
     $sql="SELECT chitietdonhang.*,sanpham.ten_sp, sanpham.img, donhang.ma_tk
     FROM chitietdonhang
@@ -99,4 +105,5 @@ function getCountSp($ma_dh){
         $sql="SELECT * FROM `donhang` WHERE ma_dh=?";
         return getData($sql,[$ma_dh]);
    }
+
 ?>
