@@ -49,11 +49,21 @@
 .form-group-ck span {
     color: red;
 }
-
+.checkout-product{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
 .product-checkout {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
+    gap: 5px;
+    align-items: center;
+}
+.price{
+    display: inline-flex;
+    align-items: center;
 }
 
 .product-info span {
@@ -64,7 +74,7 @@
 .cart-info {
     display: flex;
     justify-content: space-between;
-    margin-top: 100px 0;
+    margin: 20px 0;
 }
 
 .checkout-cart {
@@ -93,29 +103,17 @@
     border-radius: 5px;
 }
 
-.coupon button {
-    background-color: red;
+
+.submit-btn{
+    font-family: var(--font-title);
+    background-color: var(--primary-color);
     color: white;
-    width: 100px;
+    padding: 10px 20px;
     font-size: 12px;
     border-radius: 5px;
     border: none;
 }
-
-.coupon button:hover {
-    background-color: gray;
-}
-
-.order button {
-    background-color: red;
-    color: white;
-    width: 100px;
-    height: 30px;
-    font-size: 12px;
-    border-radius: 5px;
-    border: none;
-}
-
-.order button:hover {
-    background-color: gray;
+.submit-btn:hover{
+    background-color: var(--primary-color-hover);
+    color: var(--text-color);
 }

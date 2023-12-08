@@ -26,14 +26,14 @@
                 <td><?php echo $tong_tien; ?> </td>
                 <?php
                 if ($ma_trangthai == 3) {
-                    echo '<td class="red" style="color: blue">Đã giao</td>';
+                    echo '<td class="red" style="color: green">Đã giao</td>';
                    
                 } else if ($ma_trangthai == 1) {
-                    echo '<td class="green" style="color: yellow">Đợi duyệt đơn</td>';
+                    echo '<td class="green" style="color: #9e9e0b">Đang duyệt</td>';
                 } else if ($ma_trangthai == 2) {
-                    echo '<td class="green" style="color: green">Đơn đang giao</td>';
+                    echo '<td class="green" style="color: blue">Đang giao</td>';
                 } else {
-                    echo '<td class="yellow" style="color: red">Đơn hàng đã huỷ</td>';
+                    echo '<td class="yellow" style="color: red">Đã huỷ</td>';
                 }
                 ?>
 
@@ -46,16 +46,16 @@
 
                         <a class="btn-sm" href="index.php?act=donHang&nd=trangthai&tt=dangGiao&ma_dh=<?php echo $ma_dh;?>">Xác nhận</a>
                         <a class="btn-sm" href="index.php?act=donHang&nd=trangthai&tt=huy&ma_dh=<?php echo $ma_dh;?>">Huỷ</a>
-                        <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh">Xem chi tiết đơn hàng </a>
+                        <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh">Chi tiết</a>
                     <?php
                     } else if ($ma_trangthai == 2) { ?>
 
                         <a class="btn-sm" href="index.php?act=donHang&nd=trangthai&tt=daGiao&ma_dh=<?php echo $ma_dh;?>">Đã giao</a>
-                        <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh">Xem chi tiết đơn hàng </a>
+                        <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh">Chi tiết</a>
                     <?php
                     } else {
                     ?>
-                    <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh">Xem chi tiết đơn hàng </a>
+                    <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh">Chi tiết</a>
                     <?php 
                     }
                     ?>
