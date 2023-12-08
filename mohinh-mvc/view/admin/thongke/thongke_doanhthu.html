@@ -1,0 +1,91 @@
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <h2>Biểu đồ doanh thu theo tháng</h2>
+
+<canvas id="chartDoanhThu"  width="500" height="400"></canvas>
+
+<script>
+    // Dữ liệu mẫu, bạn cần thay thế bằng dữ liệu từ cơ sở dữ liệu
+    fetch('models/total_per_month.php')
+        .then(response => response.json())
+        .then(data => {
+            // Dữ liệu cho biểu đồ
+            let revenueData = {
+                labels: data.map(item => item.thang),
+                datasets: [{
+                    label:'Tổng doanh thu',
+                    data: data.map(item => item.tongDoanhThu),
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56','#d3580e','#21e131','#1e30a6','#8c19d3','#cca511','#d3580e'],
+                    borderWidth: 1
+                }, {
+                type:'line',
+                label:'Số lượng đơn hàng',
+                data: data.map(item => item.soluong),
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56','#d3580e','#21e131','#1e30a6','#8c19d3','#cca511','#d3580e'],
+                borderWidth: 1
+            }
+                ]
+            }
+            ;
+
+
+    //         let data = {
+    //     labels: ["Label 1", "Label 2", "Label 3", "Label 4"],
+    //     datasets: [
+    //         {
+    //             label: "Dataset 1",
+    //             data: [10, 20, 30, 40],
+    //             backgroundColor: 'rgba(75, 192, 192, 0.2)',
+    //             borderColor: 'rgba(75, 192, 192, 1)',
+    //             borderWidth: 1
+    //         },
+    //         {
+    //             label: "Dataset 2",
+    //             data: [5, 15, 25, 35],
+    //             backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    //             borderColor: 'rgba(255, 99, 132, 1)',
+    //             borderWidth: 1
+    //         }
+    //     ]
+    // };
+
+    // Cấu hình biểu đồ
+            let options = {
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        stacked: true
+                    }
+                },
+                legend: {
+                    display: true, // Hiển thị chú thích
+                    position: 'top', // Vị trí chú thích: 'top', 'bottom', 'left', 'right'
+                    align: 'center', // Canh lề chú thích: 'start', 'center', 'end'
+                    labels: {
+                        font: {
+                            size: 12 // Kích thước font chú thích
+                        }
+                    }
+                }
+            };
+    // Vẽ biểu đồ
+    let ctx = document.getElementById('chartDoanhThu').getContext('2d');
+    let myChart = new Chart(ctx, {
+        type: 'bar', // Loại biểu đồ
+        data: revenueData,
+        options: {
+            responsive: false,
+            // Tắt tính năng điều chỉnh kích thước tự động
+            maintainAspectRatio: false,
+            // Tắt duy trì tỷ lệ khung hình
+            width: 600, // Đặt chiều rộng
+            height: 500 // Đặt chiều cao
+        }
+    });
+            })
+    .catch(error => console.log('Error fetching data:',error))
+</script>
+

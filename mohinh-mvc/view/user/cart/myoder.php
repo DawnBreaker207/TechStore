@@ -1,13 +1,13 @@
-<div style="width: 80%; margin: 170px 0px;" class="container-fluid">
+<div style="width: 1000px; margin: auto;" >
+    <div class="container-fluid" style="margin: 50px 0" >
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">ĐƠN HÀNG CỦA TÔI</h1>
-    
+
     <!-- DataTales Example -->
-    <div >
         <div >
             <div >
-            <table   width="100%" cellspacing="0">
+            <table  >
                                 <thead>
                                     <tr>
                                         <th>Mã đơn hàng</th>
