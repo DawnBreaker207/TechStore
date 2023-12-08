@@ -79,5 +79,8 @@ function getSearchdh( $txt)
     $sql = "SELECT * FROM `donhang`  WHERE `name` LIKE '$keyword' ";
     return getData($sql );
 }
-
+function getdonhangBymatk($ma_tk){
+$sql = "SELECT * FROM `donhang` WHERE ma_tk= ?";
+return getData($sql,[$ma_tk]);
+}
 ?>
