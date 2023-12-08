@@ -27,7 +27,7 @@
                 <td>Address</td>
                 <td>Phone</td>
                 <td>Role</td>
-                <td>Tùy chỉnh</td>
+
             </tr>
             <?php foreach ($loadallTK as $tk){
                 extract($tk)?>
@@ -39,13 +39,7 @@
                 <td><?php echo $email; ?></td>
                 <td><?php echo $dia_chi; ?></td>
                 <td><?php echo $sdt;?></td>
-                <td><?php echo $ma_vaitro;?></td>           
-                <td> <?php  if($ma_vaitro>0) {?> 
-                    <a onclick="return confirm('Bạn có muốn sửa không?');" href="index.php?act=taiKhoan&nd=update&ma_tk=<?php echo $ma_tk; ?>" class="btn-sm">Sửa</a>
-                    <a onclick="return confirm('Bạn có muốn xóa không?');" href="index.php?act=taiKhoan&nd=delete&ma_tk=<?php echo $ma_tk; ?>" class="btn-sm">Xóa</a>
-                <?php } else {?>
-                    
-                <?php } ?> 
+                <td><?php echo $ma_vaitro;?></td>
                 </td>
             </tr>
                 <?php } ?>

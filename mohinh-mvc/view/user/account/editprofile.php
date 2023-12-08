@@ -42,8 +42,8 @@
                        
                     </div>
                     <div class="submit">
-                        <button type="button">Cancel</button>
-                        <button onclick="return confirm('Sửa tài khoản thành công');" type="submit" class="submit-account">Save Changes</button>
+                        <button type="button" class="cancel-submit">Cancel</button>
+                        <button onclick="return confirm('Bạn có đồng ý sửa tài khoản không ?');" type="submit" class="submit-account">Save Changes</button>
                     </div>
                 </form>
             <?php } ?>

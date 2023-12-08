@@ -124,7 +124,7 @@
 
                             </tbody>
                         </table>
-                        <p class="bill-total" >Tổng thanh toán : <?= number_format($tong ) ?> $</p>
+                        <p class="bill-total" >Tổng thanh toán : <?= number_format($tong ) ?> VND</p>
                                     </div>
                     </div>
 
