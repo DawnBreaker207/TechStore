@@ -85,6 +85,9 @@
     cursor: pointer;
     position: relative;
 }
+.invisible{
+    visibility: hidden;
+}
 .user-option{
     position: absolute;
     z-index: 1000;
@@ -130,4 +133,7 @@
 .long {
     margin: 0;
     padding: 0;
+}
+.cart__img{
+    cursor: pointer;
 }

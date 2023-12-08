@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Menu</title>
     <!--Link CSS-->
     <link rel="stylesheet" href="accset/css/header.css">
@@ -23,43 +23,57 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <!--    End Normalize CSS-->
     <!--Inter Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans:wght@500&family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans:wght@500&family=Roboto&display=swap"
+          rel="stylesheet"/>
     <!--End Inter Font-->
     <!--Poppins Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans:wght@500&family=Poppins&family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans:wght@500&family=Poppins&family=Roboto&display=swap"
+          rel="stylesheet"/>
     <!--End Poppins Font-->
 </head>
 
 <body>
-    <section class="header wrapper">
-        <div class="header-row">
-            <div class="header-col">
-                <a href="index.php?act=home">
-                    <img src="accset/icon/header/logo_header.svg" alt="" class="nav__img" />
-                </a>
-            </div>
-            <div class="header-col">
-                <ul class="header-list">
-                    <li><a href="index.php?act=home" class="header__link">Home</a></li>
-                    <li><a href="index.php?act=product" class="header__link">Product</a></li>
-                    <li><a href="index.php?act=contact" class="header__link">Contact</a></li>
-                    <li><a href="index.php?act=about" class="header__link">About</a></li>
-                    <li><a href="index.php?act=signin" class="header__link">Sign Up</a></li>
-                </ul>
-            </div>  
-            <div class="header-col">
-                <div class="header-function">
-                    <div class="header-search">
-                        
+<section class="header wrapper">
+    <div class="header-row">
+        <div class="header-col">
+            <a href="index.php?act=home">
+                <img src="accset/icon/header/logo_header.svg" alt="" class="nav__img"/>
+            </a>
+        </div>
+        <div class="header-col">
+            <ul class="header-list">
+                <li><a href="index.php?act=home" class="header__link">Home</a></li>
+                <li><a href="index.php?act=product" class="header__link">Product</a></li>
+                <li><a href="index.php?act=contact" class="header__link">Contact</a></li>
+                <li><a href="index.php?act=about" class="header__link">About</a></li>
+                <li><a href="index.php?act=signin" class="header__link">Sign Up</a></li>
+            </ul>
+        </div>
+        <div class="header-col">
+            <div class="header-function">
+                <div class="header-search">
+
                     <form action="index.php?act=product&nd=seach" method="post">
-                        <input type="text" name="keyword" id="" placeholder="What are you looking for?" />
-                        <img src="accset/icon/search.svg" alt="" class="cart__img" />
+                        <input type="text" name="keyword" id="" placeholder="What are you looking for?"/>
+                        <img src="accset/icon/search.svg" alt="" class="cart__img"/>
                     </form>
+                </div>
+                <div class="header-nav">
+                    <div class="header-cart">
+                        <a href="index.php?act=cart" class="header-cart__link">
+                            <img src="accset/icon/cart.svg" alt="" class="cart__img "/>
+                            <?php if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2)  {
+
+                            } ?>
+                            <span class="header-cart--notifi"
+                                  id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
+                        </a>
                     </div>
+
                     <div class="header-nav">
                         <div class="header-cart">
                             <a href="index.php?act=cart" class="header-cart__link">
@@ -121,13 +135,17 @@
                               
                             </div>
 
-                        </div>
-                    </div>
 
+                        <?php }
+
+                        ?>
 
                 </div>
+
+
             </div>
         </div>
-    </section>
-    <hr class="long">
-    <!-- End .header -->
+    </div>
+</section>
+<hr class="long">
+<!-- End .header -->

@@ -104,7 +104,7 @@ ul li {
 }
 
 .btn-sm {
-    width: 40px;
+    width: 60px;
     height: 20px;
     background-color:
         #2A4365;
@@ -115,6 +115,7 @@ ul li {
     color: #F7FAFC;
     border-radius: 5px;
     font-size: 10px;
+    margin: 5px;
 }
 
 .btn-color {
@@ -146,7 +147,7 @@ tr:first-child {
 }
 
 td:last-child {
-    width: 50px;
+    width: 100px;
 
     text-align: center;
 }
@@ -154,6 +155,7 @@ td:last-child {
 td:first-child {
     width: 10px;
     text-align: left;
+    padding: 0 10px;
 }
 
 
