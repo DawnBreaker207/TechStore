@@ -1,7 +1,7 @@
 
 <?php
     
-
+    include_once "pdo.php";
     function insert_donhang($ma_tk,$name,$sdt,$email,$diachi,$ghichu, $tong_tien, $ma_trangthai, $ma_pttt){
         
          
@@ -79,8 +79,31 @@ function getSearchdh( $txt)
     $sql = "SELECT * FROM `donhang`  WHERE `name` LIKE '$keyword' ";
     return getData($sql );
 }
+
 function getdonhangBymatk($ma_tk){
 $sql = "SELECT * FROM `donhang` WHERE ma_tk= ?";
 return getData($sql,[$ma_tk]);
 }
+
+
+function getCtdhbyUser($ma_dh){
+    $sql="SELECT chitietdonhang.*,sanpham.ten_sp, sanpham.img, donhang.ma_tk
+    FROM chitietdonhang
+    JOIN sanpham ON chitietdonhang.ma_sp = sanpham.ma_sp
+    JOIN donhang ON chitietdonhang.ma_dh = donhang.ma_dh
+    WHERE donhang.ma_dh = ?";
+    return getData($sql,[$ma_dh]);
+}
+function getCountSp($ma_dh){
+    $sql="SELECT donhang.ma_dh, COUNT(chitietdonhang.ma_sp) AS NumberOfProducts FROM donhang 
+    LEFT JOIN chitietdonhang ON donhang.ma_dh = chitietdonhang.ma_dh 
+    where donhang.ma_dh=?
+    GROUP BY donhang.ma_dh;";
+    return getData($sql,[$ma_dh]);
+}
+   function getTtdh($ma_dh){
+        $sql="SELECT * FROM `donhang` WHERE ma_dh=?";
+        return getData($sql,[$ma_dh]);
+   }
+
 ?>

@@ -625,11 +625,12 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             insert_ctdh($idBill, $item['ma_sp'], $item['soluong'], $item['gia'], $item['gia'] * $item['soluong']);
                         }
                         unset($_SESSION['mycart']);
-                        $_SESSION['success'] = $idBill;
-                        header("Location: index.php?act=home");
+                        $_SESSION['idbill']=$idBill;
+                        
                     }
                 }
-                require_once "view/user/checkout/checkout.php";
+                $ctdh=getCtdhbyUser($_SESSION['idbill']);
+                require_once "view/user/checkout/bill.php";
                 break;
             case 'user':
                 if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2){
@@ -680,7 +681,12 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 }
                 
                 break;
-           
+           case 'bill':
+            $ctdh=getCtdhbyUser(10);
+            $ttdh=getTtdh(10);
+                 require_once "view/user/checkout/bill.php";
+               
+             break;
             case 'home':
                 $loadAllNSX = loadAll_nsx();
                 $loadall_sp = loadAll_sanpham();
