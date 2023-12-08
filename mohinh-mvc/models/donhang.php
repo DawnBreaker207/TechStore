@@ -97,8 +97,8 @@ function getCtdhbyUser($ma_dh){
 function getCountSp($ma_dh){
     $sql="SELECT donhang.ma_dh, COUNT(chitietdonhang.ma_sp) AS NumberOfProducts FROM donhang 
     LEFT JOIN chitietdonhang ON donhang.ma_dh = chitietdonhang.ma_dh 
-    where donhang.ma_dh=?
-    GROUP BY donhang.ma_dh;";
+    where donhang.ma_dh=?";
+    
     return getData($sql,[$ma_dh]);
 }
    function getTtdh($ma_dh){

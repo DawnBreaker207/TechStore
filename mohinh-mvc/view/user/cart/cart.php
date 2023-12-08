@@ -41,8 +41,11 @@
             </div>
           </td>
           <td width="50px"><?php  echo number_format((int)$gia , 0, "," , ".") ;?> <u>đ</u></td>
-          <td width="100px"><form action="" method="post">
-            <input type="number" name="" id="" min="1" class="ip_quantity" value="<?php echo $soluong;?>"></td>
+          <td width="100px">
+            <form action="index.php?act=updateCart&ma_sp=<?php echo $ma_sp;?>" method="post">
+            <input type="number" name="soluong" id="" min="1" class="ip_quantity" value="<?php echo $soluong;?>">
+            <input type="submit" name="updatecart" value="Cập nhật">
+          </form></td>
           <td width="100px"><?php  echo number_format((int)($gia*$soluong), 0, ",", ".") ;?><u>đ</u></td>
           <?php  $sum_total += (($gia*$soluong));
         // Lưu tổng giá trị vào sesion
@@ -51,8 +54,8 @@
         </tr>
         <?php }?>
       </table>
-      <a href="" >Update Cart</a>
-      </form>
+      
+      
     </div>
     <div class="main">
       <div class="apply-coupon">

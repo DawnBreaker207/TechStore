@@ -494,42 +494,27 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
             case 'cart':
                 require_once "view/user/cart/cart.php";
                 break;
-            case 'donHang':
+            case 'donhang':
             if (isset($_GET['nd'])) {
                 switch ($_GET['nd']) {
                     case 'viewCtdh':
                         $loadallDH=loadAll_donhang();
                         require_once "view/admin/donhang/list.php";
                         break;
-                    case 'trangthai':
+                    case 'status':
                         if (isset($_GET['tt'])){
                             switch ($_GET['tt']) {
-                                case 'dangGiao':
-                                    if (isset($_GET['ma_dh'])) {
-                                        $ma_dh = $_GET['ma_dh'];
-                                        updateDangGiao($ma_dh);
-                                        $loadallDH=loadAll_donhang();
-                                        require_once "view/admin/donhang/list.php";
-                                    }
-                                    break;
-                                case 'daGiao':
-                                    if (isset($_GET['ma_dh'])) {
-                                        $ma_dh = $_GET['ma_dh'];
-                                        updateDaGiao($ma_dh);
-                                        $loadallDH=loadAll_donhang();
-                                        require_once "view/admin/donhang/list.php";
-                                    }
-                                    break;
+
                                 case 'huy':
                                     if (isset($_GET['ma_dh'])) {
                                         $ma_dh = $_GET['ma_dh'];
                                         updateHuy($ma_dh);
-                                        $loadallDH=loadAll_donhang();
+                                        $loadallDh= getdonhangBymatk($_SESSION['ma_tk']);
                                     require_once "view/admin/donhang/list.php";
                                     }
                                     break;
                                 default:
-                                $loadallDH=loadAll_donhang();
+                                $loadallDh=loadAll_donhang();
                                 require_once "view/admin/donhang/list.php";
                                     break;
                             }
@@ -545,7 +530,23 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                     $loadallDH=loadAll_donhang();
                     require_once "view/admin/donhang/list.php";
                 }
-            break;
+                break;
+            case 'updateCart':
+                if(isset($_POST["updatecart"]))
+                { 
+                $fl=0;
+                       for ($i=0; $i < sizeof($_SESSION['mycart']); $i++) {
+
+                        if($_SESSION['mycart'][$i]['ma_sp']==$_GET["ma_sp"]){
+                            $fl=1;
+                            $_SESSION['mycart'][$i]['soluong']=$_POST['soluong'];
+                            break;               
+                        }
+                
+                    }
+                }
+                require_once "view/user/cart/cart.php";
+                break;
             case 'addToCart':
                 if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     $ma_sp = $_POST['masp'];
@@ -626,11 +627,10 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                         }
                         unset($_SESSION['mycart']);
                         $_SESSION['idbill']=$idBill;
-                        
+                        header("location: index.php?act=user&nd=myoder");
                     }
                 }
-                $ctdh=getCtdhbyUser($_SESSION['idbill']);
-                require_once "view/user/checkout/bill.php";
+                require_once "view/user/checkout/checkout.php";
                 break;
             case 'user':
                 if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2){
@@ -639,7 +639,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             case 'myoder':
                                 if (isset($_SESSION['ma_tk'])) {
                                     $ma_tk = $_SESSION['ma_tk'];
-                                    $loadallTK = getdonhangBymatk($ma_tk);
+                                    $loadallDh = getdonhangBymatk($ma_tk);
                                 
                                
                                 }
@@ -682,10 +682,10 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 
                 break;
            case 'bill':
-            $ctdh=getCtdhbyUser(10);
-            $ttdh=getTtdh(10);
+              
+            // $ctdh=getCtdhbyUser($_SESSION['idbill']);
+            // $ttdh=getTtdh($_SESSION['idbill']);
                  require_once "view/user/checkout/bill.php";
-               
              break;
             case 'home':
                 $loadAllNSX = loadAll_nsx();
