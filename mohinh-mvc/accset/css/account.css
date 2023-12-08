@@ -80,4 +80,16 @@ button[type=button] {
     font-family: var(--font-title);
     background-color: rgb(232, 89, 89);
     color: white;
+    cursor: pointer;
+}
+.submit-account:hover{
+    background-color: var(--primary-color-hover);
+    color: var(--text-color);
+}
+.cancel-submit{
+    font-family: var(--font-heading);
+    cursor: pointer;
+}
+.cancel-submit:hover{
+    background-color: #BB2F2FFF;
 }

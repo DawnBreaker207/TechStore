@@ -10,9 +10,9 @@
         return getData($sql,[$ma_dm], false);
     }
 
-    function update_danhmuc($ma_dm, $ten_dm, $img){
-        $sql = "UPDATE danhmuc SET ten_dm=?, img=? WHERE ma_dm=?";
-        return getData($sql,[$ten_dm,$img,$ma_dm], false);
+    function update_danhmuc($ma_dm, $ten_dm, $img_dm){
+        $sql = "UPDATE danhmuc SET ten_dm=?, img_dm=? WHERE ma_dm=?";
+        return getData($sql,[$ten_dm,$img_dm,$ma_dm], false);
 
 
     }
