@@ -59,10 +59,7 @@
     </div>
     <div class="main">
       <div class="apply-coupon">
-        <form action="" method="post">
-          <input type="text" class="ip-text" placeholder="Coupon Code">
-          <input type="submit" value="Apply Coupon" class="ip-submit">
-        </form>
+        
       </div>
       <div class="right-side">
         <div class="total">

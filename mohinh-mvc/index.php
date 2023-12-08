@@ -11,7 +11,7 @@ require_once "models/nsx.php";
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
-
+$sp=0;
 $top_seller = best_sell_sanpham();
 $product =  menu_sanpham();
 if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
@@ -497,10 +497,6 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
             case 'donhang':
             if (isset($_GET['nd'])) {
                 switch ($_GET['nd']) {
-                    case 'viewCtdh':
-                        $loadallDH=loadAll_donhang();
-                        require_once "view/admin/donhang/list.php";
-                        break;
                     case 'status':
                         if (isset($_GET['tt'])){
                             switch ($_GET['tt']) {
@@ -548,6 +544,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 require_once "view/user/cart/cart.php";
                 break;
             case 'addToCart':
+              
                 if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     $ma_sp = $_POST['masp'];
                     $ten_sp = $_POST['tensp'];
@@ -579,8 +576,10 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                         $cartItems[$existingItemKey]['soluong']++; // Tăng số lượng
                     } else {
                         // Nếu sản phẩm chưa tồn tại, thêm mới sản phẩm vào giỏ hàng
-                        array_push($cartItems, $giohang);
+                        array_push($cartItems, $giohang); 
+                        
                     }
+                   
                     $_SESSION['mycart'] = $cartItems;
                 }
                 require_once "view/user/cart/cart.php";
@@ -682,10 +681,11 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 
                 break;
            case 'bill':
-              
-            // $ctdh=getCtdhbyUser($_SESSION['idbill']);
-            // $ttdh=getTtdh($_SESSION['idbill']);
-                 require_once "view/user/checkout/bill.php";
+            if (isset($_GET['ma_dh'])) {
+                $ma_dh = $_GET['ma_dh'];
+                    $ctdh=getCtdhbyUser($ma_dh);
+                    $ttdh=getTtdh($ma_dh);
+                 require_once "view/user/checkout/bill.php";}
              break;
             case 'home':
                 $loadAllNSX = loadAll_nsx();

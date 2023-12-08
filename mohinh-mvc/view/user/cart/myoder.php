@@ -12,7 +12,7 @@
                                     <tr>
                                         <th>Mã đơn hàng</th>
                                         <th>Ngày đặt</th>
-                                        <!-- <th>Số lượng mặt hàng</th> -->
+                                        <th>Số lượng mặt hàng</th>
                                         <th>Tổng tiền</th>
                                         <th>Tình trạng đơn hàng</th>
                                         <th>Tình trạng thanh toán</th>
@@ -21,9 +21,12 @@
                                 <tbody>
                                     <?php foreach($loadallDh as $tk){
                                         extract($tk);
+                                        $spincart=getCountSp($ma_dh);
+                                        $sl=sizeof($spincart);
                                      ?>
                                     <td><?php echo $ma_dh ?></td>
                                     <td><?php echo $ngay_dat ?></td>
+                                    <td><?php echo $sl; ?></td>
                                     <td> <?php echo number_format((int)$tong_tien, 0, ",", ".")  ?><u>đ</u></td>
                                     <?php 
                                      if ($ma_trangthai == 3) {
@@ -41,15 +44,14 @@
                                             <?php
                                             } else if ($ma_trangthai == 1) { ?>
                                                 <a class="btn-sm" href="index.php?act=donhang&nd=status&tt=huy&ma_dh=<?php echo $ma_dh;?>">Huỷ</a>
-                                                <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh">Chi tiết</a>
+                                                <a class="btn-sm"href="index.php?act=bill&ma_dh=<?= $ma_dh; ?>">Chi tiết</a>
                                             <?php
                                             }else {?>
 
-                                    <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh">Chi tiết</a>
+                                    <a class="btn-sm" href="index.php?act=bill&ma_dh=<?= $ma_dh; ?>">Chi tiết</a>
                                           <?php  }
                                       ?></td>
-                                    <td></td>
-                                    <td></td>
+                                    
                                        
                                             
 

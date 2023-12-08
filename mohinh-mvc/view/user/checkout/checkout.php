@@ -78,10 +78,6 @@
                 <div class="cart-purchase">
                     <input type="radio" name="pttt" id="cash" value="4"><label for="">Cash on delivery</label>
                 </div>
-                <div class="coupon">
-                    <input type="text" name="coupon" id="coupon" placeholder="Coupon Code">
-                    <button type="submit" class="submit-btn">Apply Coupon</button>
-                </div>
                 <div class="order">
                
                     <button type="submit" class="submit-btn"> <a  href=""></a>Place Order</button>
