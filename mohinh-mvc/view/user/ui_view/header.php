@@ -50,6 +50,7 @@
                 <li><a href="index.php?act=product" class="header__link">Product</a></li>
                 <li><a href="index.php?act=contact" class="header__link">Contact</a></li>
                 <li><a href="index.php?act=about" class="header__link">About</a></li>
+
                 <?php
                 if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2){
 
@@ -90,13 +91,8 @@
                                 </a>';
                             }
                             ?>
-<!--                            <a href="index.php?act=cart" class="header-cart__link">-->
-<!--                                <img src="accset/icon/cart.svg" alt="" class="cart__img " />-->
-<!--                                <span class="header-cart--notifi" id="totalProduct">-->
-                            <?php //= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?>
-                                    <!--</span>-->
-<!--                            </a>-->
                         </div>
+                        
                         <div class="header-user">
 
                               <?php

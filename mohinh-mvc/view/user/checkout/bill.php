@@ -24,10 +24,10 @@
         margin-left: 18px;
     }
     .cart__title{
-        font-family: var(--font-heading);
+      
     }
     .bill-info{
-        font-family: var(--font-title);
+       
         font-size: 17px ;
     }
     .radio label {
@@ -45,20 +45,19 @@
     .bill-total{
         color: red;
         font-size: 20px;
-        font-family: var(--font-title);
-        font-weight: var(--font-bold);
+        
     }
     .bill-item td{
        padding: 20px 0;
          }
 </style>
-<link rel="stylesheet" href="./styles/core-style.css">
+
 
 <body>
 <?php
     foreach($ttdh as $ttdh){
         extract($ttdh);
-    }
+    
 ?>
     <div class="cart-table-area section-padding-100">
         <div class="container-fluid">
@@ -66,7 +65,7 @@
                 <div class="col-12 col-lg-10">
                     <div class="checkout_details_area mt-50 clearfix">
                         <div class="cart-title">
-                            <h1 class="cart__title">Đặt hàng thành công !</h1>
+                            <h1 class="cart__title">Thông tin đơn hàng </h1>
                         </div>
                         <div class="bill-info">
                             <h2>Thông tin khách hàng :</h2><br>
@@ -78,7 +77,7 @@
                             <p>Ngày lập hóa đơn : <?= $ngay_dat; ?></p>
                         </div>
 
-
+                    <?php } ?>
 
                     </div>
                     <div class="col-12 col-lg-12">
