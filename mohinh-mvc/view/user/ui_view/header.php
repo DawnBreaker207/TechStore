@@ -63,16 +63,6 @@
                     </form>
                 </div>
                 <div class="header-nav">
-                    <div class="header-cart">
-                        <a href="index.php?act=cart" class="header-cart__link">
-                            <img src="accset/icon/cart.svg" alt="" class="cart__img "/>
-                            <?php if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2)  {
-
-                            } ?>
-                            <span class="header-cart--notifi"
-                                  id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
-                        </a>
-                    </div>
 
                     <div class="header-nav">
                         <div class="header-cart">
@@ -134,11 +124,6 @@
                                  ?> 
                               
                             </div>
-
-
-                        <?php }
-
-                        ?>
 
                 </div>
 
