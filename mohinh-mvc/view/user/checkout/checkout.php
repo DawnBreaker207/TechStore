@@ -48,7 +48,7 @@
                     <?php  foreach($cart as $sp) {
                         extract($sp);
                      ?>
-                <div class="product-checkout">
+                <div class="checkout-product">
                     
                     
                      <div class="product-checkout"><img src="<?php echo $img; ?>" width="60px" heigth="60px">
@@ -80,11 +80,11 @@
                 </div>
                 <div class="coupon">
                     <input type="text" name="coupon" id="coupon" placeholder="Coupon Code">
-                    <button type="submit">Apply Coupon</button>
+                    <button type="submit" class="submit-btn">Apply Coupon</button>
                 </div>
                 <div class="order">
                
-                    <button type="submit"> <a  href=""></a>Place Order</button>
+                    <button type="submit" class="submit-btn"> <a  href=""></a>Place Order</button>
                     </form>
                 </div>
             </div>

@@ -46,6 +46,7 @@
                 </p>
             </div>
             <div class="detail-col">
+                        <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data">
                 <div class="detail-function">
 
 
@@ -56,33 +57,28 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15"/>
                             </svg>
 
-                        </div> 
-                        <form action="index.php?act=addToCart" method="post" enctype="multipart/form-data">
-                        <input type="number" name="soluong" id=""class="btn-quantity 1 " min = "1" value="1">
-                        <div class="btn btn-add" onclick="incrementValue()">
+                        </div>
+                        <input type="number" name="soluong" id="" class="btn-quantity" min = "1" value="1">
+
+                            <div class="btn btn-add" onclick="incrementValue()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" class="icon-m">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
                             </svg>
                         </div>
                     </div>
-                    <a class="btn-buy" href="">
-                        Buy Now
-                    </a>
-                   
+
                         <input type="hidden" name="masp" value="<?php echo $ctsp['ma_sp']; ?>">
                         <input type="hidden" name="tensp" value="<?php echo $ctsp['ten_sp']; ?>">
                         <input type="hidden" name="img" value="<?php echo $ctsp['img']; ?>">
                        
                         <input type="hidden" name="gia" value="<?php echo $ctsp['gia']; ?>">
                         <button class="btn-add-cart" type="submit" >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor" class="icon-m">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
-                        </svg>
+                               Add to cart
+
                         </button>
-                    </form>
                 </div>
+                    </form>
                 <div class="product-deliver">
                     <div class="deliver-item free-deliver">
                         <div class="deliver__img">
@@ -172,14 +168,7 @@
                                     </a>
                                     <a href="" class="product-cart">Add to cart</a>
                                 </div>
-                                <div class="product-tab">
-                                    <a class="product-item" href="#">
-                                        <img src="accset/icon/heart.svg" alt=""/>
-                                    </a>
-                                    <a class="product-item" href="#">
-                                        <img src="accset/icon/view.svg" alt=""/>
-                                    </a>
-                                </div>
+
                             </div>
                             <div class="product-body">
                                 <a href="">

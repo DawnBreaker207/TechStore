@@ -152,14 +152,7 @@
                                         <input class="product-cart" type="submit" value="Add to cart">
                                     </form>
                                 </div>
-                                <div class="product-tab">
-                                    <a class="product-item" href="#">
-                                        <img src="accset/icon/heart.svg" alt="" />
-                                    </a>
-                                    <a class="product-item" href="#">
-                                        <img src="accset/icon/view.svg" alt="" />
-                                    </a>
-                                </div>
+
                             </div>
                             <div class="product-body">
                                 <a href="">
@@ -268,14 +261,7 @@
                                     </form>
                                 </div>
 
-                                <div class="product-tab">
-                                    <a class="product-item" href="#">
-                                        <img src="accset/icon/heart.svg" alt="" />
-                                    </a>
-                                    <a class="product-item" href="#">
-                                        <img src="accset/icon/view.svg" alt="" />
-                                    </a>
-                                </div>
+
                             </div>
                             <div class="product-body">
                                 <a href="">
