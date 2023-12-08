@@ -1,7 +1,10 @@
 <style>
     .cart-table-area {
-        margin-top: 200px;
-        margin-left: 210px;
+        width: 1000px;
+        margin: auto;
+    }
+    .container-fluid{
+        margin: 50px 0;
     }
     .cart-summary {
         text-align: left;
@@ -20,7 +23,13 @@
         font-size: 18px;
         margin-left: 18px;
     }
-
+    .cart__title{
+        font-family: var(--font-heading);
+    }
+    .bill-info{
+        font-family: var(--font-title);
+        font-size: 17px ;
+    }
     .radio label {
         margin-right: 8px;
     }
@@ -33,30 +42,38 @@
     table img {
         width: 50px;
     }
+    .bill-total{
+        color: red;
+        font-size: 20px;
+        font-family: var(--font-title);
+        font-weight: var(--font-bold);
+    }
+    .bill-item td{
+       padding: 20px 0;
+         }
 </style>
 <link rel="stylesheet" href="./styles/core-style.css">
 
+<body>
 <?php
     foreach($ttdh as $ttdh){
         extract($ttdh);
     }
 ?>
-
-<body>
     <div class="cart-table-area section-padding-100">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-lg-10">
                     <div class="checkout_details_area mt-50 clearfix">
                         <div class="cart-title">
-                            <h2>Đặt hàng thành công !</h2>
+                            <h1 class="cart__title">Đặt hàng thành công !</h1>
                         </div>
-                        <div>
-                            <h3>Thông tin khách hàng :</h3><br>
+                        <div class="bill-info">
+                            <h2>Thông tin khách hàng :</h2><br>
                             <p>Người đặt hàng : <?= $name; ?></p>
                             <p>Số điện thoại : <?= $sdt ?></p>
                             <p>Địa chỉ : <?= $diachi;?></p>
-                            <p>email : <?= $email; ?></p>
+                            <p>Email : <?= $email; ?></p>
                             <p>Phương thức thanh toán : <?= $ma_pttt; ?></p>
                             <p>Ngày lập hóa đơn : <?= $ngay_dat; ?></p>
                         </div>
@@ -83,17 +100,17 @@
                                     extract($cart);
                                     $tong=$tong_tien;
                                     ?>
-                                    <tr>
+                                    <tr class="bill-item">
                                         <td class="cart_product_img">
                                             <img src="<?= $img;?> " alt="">
                                         </td>
                                         <td class="cart_product_desc">
                                             <h5><?= $ten_sp ?></h5>
                                         </td>
-                                        <td class="price">
+                                        <td class="price-bill">
                                             <span><?= number_format($dongia); ?><u>đ</u></span>
                                         </td>
-                                        <td class="price">
+                                        <td class="item-quantity">
                                             <span><?= $soluong; ?></span>
                                         </td>
 
@@ -108,8 +125,7 @@
 
                             </tbody>
                         </table>
-                        <p class="tien" style="color: red;
-    font-size: 16px;">Tổng thanh toán : <?= number_format($tong ) ?> $</p>
+                        <p class="bill-total" >Tổng thanh toán : <?= number_format($tong ) ?> $</p>
                                     </div>
                     </div>
 
@@ -125,3 +141,4 @@
             </div>
         </div>
     </div>
+</body>

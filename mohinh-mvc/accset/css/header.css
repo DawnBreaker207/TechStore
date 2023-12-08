@@ -108,6 +108,7 @@
     justify-content: flex-start;
     gap:16px ;
     color: var(--text-color-2);
+    text-decoration: none;
 
 }
 .user-block:hover {
