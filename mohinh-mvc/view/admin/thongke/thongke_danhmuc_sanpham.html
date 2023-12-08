@@ -1,0 +1,40 @@
+
+<!-- Liên kết từ CDN (nếu bạn có kết nối internet) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <h2>Biểu Đồ thống kê số lượng theo danh mục </h2>
+
+    <!-- Phần tử canvas để vẽ biểu đồ -->
+    <canvas id="chartSanPham"></canvas>
+
+    <script>
+        // Dữ liệu mẫu cho biểu đồ pie
+        fetch('models/total_category.php')
+            .then(response => response.json())
+            .then(data => {
+                // Dữ liệu cho biểu đồ
+                let revenueData = {
+                    labels: data.map(item => item.tendm),
+                    datasets: [{
+                        data: data.map(item => item.count_sp),
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56','#d3580e','#21e131','#1e30a6','#8c19d3','#cca511','#d3580e',]
+                    }]
+                };
+
+        // Lấy thẻ canvas và vẽ biểu đồ pie
+        var ctx = document.getElementById('chartSanPham').getContext('2d');
+        var revenueChart = new Chart(ctx, {
+            type: 'pie',
+            data: revenueData,
+            options: {
+                responsive: false, // Tắt tính năng điều chỉnh kích thước tự động
+                maintainAspectRatio: false, // Tắt duy trì tỷ lệ khung hình
+                width: 300, // Đặt chiều rộng
+                height: 300 // Đặt chiều cao
+
+            }
+        });
+                })
+            .catch(error => console.log('Error fetching data:', error));
+    </script>
+
