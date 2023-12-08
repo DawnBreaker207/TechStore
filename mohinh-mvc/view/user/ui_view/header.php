@@ -67,12 +67,20 @@
                                 <span class="header-cart--notifi" id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                             </a>
                         </div>
-        
                         <div class="header-user">
-                            <div class="user-block">
-                                <a href="index.php?act=signin"><svg xmlns="http://www.w3.org/2000/svg" fill="transparent" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-l user__account">
+                       <?php if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2){?>
+                          <?php echo  '<div class="user-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="transparent" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-l user__account">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                                </svg></a>
+                                    </svg>';?>
+                                   <?php }else{?>
+                              <?php 
+                                  echo '<a href="index.php?act=signin">
+                                  <div class="user-block">
+                                     <svg xmlns="http://www.w3.org/2000/svg" fill="transparent" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-l user__account">
+                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                     </svg></a>';  
+                                   }?>
                               <?php  
                               if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2){
                         
@@ -93,7 +101,7 @@
                                         <a href="index.php?act="><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-lm">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                                         </svg></a>
-                                        <a href="index.php?act=myoder"><p>My Oder</p></a>
+                                        <a href="index.php?act=bill"><p>My Oder</p></a>
                                     </div>
                                     <div class="option-item">
                                         <a href="index.php?act=user">
@@ -109,11 +117,6 @@
                               } else {
 
                               }
-                                
-                              
-                        
-                              
-                              
                                  ?> 
                               
                             </div>
