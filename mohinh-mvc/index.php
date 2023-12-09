@@ -687,9 +687,9 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                     update_taikhoan($ma_tk, $user, $pass, $email, $dia_chi, $sdt, $ma_vaitro);
                                     $loadallTK = loadAll_tk();
 
+                                }
                                 require_once "view/user/account/editprofile.php";
                                     break;
-                                }
                             case 'success':
                                 require_once "view/user/checkout/success.php";
                                 break;
