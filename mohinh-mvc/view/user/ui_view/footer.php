@@ -4,16 +4,16 @@
                 <div class="footer-logo">
                     <img src="accset/icon/footer/logo_footer.svg" alt="" class="footer__image" />
                 </div>
-                <div class="footer-header">
-                    <h3 class="footer__title">Subscribe</h3>
-                </div>
-                <div class="footer-body">
-                    <div class="footer__desc">Get 10% off your first order</div>
-                    <div class="footer-form">
-                        <input type="text" name="" placeholder="Enter your email" />
-                        <img src="accset/icon/footer/input_logo.svg" alt="" class="footer-form__img" />
-                    </div>
-                </div>
+<!--                <div class="footer-header">-->
+<!--                    <h3 class="footer__title">Subscribe</h3>-->
+<!--                </div>-->
+<!--                <div class="footer-body">-->
+<!--                    <div class="footer__desc">Get 10% off your first order</div>-->
+<!--                    <div class="footer-form">-->
+<!--                        <input type="text" name="" placeholder="Enter your email" />-->
+<!--                        <img src="accset/icon/footer/input_logo.svg" alt="" class="footer-form__img" />-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
             <div class="footer-col">
                 <div class="footer-header">
@@ -22,10 +22,10 @@
                 <div class="footer-body">
                     <ul>
                         <li>
-                            <a href="">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</a>
+                            <a href="">11 Đại Cồ Việt, Quận Hoàn Kiếm, Hà Nội.</a>
                         </li>
-                        <li><a href="">exclusive@gmail.com</a></li>
-                        <li><a href="">+88015-88888-9999</a></li>
+                        <li><a href="">techstore203@gmail.com</a></li>
+                        <li><a href="">0594959594</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="footer-body">
                     <ul>
                         <li><a href="">My Account</a></li>
-                        <li><a href="">Login / Register</a></li>
+                        <li><a href="index.php?act=signin">Login / Register</a></li>
                         <li><a href="">Cart</a></li>
                         <li><a href="">Wishlist</a></li>
                         <li><a href="">Shop</a></li>
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="footer-copyright">
-            &copy; Copyright Rimel 2022. All right reserved
+            &copy; Copyright TechStore 2022. All right reserved
         </div>
     </section>
     <!--End .footer-->
