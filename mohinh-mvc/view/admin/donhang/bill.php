@@ -73,17 +73,14 @@
                             <p>Số điện thoại : <?= $sdt ?></p>
                             <p>Địa chỉ : <?= $diachi;?></p>
                             <p>Email : <?= $email; ?></p>
-                            <p>Phương thức thanh toán : 
-                            <?php 
+                            <p>Phương thức thanh toán : <?php 
                                      if ($ma_pttt == 3) {
                                             echo 'Banking';
                                         } else {
                                             echo 'Thanh toán khi nhận hàng ';
                                         } 
                                            
-                                     ?>
-                                
-    </p>
+                                     ?></p>
                             <p>Ngày lập hóa đơn : <?= $ngay_dat; ?></p>
                         </div>
 
@@ -134,7 +131,7 @@
 
                             </tbody>
                         </table>
-                        <p class="bill-total" >Tổng thanh toán : <?= number_format($tong ) ?> VND</p>
+                        <p class="bill-total" >Tổng thanh toán : <?= number_format($tong ) ?> $</p>
                                     </div>
                     </div>
 

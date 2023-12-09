@@ -269,8 +269,12 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                     if (isset($_GET['nd'])) {
                         switch ($_GET['nd']) {
                             case 'viewCtdh':
-                                $loadallDH=loadAll_donhang();
-                                require_once "view/admin/donhang/list.php";
+                                if (isset($_GET['ma_dh'])) {
+                                    $ma_dh = $_GET['ma_dh'];
+                                        $ctdh=getCtdhbyUser($ma_dh);
+                                        $ttdh=getTtdh($ma_dh);
+                                }
+                                require_once "view/admin/donhang/bill.php"; 
                                 break;
                             case 'trangthai':
                                 if (isset($_GET['tt'])){
@@ -430,7 +434,15 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 }
                 require_once "view/user/dangky/dangky.php";
                 break;
-
+            
+            case 'addBl':
+                    if ($_SERVER['REQUEST_METHOD'] == "POST") {     
+                        $ma_tk = $_SESSION['ma_tk'];
+                        $ma_sp = $_GET['ma_sp'];
+                        $noidung = $_POST['noidung'];
+                        insert_binhluan( $ma_tk, $ma_sp, $noidung);
+                    } 
+             break;
 
             case 'product':
                 if (isset($_GET['nd'])) {
@@ -482,13 +494,21 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 }
                 break;
             case 'ctsp':
+                
                 if (isset($_GET['ma_sp'])) {
                     $ma_sp = $_GET['ma_sp'];
                     $loadAllNSX = loadAll_nsx();
                     $loadallDm = loadAll_danhmuc();
+                    $loadAllBl=loadAll_binhluanbysp($ma_sp);
                     $loadOneSp = loadOne_sanpham($ma_sp);
                     $loadall_sp = loadAll_sanpham();
                     require_once "view/user/ctsp/ctsp.php";
+                }
+                if(isset($_POST['guibinhluan'])){
+                    $ma_tk = $_SESSION['ma_tk'];
+                    $ma_sp = $_POST['masp'];
+                    $noidung = $_POST['noidung'];
+                    insert_binhluan($ma_tk,$ma_sp,$noidung);
                 }
                 break;
             case 'contact':
@@ -500,25 +520,25 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
             case 'cart':
                 require_once "view/user/cart/cart.php";
                 break;
-            case 'donhang':
-                if (isset($_GET['nd'])) {
-                    switch ($_GET['nd']) {
-                        case 'status':
-                            if (isset($_GET['tt'])){
-                                switch ($_GET['tt']) {
-                                    case 'huy':
-                                        if (isset($_GET['ma_dh'])) {
-                                            $ma_dh = $_GET['ma_dh'];
-                                            updateHuy($ma_dh);
-                                            header("location: index.php?act=user&nd=myoder");
-                                        }
-                                        break;
-                                }}
+           case 'donhang':
+            if (isset($_GET['nd'])) {
+                switch ($_GET['nd']) {
+                    case 'status':
+                        if (isset($_GET['tt'])){
+                            switch ($_GET['tt']) {
+                                case 'huy':
+                                    if (isset($_GET['ma_dh'])) {
+                                        $ma_dh = $_GET['ma_dh'];
+                                        updateHuy($ma_dh);   
+                                    header("location: index.php?act=user&nd=myoder");
+                                    }
+                                    break;
+                            }} 
                             else {
-
+                                
                                 require_once "view/user/cart/myoder.php";
-                            }
-                            break;
+                         }
+                     break;
                     }
                 }
                 else {
@@ -637,7 +657,6 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 if (isset($_SESSION['ma_tk'])) {
                                     $ma_tk = $_SESSION['ma_tk'];
                                     $loadallDh = getdonhangBymatk($ma_tk);
-
 
                                 }
                                 require_once "view/user/cart/myoder.php";
