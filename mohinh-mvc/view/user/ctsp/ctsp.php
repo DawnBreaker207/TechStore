@@ -58,7 +58,7 @@
                             </svg>
 
                         </div>
-                        <input type="number" name="soluong" id="" class="btn-quantity" min = "1" value="1">
+                        <input type="number" name="soluong" id="" class="btn-quantity" min = "1" value="1" max="<?php echo $ctsp['soluong'];?>">
 
                             <div class="btn btn-add" onclick="incrementValue()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -203,36 +203,52 @@
             <h2 class="comment__heading">Comment</h2>
         </div>
         <div class="comment-body">
-            <div class="comment-input">
-                <div class="comment-rate">Bạn đánh giá sản phẩm này thế nào ?
+    
+            <div class="comment-input"> 
+                 <?php   if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 2) {
+                    extract($loadOneSp);
+                 ?>
+             <?php   echo'<div class="comment-rate">Bạn đánh giá sản phẩm này thế nào ?
                     <div class="comment-rating">
-                        <img src="image/icon/star_black.svg" alt="">
-                        <img src="image/icon/star_black.svg" alt="">
-                        <img src="image/icon/star_black.svg" alt="">
-                        <img src="image/icon/star_black.svg" alt="">
-                        <img src="image/icon/star_black.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
                     </div>
                 </div>
                 <div>
-                    <input type="text" class="comment__input" placeholder="Bạn cảm thấy sản phẩm này có tốt không ?">
-                </div>
+                    <form action="index.php?act=ctsp&ma_sp='.$ma_sp.'" method="post">
+                    <input type="text" name="noidung" class="comment__input" placeholder="Bạn cảm thấy sản phẩm này có tốt không ?">
+                    <input type="hidden" name="masp" value="'.$ma_sp.'">
+                    <input type="submit" name="guibinhluan" value="Gửi">
+
+                    </form>
+                </div>'; ?>
+                <?php }else {
+                    echo '<h3> Vui lòng đăng nhập để bình luận</3>';
+                } ?>
             </div>
+            <?php foreach($loadAllBl as $bl):
+                
+                extract($bl);?>
             <div class="comment-customer">
                 <div class="comment-image">
                     <img src="accset/img/brand/logo_amd.png" alt="">
                 </div>
                 <div class="comment-body">
-                    <span class="comment-name">G2<span class="comment-date">vào ngày 20/10/2023</span></span>
+                    <span class="comment-name"><?= $user; ?><span class="comment-date">vào ngày 20/10/2023</span></span>
                     <div class="comment-rating">
-                        <img src="image/icon/star.svg" alt="">
-                        <img src="image/icon/star.svg" alt="">
-                        <img src="image/icon/star.svg" alt="">
-                        <img src="image/icon/star.svg" alt="">
-                        <img src="image/icon/star_black.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
+                        <img src="accset/icon/star.svg" alt="">
                     </div>
-                    <div class="comment-content">Sản phẩm ok</div>
+                    <div class="comment-content"><?= $noidung; ?></div>
                 </div>
             </div>
+            <?php  endforeach; ?>
         </div>
 
     </section>
