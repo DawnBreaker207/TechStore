@@ -28,8 +28,8 @@
                 <span class="error" id="tendmError"></span><br>
 
                 <label for="img">Hình Ảnh:</label>
-                <input type="file" id="img" name="img" value="<?php echo $img; ?>"><br>
-                <input type="hidden" name="oldimg" value="<?php echo $img; ?>">
+                <input type="file" id="img" name="img" value="<?php echo $img_dm; ?>"><br>
+                <input type="hidden" name="oldimg" value="<?php echo $img_dm; ?>">
 
                 <input type="submit" value="Cập nhật" name="them" class="them">
             <?php } ?>

@@ -47,6 +47,7 @@
                         <a class="btn-sm" href="index.php?act=donHang&nd=trangthai&tt=dangGiao&ma_dh=<?php echo $ma_dh;?>">Xác nhận</a>
                         <a class="btn-sm" href="index.php?act=donHang&nd=trangthai&tt=huy&ma_dh=<?php echo $ma_dh;?>">Huỷ</a>
                         <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh&ma_dh=<?php echo $ma_dh;?>">Chi tiết</a>
+
                     <?php
                     } else if ($ma_trangthai == 2) { ?>
 
@@ -55,7 +56,7 @@
                     <?php
                     } else {
                     ?>
-                    <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh">Chi tiết</a>
+                    <a class="btn-sm" href="index.php?act=donHang&nd=viewCtdh&ma_dh=<?php echo $ma_dh;?>">Chi tiết</a>
                     <?php 
                     }
                     ?>

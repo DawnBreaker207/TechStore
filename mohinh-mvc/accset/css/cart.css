@@ -178,3 +178,25 @@ ul {
   height: 30px;
 
 }
+.cart-update{
+  font-family: var(--font-heading);
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+  color: var(--text-color-2);
+  border: none;
+  border-radius: 5px;
+}
+.cart-update:hover{
+  background-color: var(--primary-color-hover);
+  color: var(--bg-color-2);
+}
+.btn-sm{
+  text-decoration: none;
+  margin: 0 10px;
+  font-family: var(--font-heading);
+  color: var(--text-color);
+
+}
+.btn-sm:hover{
+  color: var(--primary-color);
+}

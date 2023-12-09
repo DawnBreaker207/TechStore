@@ -16,11 +16,11 @@
                             
                             <div class="miniform-group">
                                 <label>Username</label> <br>
-                                <input type="text" name="firstname" id="firstname" value="<?php echo $user ?>">
+                                <input type="text" name="firstname" id="firstname" value="<?php echo $user ?>" disabled>
                             </div>
                             <div class="miniform-group">
                                 <label>Phone Number</label><br>
-                                <input type="text" name="phonenumber" id="phonenumber" value="<?php echo $pass ?>">
+                                <input type="text" name="phonenumber" id="phonenumber" value="<?php echo $pass ?>" disabled>
                             </div>                                   
                         </div>                      
                     </div>
@@ -28,17 +28,17 @@
                         <div class="miniform">
                             <div class="miniform-group">
                                 <label>Email</label> <br>
-                                <input type="text" name="email" id="email" value="<?php echo $email ?>">
+                                <input type="text" name="email" id="email" value="<?php echo $email ?>" disabled>
                             </div>
                             <div class="miniform-group">
                                 <label>Address</label> <br>
-                                <input type="text" name="address" id="address" value="<?php echo $dia_chi ?>">
+                                <input type="text" name="address" id="address" value="<?php echo $dia_chi ?>" disabled>
                             </div>
                         </div>
                     </div>
                     <div class="form-group-account">
                         <label>Password </label>
-                        <input type="password" name="currentpassword" id="currentpassword" placeholder="Current Password" value="<?php echo $pass ?>">
+                        <input type="password" name="currentpassword" id="currentpassword" placeholder="Current Password" value="<?php echo $pass ?>" disabled>
                         
                        
                     </div>

@@ -33,6 +33,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 $ma_dm = $_POST['madm'];
                                 $img_dm = img();
                                 insert_danhmuc($ten_dm, $img_dm);
+                                $loadallDm = loadAll_danhmuc();
+                                require_once "view/admin/danhmuc/list.php";
                             } else {
                                 require_once "view/admin/danhmuc/add.php";
                             }
@@ -56,19 +58,21 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             if (isset($_GET['ma_dm'])) {
                                 $ma_dm = $_GET['ma_dm'];
                                 delete_danhmuc($ma_dm);
+                                $loadallDm = loadAll_danhmuc();
+                                require_once "view/admin/danhmuc/list.php";
                             }
                             break;
 
                             case 'seach':
                                 if($_SERVER['REQUEST_METHOD'] == "POST"){
-                                   $keyword = $_POST['keyword']; 
+                                   $keyword = $_POST['keyword'];
                                    $loadallDm = getsearchdm($keyword);
-                                     
+
                                    require_once "view/admin/danhmuc/list.php";
                                 }
                                 break;
-   
-                            
+
+
                         case 'view':
                             $loadallDm = loadAll_danhmuc();
                             require_once "view/admin/danhmuc/list.php";
@@ -133,9 +137,9 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
 
                         case 'seach':
                                 if($_SERVER['REQUEST_METHOD'] == "POST"){
-                                   $keyword = $_POST['keyword']; 
+                                   $keyword = $_POST['keyword'];
                                    $loadallTK =  getSearchtk($keyword);
-                                     
+
                                    require_once "view/admin/taikhoan/list.php";
                                 }
                                 break;
@@ -196,6 +200,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 $ma_nsx = $_POST['ma_nsx'];
                                 $ma_dm = $_POST['ma_dm'];
                                 insert_sanpham($ten_sp, $img, $gia,$soluong, $mota, $ma_nsx, $ma_dm);
+                                $loadall_sp =  loadAll_sanpham();
+                                require_once "view/admin/sanpham/list.php";
                             } else {
                                 require_once "view/admin/sanpham/add.php";
                             }
@@ -241,9 +247,9 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                             break;
                         case 'seach':
                                 if($_SERVER['REQUEST_METHOD'] == "POST"){
-                                   $keyword = $_POST['keyword']; 
+                                   $keyword = $_POST['keyword'];
                                    $loadall_sp =  getSearchsp($keyword);
-                                     
+
                                    require_once "view/admin/sanpham/list.php";
                                 }
                                 break;
@@ -302,7 +308,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                         require_once "view/admin/donhang/list.php";
                                             break;
                                     }
-                                    } 
+                                    }
                                     else {
                                         $loadallDH=loadAll_donhang();
                                         require_once "view/admin/donhang/list.php";
@@ -358,9 +364,9 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 break;
                             case 'seach':
                                     if($_SERVER['REQUEST_METHOD'] == "POST"){
-                                       $keyword = $_POST['keyword']; 
+                                       $keyword = $_POST['keyword'];
                                        $loadallNsx =  getSearchnsx($keyword);
-                                         
+
                                        require_once "view/admin/nsx/list.php";
                                     }
                                     break;
@@ -375,8 +381,8 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                     }
                     break;
 
-       
-                
+
+
 
             case 'dangxuat':
                 unset($_SESSION['ma_vaitro']);
@@ -387,7 +393,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
         }
     } else {
         $loadallDm = loadAll_danhmuc();
-        
+
         require_once "view/admin/home/home.php";
     }
 
@@ -514,7 +520,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
             case 'cart':
                 require_once "view/user/cart/cart.php";
                 break;
-            case 'donhang':
+           case 'donhang':
             if (isset($_GET['nd'])) {
                 switch ($_GET['nd']) {
                     case 'status':
@@ -541,22 +547,22 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                 break;
             case 'updateCart':
                 if(isset($_POST["updatecart"]))
-                { 
+                {
                 $fl=0;
                        for ($i=0; $i < sizeof($_SESSION['mycart']); $i++) {
 
                         if($_SESSION['mycart'][$i]['ma_sp']==$_GET["ma_sp"]){
                             $fl=1;
                             $_SESSION['mycart'][$i]['soluong']=$_POST['soluong'];
-                            break;               
+                            break;
                         }
-                
+
                     }
                 }
                 require_once "view/user/cart/cart.php";
                 break;
             case 'addToCart':
-              
+
                 if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     $ma_sp = $_POST['masp'];
                     $ten_sp = $_POST['tensp'];
@@ -588,10 +594,10 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                         $cartItems[$existingItemKey]['soluong']++; // Tăng số lượng
                     } else {
                         // Nếu sản phẩm chưa tồn tại, thêm mới sản phẩm vào giỏ hàng
-                        array_push($cartItems, $giohang); 
-                        
+                        array_push($cartItems, $giohang);
+
                     }
-                   
+
                     $_SESSION['mycart'] = $cartItems;
                 }
                 require_once "view/user/cart/cart.php";
@@ -638,7 +644,7 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                         }
                         unset($_SESSION['mycart']);
                         $_SESSION['idbill']=$idBill;
-                        header("location: index.php?act=user&nd=myoder");
+                        header("location: index.php?act=user&nd=success");
                     }
                 }
                 require_once "view/user/checkout/checkout.php";
@@ -651,15 +657,16 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                 if (isset($_SESSION['ma_tk'])) {
                                     $ma_tk = $_SESSION['ma_tk'];
                                     $loadallDh = getdonhangBymatk($ma_tk);
+
                                 }
                                 require_once "view/user/cart/myoder.php";
-                                break; 
-                                
+                                break;
+
                             case 'myProfile':
                                 if (isset($_SESSION['ma_tk'])) {
                                     $ma_tk = $_SESSION['ma_tk'];
                                     $loadOneTK = loadOne_tk($ma_tk);
-                                    
+
                                 require_once "view/user/account/account.php";
                                 }
                                 break;
@@ -679,16 +686,19 @@ if (isset($_SESSION['ma_vaitro']) && $_SESSION['ma_vaitro'] == 0) {
                                     $ma_vaitro = $_SESSION['ma_vaitro'];
                                     update_taikhoan($ma_tk, $user, $pass, $email, $dia_chi, $sdt, $ma_vaitro);
                                     $loadallTK = loadAll_tk();
-                                    
+
                                 require_once "view/user/account/editprofile.php";
                                     break;
                                 }
+                            case 'success':
+                                require_once "view/user/checkout/success.php";
+                                break;
                             }
                         }
                 }else {
-                    require_once "view/user/account/account.php";   
+                    require_once "view/user/account/account.php";
                 }
-                
+
                 break;
            case 'bill':
             if (isset($_GET['ma_dh'])) {
