@@ -43,7 +43,7 @@
           <td width="50px"><?php  echo number_format((int)$gia , 0, "," , ".") ;?> <u>đ</u></td>
           <td width="100px">
             <form action="index.php?act=updateCart&ma_sp=<?php echo $ma_sp;?>" method="post">
-            <input type="number" name="soluong" id="" min="1" class="ip_quantity" value="<?php echo $soluong;?>">
+            <input type="number" name="soluong" id="" min="1" class="ip_quantity" value="<?php echo $soluong;?>" max="<?php echo $soluong -1;?>">
             <input type="submit" name="updatecart" value="Cập nhật" class="cart-update">
           </form></td>
           <td width="100px"><?php  echo number_format((int)($gia*$soluong), 0, ",", ".") ;?><u>đ</u></td>
